@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" -S /mnt/d/NetworkProgramming/Tank98 -B /mnt/d/NetworkProgramming/Tank98/cmake-build-release
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /mnt/d/NetworkProgramming/Tank98/cmake-build-release
