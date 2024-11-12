@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "Tank98",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -38,8 +40,15 @@
 			[
 				{
 					"directoryIndex" : 0,
+					"id" : "Server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Server-Debug-37f586973ac4b53d21f2.json",
+					"name" : "Server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "Tank98::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Tank98-Debug-66c5a625f43be72148ed.json",
+					"jsonFile" : "target-Tank98-Debug-7903ca809557c26f41b7.json",
 					"name" : "Tank98",
 					"projectIndex" : 0
 				}
@@ -49,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/mnt/d/Game/tank90-FE/cmake-build-debug",
-		"source" : "/mnt/d/Game/tank90-FE"
+		"build" : "/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug",
+		"source" : "/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE"
 	},
 	"version" : 
 	{

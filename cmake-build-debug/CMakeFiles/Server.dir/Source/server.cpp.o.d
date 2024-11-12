@@ -1,4 +1,5 @@
-CMakeFiles/Tank98.dir/main.cpp.o: /mnt/d/Game/tank90-FE/main.cpp \
+CMakeFiles/Server.dir/Source/server.cpp.o: \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/server.cpp \
  /usr/include/stdc-predef.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h \
@@ -212,6 +213,7 @@ CMakeFiles/Tank98.dir/main.cpp.o: /mnt/d/Game/tank90-FE/main.cpp \
  /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
+ /usr/include/SDL2/SDL_net.h /usr/include/SDL2/SDL.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/iosfwd \
  /usr/include/c++/11/bits/stringfwd.h \
@@ -281,4 +283,4 @@ CMakeFiles/Tank98.dir/main.cpp.o: /mnt/d/Game/tank90-FE/main.cpp \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc /mnt/d/Game/tank90-FE/math.h
+ /usr/include/c++/11/bits/istream.tcc

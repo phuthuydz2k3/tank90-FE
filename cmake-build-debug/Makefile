@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/Game/tank90-FE
+CMAKE_SOURCE_DIR = /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/Game/tank90-FE/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles /mnt/d/Game/tank90-FE/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,19 @@ Tank98: cmake_check_build_system
 Tank98/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/build
 .PHONY : Tank98/fast
+
+#=============================================================================
+# Target rules for targets named Server
+
+# Build rule for target.
+Server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Server
+.PHONY : Server
+
+# fast build rule for target.
+Server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/build
+.PHONY : Server/fast
 
 Source/ECS/Component/Component.o: Source/ECS/Component/Component.cpp.o
 .PHONY : Source/ECS/Component/Component.o
@@ -297,6 +310,30 @@ Source/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/main.cpp.s
 .PHONY : Source/main.cpp.s
 
+Source/server.o: Source/server.cpp.o
+.PHONY : Source/server.o
+
+# target to build an object file
+Source/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Source/server.cpp.o
+.PHONY : Source/server.cpp.o
+
+Source/server.i: Source/server.cpp.i
+.PHONY : Source/server.i
+
+# target to preprocess a source file
+Source/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Source/server.cpp.i
+.PHONY : Source/server.cpp.i
+
+Source/server.s: Source/server.cpp.s
+.PHONY : Source/server.s
+
+# target to generate assembly for a file
+Source/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Source/server.cpp.s
+.PHONY : Source/server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -305,6 +342,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Server"
 	@echo "... Tank98"
 	@echo "... Source/ECS/Component/Component.o"
 	@echo "... Source/ECS/Component/Component.i"
@@ -327,6 +365,9 @@ help:
 	@echo "... Source/main.o"
 	@echo "... Source/main.i"
 	@echo "... Source/main.s"
+	@echo "... Source/server.o"
+	@echo "... Source/server.i"
+	@echo "... Source/server.s"
 .PHONY : help
 
 

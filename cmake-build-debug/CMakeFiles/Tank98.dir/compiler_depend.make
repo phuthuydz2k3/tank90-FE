@@ -1032,8 +1032,13 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/cstring \
+  /usr/include/SDL2/SDL_net.h \
+  /usr/include/SDL2/SDL.h \
   ../Source/Math/Vector2.h
 
+
+/usr/include/SDL2/SDL_net.h:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -1724,6 +1729,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 ../Source/Math/Vector2.cpp:
 
 ../Source/Math/Vector2.h:
+
+/usr/include/c++/11/cstring:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 

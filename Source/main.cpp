@@ -1,5 +1,8 @@
 #include <SDL2/SDL.h>
 #include <iostream>
+#include <cstring>
+#include <SDL2/SDL_net.h>
+
 #include "Math/Vector2.h"
 
 // Define window size
@@ -20,6 +23,14 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+
+    // Initialize SDL_net
+    if (SDLNet_Init() < 0) {
+        std::cerr << "SDL_net haven't been initialized: " << SDLNet_GetError() << std::endl;
+        SDL_Quit();
+        return 1;
+    }
+
     // Create window
     SDL_Window *window = SDL_CreateWindow("Tank Game",
                                           SDL_WINDOWPOS_CENTERED,
@@ -28,6 +39,7 @@ int main(int argc, char *argv[]) {
                                           SDL_WINDOW_SHOWN);
     if (!window) {
         std::cerr << "Window haven't been initialized: " << SDL_GetError() << std::endl;
+        SDLNet_Quit();
         SDL_Quit();
         return 1;
     }
@@ -37,14 +49,50 @@ int main(int argc, char *argv[]) {
     if (!renderer) {
         std::cerr << "Renderer haven't been initialized: " << SDL_GetError() << std::endl;
         SDL_DestroyWindow(window);
+        SDLNet_Quit();
         SDL_Quit();
         return 1;
     }
+
+    // Network setup
+    IPaddress ip;
+    if (SDLNet_ResolveHost(&ip, "127.0.0.1", 12345) < 0) {
+        std::cerr << "Failed to resolve host: " << SDLNet_GetError() << std::endl;
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        SDLNet_Quit();
+        SDL_Quit();
+        return 1;
+    }
+
+    UDPsocket socket = SDLNet_UDP_Open(0);
+    if (!socket) {
+        std::cerr << "Failed to open UDP socket: " << SDLNet_GetError() << std::endl;
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        SDLNet_Quit();
+        SDL_Quit();
+        return 1;
+    }
+
+    UDPpacket *packet = SDLNet_AllocPacket(512);
+    if (!packet) {
+        std::cerr << "Failed to allocate packet: " << SDLNet_GetError() << std::endl;
+        SDLNet_UDP_Close(socket);
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        SDLNet_Quit();
+        SDL_Quit();
+        return 1;
+    }
+
+    packet->address = ip;
 
     // Game loop
     bool running = true;
     SDL_Event event;
     Uint32 lastTime = SDL_GetTicks();
+    Uint32 lastSendTime = SDL_GetTicks();
     while (running) {
         // Event handling
         Uint32 currentTime = SDL_GetTicks();
@@ -70,6 +118,16 @@ int main(int argc, char *argv[]) {
             squarePos += move * (MOVE_SPEED * deltaTime);
         }
 
+        // Send 50 frames every second
+        // 1000ms / 50 = 20ms
+        if (currentTime - lastSendTime >= 20) {
+            lastSendTime = currentTime;
+            std::string posStr = std::to_string(squarePos.x) + "," + std::to_string(squarePos.y);
+            std::strcpy((char *)packet->data, posStr.c_str());
+            packet->len = posStr.length() + 1;
+            SDLNet_UDP_Send(socket, -1, packet);
+        }
+
         // Background color
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
@@ -87,8 +145,11 @@ int main(int argc, char *argv[]) {
     }
 
     // Clean up
+    SDLNet_FreePacket(packet);
+    SDLNet_UDP_Close(socket);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+    SDLNet_Quit();
     SDL_Quit();
 
     return 0;
