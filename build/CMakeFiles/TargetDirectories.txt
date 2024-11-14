@@ -1,3 +1,0 @@
-/mnt/d/NetworkProgramming/Tank98/build/CMakeFiles/Tank98.dir
-/mnt/d/NetworkProgramming/Tank98/build/CMakeFiles/edit_cache.dir
-/mnt/d/NetworkProgramming/Tank98/build/CMakeFiles/rebuild_cache.dir

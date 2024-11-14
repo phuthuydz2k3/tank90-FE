@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/Tank98.dir/main.cpp.o CMakeFiles/Tank98.dir/math.cpp.o -o Tank98  /usr/lib/x86_64-linux-gnu/libSDL2.so 

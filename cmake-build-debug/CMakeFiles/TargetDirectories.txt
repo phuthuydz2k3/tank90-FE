@@ -1,3 +1,0 @@
-/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles/Tank98.dir
-/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles/rebuild_cache.dir
