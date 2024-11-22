@@ -345,6 +345,30 @@ Source/Game/Components/FlyComponent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.s
 .PHONY : Source/Game/Components/FlyComponent.cpp.s
 
+Source/Game/Components/RectangleCollider.o: Source/Game/Components/RectangleCollider.cpp.o
+.PHONY : Source/Game/Components/RectangleCollider.o
+
+# target to build an object file
+Source/Game/Components/RectangleCollider.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o
+.PHONY : Source/Game/Components/RectangleCollider.cpp.o
+
+Source/Game/Components/RectangleCollider.i: Source/Game/Components/RectangleCollider.cpp.i
+.PHONY : Source/Game/Components/RectangleCollider.i
+
+# target to preprocess a source file
+Source/Game/Components/RectangleCollider.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.i
+.PHONY : Source/Game/Components/RectangleCollider.cpp.i
+
+Source/Game/Components/RectangleCollider.s: Source/Game/Components/RectangleCollider.cpp.s
+.PHONY : Source/Game/Components/RectangleCollider.s
+
+# target to generate assembly for a file
+Source/Game/Components/RectangleCollider.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.s
+.PHONY : Source/Game/Components/RectangleCollider.cpp.s
+
 Source/Game/Components/Sprite.o: Source/Game/Components/Sprite.cpp.o
 .PHONY : Source/Game/Components/Sprite.o
 
@@ -393,6 +417,30 @@ Source/Game/Components/Transform.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.s
 .PHONY : Source/Game/Components/Transform.cpp.s
 
+Source/Game/Entities/Brick.o: Source/Game/Entities/Brick.cpp.o
+.PHONY : Source/Game/Entities/Brick.o
+
+# target to build an object file
+Source/Game/Entities/Brick.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o
+.PHONY : Source/Game/Entities/Brick.cpp.o
+
+Source/Game/Entities/Brick.i: Source/Game/Entities/Brick.cpp.i
+.PHONY : Source/Game/Entities/Brick.i
+
+# target to preprocess a source file
+Source/Game/Entities/Brick.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.i
+.PHONY : Source/Game/Entities/Brick.cpp.i
+
+Source/Game/Entities/Brick.s: Source/Game/Entities/Brick.cpp.s
+.PHONY : Source/Game/Entities/Brick.s
+
+# target to generate assembly for a file
+Source/Game/Entities/Brick.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.s
+.PHONY : Source/Game/Entities/Brick.cpp.s
+
 Source/Game/Entities/Bullet.o: Source/Game/Entities/Bullet.cpp.o
 .PHONY : Source/Game/Entities/Bullet.o
 
@@ -440,6 +488,30 @@ Source/Game/Entities/Tank.s: Source/Game/Entities/Tank.cpp.s
 Source/Game/Entities/Tank.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.s
 .PHONY : Source/Game/Entities/Tank.cpp.s
+
+Source/Game/Entities/Tree.o: Source/Game/Entities/Tree.cpp.o
+.PHONY : Source/Game/Entities/Tree.o
+
+# target to build an object file
+Source/Game/Entities/Tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o
+.PHONY : Source/Game/Entities/Tree.cpp.o
+
+Source/Game/Entities/Tree.i: Source/Game/Entities/Tree.cpp.i
+.PHONY : Source/Game/Entities/Tree.i
+
+# target to preprocess a source file
+Source/Game/Entities/Tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.i
+.PHONY : Source/Game/Entities/Tree.cpp.i
+
+Source/Game/Entities/Tree.s: Source/Game/Entities/Tree.cpp.s
+.PHONY : Source/Game/Entities/Tree.s
+
+# target to generate assembly for a file
+Source/Game/Entities/Tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s
+.PHONY : Source/Game/Entities/Tree.cpp.s
 
 Source/Game/LoadResourceManager.o: Source/Game/LoadResourceManager.cpp.o
 .PHONY : Source/Game/LoadResourceManager.o
@@ -536,6 +608,30 @@ Source/Game/Systems/FlySystem.s: Source/Game/Systems/FlySystem.cpp.s
 Source/Game/Systems/FlySystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.s
 .PHONY : Source/Game/Systems/FlySystem.cpp.s
+
+Source/Game/Systems/RectangleColliderSystem.o: Source/Game/Systems/RectangleColliderSystem.cpp.o
+.PHONY : Source/Game/Systems/RectangleColliderSystem.o
+
+# target to build an object file
+Source/Game/Systems/RectangleColliderSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o
+.PHONY : Source/Game/Systems/RectangleColliderSystem.cpp.o
+
+Source/Game/Systems/RectangleColliderSystem.i: Source/Game/Systems/RectangleColliderSystem.cpp.i
+.PHONY : Source/Game/Systems/RectangleColliderSystem.i
+
+# target to preprocess a source file
+Source/Game/Systems/RectangleColliderSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.i
+.PHONY : Source/Game/Systems/RectangleColliderSystem.cpp.i
+
+Source/Game/Systems/RectangleColliderSystem.s: Source/Game/Systems/RectangleColliderSystem.cpp.s
+.PHONY : Source/Game/Systems/RectangleColliderSystem.s
+
+# target to generate assembly for a file
+Source/Game/Systems/RectangleColliderSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.s
+.PHONY : Source/Game/Systems/RectangleColliderSystem.cpp.s
 
 Source/Game/Systems/SpriteSystem.o: Source/Game/Systems/SpriteSystem.cpp.o
 .PHONY : Source/Game/Systems/SpriteSystem.o
@@ -645,18 +741,27 @@ help:
 	@echo "... Source/Game/Components/FlyComponent.o"
 	@echo "... Source/Game/Components/FlyComponent.i"
 	@echo "... Source/Game/Components/FlyComponent.s"
+	@echo "... Source/Game/Components/RectangleCollider.o"
+	@echo "... Source/Game/Components/RectangleCollider.i"
+	@echo "... Source/Game/Components/RectangleCollider.s"
 	@echo "... Source/Game/Components/Sprite.o"
 	@echo "... Source/Game/Components/Sprite.i"
 	@echo "... Source/Game/Components/Sprite.s"
 	@echo "... Source/Game/Components/Transform.o"
 	@echo "... Source/Game/Components/Transform.i"
 	@echo "... Source/Game/Components/Transform.s"
+	@echo "... Source/Game/Entities/Brick.o"
+	@echo "... Source/Game/Entities/Brick.i"
+	@echo "... Source/Game/Entities/Brick.s"
 	@echo "... Source/Game/Entities/Bullet.o"
 	@echo "... Source/Game/Entities/Bullet.i"
 	@echo "... Source/Game/Entities/Bullet.s"
 	@echo "... Source/Game/Entities/Tank.o"
 	@echo "... Source/Game/Entities/Tank.i"
 	@echo "... Source/Game/Entities/Tank.s"
+	@echo "... Source/Game/Entities/Tree.o"
+	@echo "... Source/Game/Entities/Tree.i"
+	@echo "... Source/Game/Entities/Tree.s"
 	@echo "... Source/Game/LoadResourceManager.o"
 	@echo "... Source/Game/LoadResourceManager.i"
 	@echo "... Source/Game/LoadResourceManager.s"
@@ -669,6 +774,9 @@ help:
 	@echo "... Source/Game/Systems/FlySystem.o"
 	@echo "... Source/Game/Systems/FlySystem.i"
 	@echo "... Source/Game/Systems/FlySystem.s"
+	@echo "... Source/Game/Systems/RectangleColliderSystem.o"
+	@echo "... Source/Game/Systems/RectangleColliderSystem.i"
+	@echo "... Source/Game/Systems/RectangleColliderSystem.s"
 	@echo "... Source/Game/Systems/SpriteSystem.o"
 	@echo "... Source/Game/Systems/SpriteSystem.i"
 	@echo "... Source/Game/Systems/SpriteSystem.s"

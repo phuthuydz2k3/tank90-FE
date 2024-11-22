@@ -45,6 +45,15 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Systems/FlySystem.h
         Source/Game/Systems/DestroyCounterSystem.cpp
         Source/Game/Systems/DestroyCounterSystem.h
+        Source/Game/Entities/Brick.cpp
+        Source/Game/Entities/Brick.h
+        Source/Game/Components/RectangleCollider.cpp
+        Source/Game/Components/RectangleCollider.h
+        Source/Game/Systems/RectangleColliderSystem.cpp
+        Source/Game/Systems/RectangleColliderSystem.h
+        Source/Game/Common/ColliderLayer.h
+        Source/Game/Entities/Tree.cpp
+        Source/Game/Entities/Tree.h
 )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 # Link against the SDL2 library

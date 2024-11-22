@@ -37,7 +37,7 @@ void ControlSystem::update() {
         }
         if (control->isShoot()) {
             Bullet* bullet = EntityManager::getInstance()->createEntity<Bullet>();
-            bullet->getComponent<Transform>()->position = entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.5f;
+            bullet->getComponent<Transform>()->position = entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
         }
         Transform *transform = entity->getComponent<Transform>();

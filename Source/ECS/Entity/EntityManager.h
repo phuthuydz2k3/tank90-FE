@@ -61,6 +61,8 @@ public:
         }
         return entitiesWithComponent;
     }
+
+    void lateUpdate();
 };
 
 

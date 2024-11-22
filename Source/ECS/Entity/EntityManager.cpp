@@ -4,10 +4,12 @@
 
 #include "EntityManager.h"
 
+std::list<int> backupRemoveEntities = {};
 
 void EntityManager::removeEntity(int id) {
     if (this->entities.find(id) == this->entities.end()) return;
-    this->entities.erase(id);
+    backupRemoveEntities.push_back(id);
+    // this->entities.erase(id);
 }
 
 
@@ -22,4 +24,11 @@ void EntityManager::clearEntities() {
 
 int EntityManager::getEntityCount() const {
     return this->entities.size();
+}
+
+void EntityManager::lateUpdate() {
+    for (auto &id: backupRemoveEntities) {
+        this->entities.erase(id);
+    }
+    backupRemoveEntities.clear();
 }

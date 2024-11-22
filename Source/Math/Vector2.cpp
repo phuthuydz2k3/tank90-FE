@@ -58,6 +58,10 @@ VECTOR2 VECTOR2::operator*=(float scalar) {
     return *this;
 }
 
+float VECTOR2::dot(const VECTOR2 &other) const {
+    return x * other.x + y * other.y;
+}
+
 
 // Magnitude of the vector
 float VECTOR2::magnitude() const {

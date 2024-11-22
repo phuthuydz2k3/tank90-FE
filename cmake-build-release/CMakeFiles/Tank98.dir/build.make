@@ -349,6 +349,62 @@ CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Systems/DestroyCounterSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.s
 
+CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o: ../Source/Game/Entities/Brick.cpp
+CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Entities/Brick.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Entities/Brick.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Entities/Brick.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o: ../Source/Game/Components/RectangleCollider.cpp
+CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Components/RectangleCollider.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Components/RectangleCollider.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Components/RectangleCollider.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o: ../Source/Game/Systems/RectangleColliderSystem.cpp
+CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Systems/RectangleColliderSystem.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Systems/RectangleColliderSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Systems/RectangleColliderSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o: ../Source/Game/Entities/Tree.cpp
+CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Entities/Tree.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Entities/Tree.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Entities/Tree.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s
+
 # Object files for target Tank98
 Tank98_OBJECTS = \
 "CMakeFiles/Tank98.dir/Source/main.cpp.o" \
@@ -370,7 +426,11 @@ Tank98_OBJECTS = \
 "CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o" \
-"CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o"
+"CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o"
 
 # External object files for target Tank98
 Tank98_EXTERNAL_OBJECTS =
@@ -395,10 +455,14 @@ Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o
 Tank98: CMakeFiles/Tank98.dir/build.make
 Tank98: /usr/lib/x86_64-linux-gnu/libSDL2.so
 Tank98: CMakeFiles/Tank98.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable Tank98"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable Tank98"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tank98.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

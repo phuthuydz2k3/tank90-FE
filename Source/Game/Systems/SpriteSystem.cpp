@@ -3,7 +3,6 @@
 //
 
 #include "SpriteSystem.h"
-
 #include "ECS/Entity/EntityManager.h"
 #include "Game/LoadResourceManager.h"
 #include "Game/Components/Sprite.h"
@@ -17,6 +16,11 @@ void SpriteSystem::update() {
     System::update();
     SDL_RenderClear(LoadResourceManager::getInstance()->GetRenderer());
     auto entities = EntityManager::getInstance()->getEntitiesWithComponent<Sprite>();
+    if (entities.empty()) return;
+    entities.sort([] (Entity* a, Entity* b) {
+        return a->getComponent<Sprite>()->layer < b->getComponent<Sprite>()->layer;
+    });
+
     for (auto &entity: entities) {
         Sprite *sprite = entity->getComponent<Sprite>();
         if (sprite->texture == nullptr) continue;
@@ -32,6 +36,7 @@ void SpriteSystem::update() {
     }
     SDL_RenderPresent(LoadResourceManager::getInstance()->GetRenderer());
 }
+
 
 void SpriteSystem::init() {
     System::init();

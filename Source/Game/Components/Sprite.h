@@ -15,11 +15,12 @@ class Sprite : public Component {
 public:
     Sprite();
 
-    Sprite(const std::string &pathSprite, const VECTOR2 &size, SDL_Rect *srcRect);
+    Sprite(const std::string &pathSprite, const VECTOR2 &size, SDL_Rect *srcRect, int layer);
 
     SDL_Texture *texture;
     VECTOR2 size;
     SDL_Rect *srcRect;
+    int layer;
 };
 
 

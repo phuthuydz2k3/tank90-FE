@@ -5,7 +5,7 @@
 #include "LoadResourceManager.h"
 
 const float WINDOW_WIDTH = 800;
-const float WINDOW_HEIGHT = 600;
+const float WINDOW_HEIGHT = 800;
 
 SDL_Texture *LoadResourceManager::LoadTexture(const std::string &path) const {
     SDL_Texture *texturePtr = IMG_LoadTexture(this->renderer, path.c_str());
@@ -22,18 +22,19 @@ void LoadResourceManager::InitWindow() {
                                     SDL_WINDOWPOS_CENTERED,
                                     WINDOW_WIDTH, WINDOW_HEIGHT,
                                     SDL_WINDOW_SHOWN);
-    if (!window) {
+    if (!this->window) {
         std::cerr << "Window haven't been initialized: " << SDL_GetError() << std::endl;
         SDL_Quit();
         return;
     }
-    this->renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    this->renderer = SDL_CreateRenderer(this->window, -1, SDL_RENDERER_ACCELERATED);
     if (!renderer) {
         std::cerr << "Renderer haven't been initialized: " << SDL_GetError() << std::endl;
-        SDL_DestroyWindow(window);
+        SDL_DestroyWindow(this->window);
         SDL_Quit();
         return;
     }
+    SDL_SetWindowResizable(this->window, SDL_FALSE);
 }
 
 void LoadResourceManager::CleanUp() const {

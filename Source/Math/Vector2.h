@@ -11,13 +11,10 @@ struct VECTOR2 {
     // Parameterized constructor
     VECTOR2(float x, float y);
 
-    // Addition operator
     VECTOR2 operator+(const VECTOR2 &other) const;
 
-    // Subtraction operator
     VECTOR2 operator-(const VECTOR2 &other) const;
 
-    // Scalar multiplication
     VECTOR2 operator*(float scalar) const;
 
     VECTOR2 operator/(float scalar) const;
@@ -31,6 +28,8 @@ struct VECTOR2 {
     VECTOR2 operator/=(float scalar);
 
     VECTOR2 operator *=(float scalar);
+
+    float dot(const VECTOR2 &other) const;
 
     float magnitude() const;
 
