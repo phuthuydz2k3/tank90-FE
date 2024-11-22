@@ -195,19 +195,19 @@ CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Components/Sprite.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.s
 
-CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o: CMakeFiles/Tank98.dir/flags.make
-CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o: ../Source/Game/LoadResourceManager.cpp
-CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/LoadResourceManager.cpp
+CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o: ../Source/Game/Manager/LoadResourceManager.cpp
+CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Manager/LoadResourceManager.cpp
 
-CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/LoadResourceManager.cpp > CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.i
+CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Manager/LoadResourceManager.cpp > CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.i
 
-CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/LoadResourceManager.cpp -o CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.s
+CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Manager/LoadResourceManager.cpp -o CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o: ../Source/Game/Entities/Tank.cpp
@@ -405,6 +405,20 @@ CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Entities/Tree.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s
 
+CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o: ../Source/Game/Manager/SoundManager.cpp
+CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Manager/SoundManager.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Manager/SoundManager.cpp > CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Manager/SoundManager.cpp -o CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.s
+
 # Object files for target Tank98
 Tank98_OBJECTS = \
 "CMakeFiles/Tank98.dir/Source/main.cpp.o" \
@@ -416,7 +430,7 @@ Tank98_OBJECTS = \
 "CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o" \
-"CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o" \
@@ -430,7 +444,8 @@ Tank98_OBJECTS = \
 "CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o" \
-"CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o"
+"CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o"
 
 # External object files for target Tank98
 Tank98_EXTERNAL_OBJECTS =
@@ -444,7 +459,7 @@ Tank98: CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o
-Tank98: CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o
@@ -459,10 +474,11 @@ Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o
 Tank98: CMakeFiles/Tank98.dir/build.make
 Tank98: /usr/lib/x86_64-linux-gnu/libSDL2.so
 Tank98: CMakeFiles/Tank98.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable Tank98"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable Tank98"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tank98.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

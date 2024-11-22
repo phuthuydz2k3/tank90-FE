@@ -1,10 +1,14 @@
-# Initial CMake configuration
 cmake_minimum_required(VERSION 3.10)
 project(Tank98 LANGUAGES CXX)
 
-# Find the SDL2 library
+
+
+# Find the SDL2 and SDL2_mixer libraries
 find_package(SDL2 REQUIRED)
+
 include_directories(${CMAKE_SOURCE_DIR}/Source)
+include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_MIXER_INCLUDE_DIRS})
+
 # Add the executable
 add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/SingletonTemplate.h
@@ -23,8 +27,8 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Components/Transform.h
         Source/Game/Components/Sprite.cpp
         Source/Game/Components/Sprite.h
-        Source/Game/LoadResourceManager.cpp
-        Source/Game/LoadResourceManager.h
+        Source/Game/Manager/LoadResourceManager.cpp
+        Source/Game/Manager/LoadResourceManager.h
         Source/Game/Entities/Tank.cpp
         Source/Game/Entities/Tank.h
         Source/Game/Systems/SpriteSystem.cpp
@@ -54,7 +58,10 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Common/ColliderLayer.h
         Source/Game/Entities/Tree.cpp
         Source/Game/Entities/Tree.h
+        Source/Game/Manager/SoundManager.cpp
+        Source/Game/Manager/SoundManager.h
 )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
-# Link against the SDL2 library
-target_link_libraries(Tank98 SDL2::SDL2 SDL2_image)
+
+# Link against the SDL2 and SDL2_mixer libraries
+target_link_libraries(Tank98 SDL2::SDL2 SDL2_image SDL2_mixer)

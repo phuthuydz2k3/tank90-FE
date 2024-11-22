@@ -9,16 +9,22 @@
 #include "SingletonTemplate.h"
 #include <iostream>
 #include <SDL_image.h>
+#include <SDL_mixer.h>
+#include <SDL2/SDL_mixer.h>
 
 
 class LoadResourceManager : public SingletonTemplate<LoadResourceManager> {
 public:
     SDL_Texture *LoadTexture(const std::string &) const;
 
+    Mix_Chunk *LoadSound(const std::string &) const;
+
     void InitWindow();
+
     void CleanUp() const;
 
     SDL_Window *GetWindow() const;
+
     SDL_Renderer *GetRenderer() const;
 
 private:

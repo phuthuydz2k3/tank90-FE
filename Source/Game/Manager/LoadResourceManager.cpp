@@ -16,6 +16,18 @@ SDL_Texture *LoadResourceManager::LoadTexture(const std::string &path) const {
     return texturePtr;
 }
 
+Mix_Chunk *LoadResourceManager::LoadSound(const std::string &path) const {
+    Mix_Chunk *sound = Mix_LoadWAV(path.c_str());
+    if (!sound) {
+        Mix_FreeChunk(sound);
+        Mix_CloseAudio();
+        Mix_Quit();
+        std::cerr << "Path is not correct" << Mix_GetError() << std::endl;
+        return nullptr;
+    }
+    return sound;
+}
+
 void LoadResourceManager::InitWindow() {
     this->window = SDL_CreateWindow("Tank Game",
                                     SDL_WINDOWPOS_CENTERED,

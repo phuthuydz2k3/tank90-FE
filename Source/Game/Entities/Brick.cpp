@@ -5,7 +5,8 @@
 #include "Brick.h"
 
 #include "ECS/Entity/EntityManager.h"
-#include "Game/LoadResourceManager.h"
+
+#include "Game/Manager/LoadResourceManager.h"
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Components/Sprite.h"
 #include "Game/Components/Transform.h"

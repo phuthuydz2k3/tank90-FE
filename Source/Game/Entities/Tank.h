@@ -5,7 +5,7 @@
 #ifndef TANK_H
 #define TANK_H
 #include "ECS/Entity/Entity.h"
-#include "Game/LoadResourceManager.h"
+#include "Game/Manager/LoadResourceManager.h"
 #include "Game/Components/ControlComponent.h"
 #include "Game/Components/Sprite.h"
 #include "Game/Components/Transform.h"

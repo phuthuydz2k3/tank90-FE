@@ -513,29 +513,53 @@ Source/Game/Entities/Tree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s
 .PHONY : Source/Game/Entities/Tree.cpp.s
 
-Source/Game/LoadResourceManager.o: Source/Game/LoadResourceManager.cpp.o
-.PHONY : Source/Game/LoadResourceManager.o
+Source/Game/Manager/LoadResourceManager.o: Source/Game/Manager/LoadResourceManager.cpp.o
+.PHONY : Source/Game/Manager/LoadResourceManager.o
 
 # target to build an object file
-Source/Game/LoadResourceManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.o
-.PHONY : Source/Game/LoadResourceManager.cpp.o
+Source/Game/Manager/LoadResourceManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o
+.PHONY : Source/Game/Manager/LoadResourceManager.cpp.o
 
-Source/Game/LoadResourceManager.i: Source/Game/LoadResourceManager.cpp.i
-.PHONY : Source/Game/LoadResourceManager.i
+Source/Game/Manager/LoadResourceManager.i: Source/Game/Manager/LoadResourceManager.cpp.i
+.PHONY : Source/Game/Manager/LoadResourceManager.i
 
 # target to preprocess a source file
-Source/Game/LoadResourceManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.i
-.PHONY : Source/Game/LoadResourceManager.cpp.i
+Source/Game/Manager/LoadResourceManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.i
+.PHONY : Source/Game/Manager/LoadResourceManager.cpp.i
 
-Source/Game/LoadResourceManager.s: Source/Game/LoadResourceManager.cpp.s
-.PHONY : Source/Game/LoadResourceManager.s
+Source/Game/Manager/LoadResourceManager.s: Source/Game/Manager/LoadResourceManager.cpp.s
+.PHONY : Source/Game/Manager/LoadResourceManager.s
 
 # target to generate assembly for a file
-Source/Game/LoadResourceManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/LoadResourceManager.cpp.s
-.PHONY : Source/Game/LoadResourceManager.cpp.s
+Source/Game/Manager/LoadResourceManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.s
+.PHONY : Source/Game/Manager/LoadResourceManager.cpp.s
+
+Source/Game/Manager/SoundManager.o: Source/Game/Manager/SoundManager.cpp.o
+.PHONY : Source/Game/Manager/SoundManager.o
+
+# target to build an object file
+Source/Game/Manager/SoundManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o
+.PHONY : Source/Game/Manager/SoundManager.cpp.o
+
+Source/Game/Manager/SoundManager.i: Source/Game/Manager/SoundManager.cpp.i
+.PHONY : Source/Game/Manager/SoundManager.i
+
+# target to preprocess a source file
+Source/Game/Manager/SoundManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.i
+.PHONY : Source/Game/Manager/SoundManager.cpp.i
+
+Source/Game/Manager/SoundManager.s: Source/Game/Manager/SoundManager.cpp.s
+.PHONY : Source/Game/Manager/SoundManager.s
+
+# target to generate assembly for a file
+Source/Game/Manager/SoundManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.s
+.PHONY : Source/Game/Manager/SoundManager.cpp.s
 
 Source/Game/Systems/ControlSystem.o: Source/Game/Systems/ControlSystem.cpp.o
 .PHONY : Source/Game/Systems/ControlSystem.o
@@ -762,9 +786,12 @@ help:
 	@echo "... Source/Game/Entities/Tree.o"
 	@echo "... Source/Game/Entities/Tree.i"
 	@echo "... Source/Game/Entities/Tree.s"
-	@echo "... Source/Game/LoadResourceManager.o"
-	@echo "... Source/Game/LoadResourceManager.i"
-	@echo "... Source/Game/LoadResourceManager.s"
+	@echo "... Source/Game/Manager/LoadResourceManager.o"
+	@echo "... Source/Game/Manager/LoadResourceManager.i"
+	@echo "... Source/Game/Manager/LoadResourceManager.s"
+	@echo "... Source/Game/Manager/SoundManager.o"
+	@echo "... Source/Game/Manager/SoundManager.i"
+	@echo "... Source/Game/Manager/SoundManager.s"
 	@echo "... Source/Game/Systems/ControlSystem.o"
 	@echo "... Source/Game/Systems/ControlSystem.i"
 	@echo "... Source/Game/Systems/ControlSystem.s"

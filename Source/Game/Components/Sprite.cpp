@@ -4,7 +4,7 @@
 
 #include "Sprite.h"
 
-#include "Game/LoadResourceManager.h"
+#include "Game/Manager/LoadResourceManager.h"
 
 Sprite::Sprite() {
     this->texture = nullptr;

@@ -1,10 +1,11 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
 #include <iostream>
 #include "Math/Vector2.h"
 #include "ECS/Entity/EntityManager.h"
 #include "ECS/System/SystemManager.h"
-#include "Game/LoadResourceManager.h"
+#include "Game/Manager/LoadResourceManager.h"
 #include "Game/Common/Time.h"
 #include "Game/Components/Transform.h"
 #include "Game/Entities/Brick.h"
@@ -21,9 +22,18 @@ void Init() {
         return;
     }
 
-    // Initialize SDL_image
     if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
         std::cerr << "SDL_image haven't been initialized: " << IMG_GetError() << std::endl;
+        SDL_Quit();
+        return;
+    }
+    if (SDL_Init(SDL_INIT_AUDIO) < 0) {
+        std::cerr << "Failed to initialize SDL: " << SDL_GetError() << std::endl;
+        return;
+    }
+
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+        std::cerr << "Failed to initialize SDL_mixer: " << Mix_GetError() << std::endl;
         SDL_Quit();
         return;
     }
@@ -34,7 +44,7 @@ void Init() {
     SystemManager::getInstance()->registerSystem<RectangleColliderSystem>();
     Tank *tank = EntityManager::getInstance()->createEntity<Tank>();
     Brick *brick = EntityManager::getInstance()->createEntity<Brick>();
-    Tree* tree = EntityManager::getInstance()->createEntity<Tree>();
+    Tree *tree = EntityManager::getInstance()->createEntity<Tree>();
     brick->getComponent<Transform>()->position = VECTOR2(400, 400);
     brick->getComponent<Sprite>()->layer = 2;
     tank->getComponent<Transform>()->position = VECTOR2(100, 100);

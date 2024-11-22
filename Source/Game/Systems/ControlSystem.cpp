@@ -11,6 +11,7 @@
 #include "Game/Components/ControlComponent.h"
 #include "Game/Components/Transform.h"
 #include "Game/Entities/Bullet.h"
+#include "Game/Manager/SoundManager.h"
 #include "Math/Vector2.h"
 
 class ControlComponent;
@@ -36,6 +37,7 @@ void ControlSystem::update() {
             rotationMove += 1;
         }
         if (control->isShoot()) {
+            SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/shoot.wav");
             Bullet* bullet = EntityManager::getInstance()->createEntity<Bullet>();
             bullet->getComponent<Transform>()->position = entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
