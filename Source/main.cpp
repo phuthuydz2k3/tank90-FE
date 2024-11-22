@@ -1,95 +1,62 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <iostream>
 #include "Math/Vector2.h"
+#include "ECS/Entity/EntityManager.h"
+#include "ECS/System/SystemManager.h"
+#include "Game/LoadResourceManager.h"
+#include "Game/Common/Time.h"
+#include "Game/Components/Transform.h"
+#include "Game/Entities/Tank.h"
+#include "Game/Systems/ControlSystem.h"
+#include "Game/Systems/FlySystem.h"
+#include "Game/Systems/SpriteSystem.h"
 
-// Define window size
-const float WINDOW_WIDTH = 800;
-const float WINDOW_HEIGHT = 600;
-
-// Define rect size and position
-const int SQUARE_SIZE = 50;
-VECTOR2 squarePos = VECTOR2(WINDOW_WIDTH / 2 - SQUARE_SIZE / 2, WINDOW_HEIGHT / 2 - SQUARE_SIZE / 2);
-
-// Define move speed
-const float MOVE_SPEED = 200.0f; // Pixels per second
-
-int main(int argc, char *argv[]) {
-    // Initialize SDL
+void Init() {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "SDL haven't been initialized: " << SDL_GetError() << std::endl;
-        return 1;
+        return;
     }
 
-    // Create window
-    SDL_Window *window = SDL_CreateWindow("Tank Game",
-                                          SDL_WINDOWPOS_CENTERED,
-                                          SDL_WINDOWPOS_CENTERED,
-                                          WINDOW_WIDTH, WINDOW_HEIGHT,
-                                          SDL_WINDOW_SHOWN);
-    if (!window) {
-        std::cerr << "Window haven't been initialized: " << SDL_GetError() << std::endl;
+    // Initialize SDL_image
+    if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
+        std::cerr << "SDL_image haven't been initialized: " << IMG_GetError() << std::endl;
         SDL_Quit();
-        return 1;
+        return;
     }
+    LoadResourceManager::getInstance()->InitWindow();
+    SystemManager::getInstance()->registerSystem<SpriteSystem>();
+    SystemManager::getInstance()->registerSystem<ControlSystem>();
+    SystemManager::getInstance()->registerSystem<FlySystem>();
+    Tank *tank = EntityManager::getInstance()->createEntity<Tank>();
+    tank->getComponent<Transform>()->position = VECTOR2(100, 100);
+}
 
-    // Renderer Initialization
-    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    if (!renderer) {
-        std::cerr << "Renderer haven't been initialized: " << SDL_GetError() << std::endl;
-        SDL_DestroyWindow(window);
-        SDL_Quit();
-        return 1;
-    }
+void Update() {
+    SDL_SetRenderDrawColor(LoadResourceManager::getInstance()->GetRenderer(), 0, 0, 0, 255);
+    SystemManager::getInstance()->update();
+}
 
-    // Game loop
+int main(int argc, char *argv[]) {
+    Init();
     bool running = true;
     SDL_Event event;
     Uint32 lastTime = SDL_GetTicks();
     while (running) {
-        // Event handling
         Uint32 currentTime = SDL_GetTicks();
-        float deltaTime = (currentTime - lastTime) / 1000.0f; // Convert milliseconds to seconds
-        lastTime = currentTime; // Update last time
+        Time::deltaTime = (currentTime - lastTime) / 1000.0f;
+        lastTime = currentTime;
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 running = false;
             }
         }
-
-        // Get the current state of the keyboard
-        const Uint8 *currentKeyStates = SDL_GetKeyboardState(NULL);
-        VECTOR2 move = VECTOR2(0, 0);
-
-        if (currentKeyStates[SDL_SCANCODE_UP]) move.y -= 1;
-        if (currentKeyStates[SDL_SCANCODE_DOWN]) move.y += 1;
-        if (currentKeyStates[SDL_SCANCODE_LEFT]) move.x -= 1;
-        if (currentKeyStates[SDL_SCANCODE_RIGHT]) move.x += 1;
-
-        if (move.x != 0 || move.y != 0) {
-            move = move.normalize();
-            squarePos += move * (MOVE_SPEED * deltaTime);
-        }
-
-        // Background color
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-        SDL_RenderClear(renderer);
-
-        // Draw square
-        SDL_Rect square = {static_cast<int>(squarePos.x), static_cast<int>(squarePos.y), SQUARE_SIZE, SQUARE_SIZE};
-        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-        SDL_RenderFillRect(renderer, &square);
-
-        // Update screen
-        SDL_RenderPresent(renderer);
-
-        // Delay
+        Update();
         SDL_Delay(16);
     }
 
-    // Clean up
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
-    SDL_Quit();
+    LoadResourceManager::getInstance()->CleanUp();
+    EntityManager::getInstance()->clearEntities();
 
     return 0;
 }

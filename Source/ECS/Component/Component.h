@@ -6,7 +6,9 @@
 #define COMPONENT_H
 
 class Component {
-
+public:
+    Component() = default;
+     virtual ~Component() = default;
 };
 
 #endif //COMPONENT_H

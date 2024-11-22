@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /usr/include/SDL2
+CXX_INCLUDES = -I/mnt/d/Game/tank90-FE/Source -isystem /usr/include/SDL2
 
-CXX_FLAGS = 
+CXX_FLAGS =  -g
 

@@ -20,8 +20,18 @@ VECTOR2 VECTOR2::operator-(const VECTOR2 &other) const {
 }
 
 // Scalar multiplication
-VECTOR2 VECTOR2::operator*(float scalar) const {
+VECTOR2 VECTOR2::operator*(const float scalar) const {
     return VECTOR2(x * scalar, y * scalar);
+}
+
+VECTOR2 VECTOR2::operator/(float scalar) const {
+    return VECTOR2(this->x / scalar, this->y / scalar);
+}
+
+VECTOR2 VECTOR2::operator=(const VECTOR2 &other) {
+    this->x = other.x;
+    this->y = other.y;
+    return *this;
 }
 
 VECTOR2 VECTOR2::operator-=(const VECTOR2 &other) {

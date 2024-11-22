@@ -3,3 +3,12 @@
 //
 
 #include "System.h"
+
+void System::update() {
+}
+
+void System::init() {
+}
+
+void System::clean() {
+}

@@ -9,11 +9,9 @@
 
 class System {
 public:
-    virtual void update() = 0;
-    virtual void render() = 0;
-    virtual void handleInput() = 0;
-    virtual void init() = 0;
-    virtual void clean() = 0;
+    virtual void update();
+    virtual void init();
+    virtual void clean();
     virtual ~System() = default;
 };
 

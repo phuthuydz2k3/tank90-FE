@@ -11,39 +11,57 @@
 #include "../../SingletonTemplate.h"
 
 
-class EntityManager : SingletonTemplate<EntityManager> {
+class EntityManager : public SingletonTemplate<EntityManager> {
 private:
     std::unordered_map<int, std::unique_ptr<Entity> > entities;
 
 public:
     template<typename T>
-    T *createEntity();
+    T *createEntity() {
+        static_assert(std::is_base_of_v<Entity, T>, "T must be derived from Entity");
+        T *entity = new T();
+        entity->setId(this->entities.size());
+        entities[entity->getId()] = std::unique_ptr<Entity>(entity);
+        return entity;
+    }
 
     template<typename T>
+    void removeEntity(int id) {
+        static_assert(std::is_base_of_v<Entity, T>, "T must be derived from Entity");
+        this->removeEntity(id);
+    }
+
     void removeEntity(int id);
 
-    void removeEntity(int id);
+    template<typename T>
+    T *getEntity(int id) {
+        static_assert(std::is_base_of_v<Entity, T>, "T must be derived from Entity");
+        return dynamic_cast<T *>(this->entities.at(id).get());
+    }
+
+    Entity *getEntity(int id) const;
 
     template<typename T>
-    T *getEntity(int id);
+    bool hasEntity(int id) {
+        static_assert(std::is_base_of_v<Entity, T>, "T must be derived from Entity");
+        return this->entities.find(id) != this->entities.end();
+    }
 
-    Entity *getEntity(int id);
-
-    template<typename T>
-    bool hasEntity(int id);
-
-    template<typename T>
     void clearEntities();
 
-    void clearEntities();
-
-    template<typename T>
     int getEntityCount() const;
 
     template<typename T>
-    std::list<std::unique_ptr<Entity>> getEntitiesWithComponent();
+    std::list<Entity *> getEntitiesWithComponent() const {
+        static_assert(std::is_base_of_v<Component, T>, "T must be derived from Component");
+        std::list<Entity *> entitiesWithComponent;
+        for (auto &entity: this->entities) {
+            if (!entity.second->hasComponent<T>()) continue;
+            entitiesWithComponent.push_back(entity.second.get());
+        }
+        return entitiesWithComponent;
+    }
 };
-
 
 
 #endif //ENTITYMANAGER_H

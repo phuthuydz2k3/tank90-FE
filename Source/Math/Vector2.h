@@ -20,6 +20,10 @@ struct VECTOR2 {
     // Scalar multiplication
     VECTOR2 operator*(float scalar) const;
 
+    VECTOR2 operator/(float scalar) const;
+
+    VECTOR2 operator=(const VECTOR2 &other);
+
     VECTOR2 operator-=(const VECTOR2 &other);
 
     VECTOR2 operator+=(const VECTOR2 &other);
@@ -28,11 +32,8 @@ struct VECTOR2 {
 
     VECTOR2 operator *=(float scalar);
 
-
-    // Magnitude of the vector
     float magnitude() const;
 
-    // Normalize the vector
     VECTOR2 normalize() const;
 };
 
