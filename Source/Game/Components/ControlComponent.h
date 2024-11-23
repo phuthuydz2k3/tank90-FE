@@ -24,6 +24,8 @@ public:
 
     bool isShoot() const;
 
+    bool isSpeedup() const;
+
     float speed;
     float rotationSpeed;
 };

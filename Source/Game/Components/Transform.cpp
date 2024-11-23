@@ -4,9 +4,9 @@
 
 #include "Transform.h"
 VECTOR2 Transform::forward() const {
-    float angleRadians = (this->angle + 90) * M_PI / 180.0f;
-    float x = -cos(angleRadians);
-    float y = -sin(angleRadians);
+    const float angleRadians = (this->angle + 90) * M_PI / 180.0f;
+    const float x = -cos(angleRadians);
+    const float y = -sin(angleRadians);
     return VECTOR2(x, y);
 }
 

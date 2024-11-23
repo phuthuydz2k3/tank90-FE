@@ -9,7 +9,7 @@
 #include <unordered_map>
 #include "Entity.h"
 #include "../../SingletonTemplate.h"
-
+#include <random>
 
 class EntityManager : public SingletonTemplate<EntityManager> {
 private:
@@ -20,7 +20,14 @@ public:
     T *createEntity() {
         static_assert(std::is_base_of_v<Entity, T>, "T must be derived from Entity");
         T *entity = new T();
-        entity->setId(this->entities.size());
+        int id = 0;
+        do {
+            std::random_device rd;
+            std::mt19937 gen(rd());
+            std::  uniform_int_distribution<> dis(0, 1000000);
+            id = dis(gen);
+        } while (this->hasEntity<Entity>(id));
+        entity->setId(id);
         entities[entity->getId()] = std::unique_ptr<Entity>(entity);
         return entity;
     }

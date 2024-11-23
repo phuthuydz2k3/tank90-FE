@@ -7,16 +7,23 @@
 const float WINDOW_WIDTH = 800;
 const float WINDOW_HEIGHT = 800;
 
-SDL_Texture *LoadResourceManager::LoadTexture(const std::string &path) const {
+SDL_Texture *LoadResourceManager::LoadTexture(const std::string &path) {
+    if (this->cacheTexture.find(path) != this->cacheTexture.end()) {
+        return this->cacheTexture.at(path);
+    }
     SDL_Texture *texturePtr = IMG_LoadTexture(this->renderer, path.c_str());
     if (!texturePtr) {
         SDL_DestroyTexture(texturePtr);
         std::cerr << "Path is not correct" << SDL_GetError() << std::endl;
     }
+    this->cacheTexture[path] = texturePtr;
     return texturePtr;
 }
 
-Mix_Chunk *LoadResourceManager::LoadSound(const std::string &path) const {
+Mix_Chunk *LoadResourceManager::LoadSound(const std::string &path) {
+    if (this->cacheSound.find(path) != this->cacheSound.end()) {
+        return this->cacheSound.at(path);
+    }
     Mix_Chunk *sound = Mix_LoadWAV(path.c_str());
     if (!sound) {
         Mix_FreeChunk(sound);
@@ -25,6 +32,7 @@ Mix_Chunk *LoadResourceManager::LoadSound(const std::string &path) const {
         std::cerr << "Path is not correct" << Mix_GetError() << std::endl;
         return nullptr;
     }
+    this->cacheSound[path] = sound;
     return sound;
 }
 

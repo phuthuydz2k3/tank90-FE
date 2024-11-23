@@ -10,14 +10,15 @@
 #include <iostream>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
+#include <unordered_map>
 #include <SDL2/SDL_mixer.h>
 
 
 class LoadResourceManager : public SingletonTemplate<LoadResourceManager> {
 public:
-    SDL_Texture *LoadTexture(const std::string &) const;
+    SDL_Texture *LoadTexture(const std::string &);
 
-    Mix_Chunk *LoadSound(const std::string &) const;
+    Mix_Chunk *LoadSound(const std::string &);
 
     void InitWindow();
 
@@ -30,6 +31,8 @@ public:
 private:
     SDL_Renderer *renderer;
     SDL_Window *window;
+    std::unordered_map<std::string, SDL_Texture *> cacheTexture;
+    std::unordered_map<std::string, Mix_Chunk *> cacheSound;
 };
 
 

@@ -15,4 +15,5 @@ Tree::Tree() {
     sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/trees.png");
     sprite->layer = 3;
     sprite->size = VECTOR2(50, 50);
+    this->getComponent<Transform>()->angle = 0;
 }

@@ -24,7 +24,7 @@ public:
     }
 
     void update() const;
-    void init();
+    void init() const;
 };
 
 

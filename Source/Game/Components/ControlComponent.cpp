@@ -36,3 +36,7 @@ bool ControlComponent::isShoot() const {
     }
     return false;
 }
+
+bool ControlComponent::isSpeedup() const {
+    return this->currentKeyStates[SDL_SCANCODE_E];
+}

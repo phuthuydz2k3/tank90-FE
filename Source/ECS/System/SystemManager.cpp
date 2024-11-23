@@ -11,5 +11,8 @@ void SystemManager::update() const {
     }
 }
 
-void SystemManager::init() {
+void SystemManager::init() const {
+    for (const auto &system: this->systems) {
+        system.second->init();
+    }
 }

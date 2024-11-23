@@ -150,9 +150,10 @@ void handleStaticCollider(RectangleCollider &dynamicCollider, RectangleCollider 
 void RectangleColliderSystem::update() {
     System::update();
     auto entities = EntityManager::getInstance()->getEntitiesWithComponent<RectangleCollider>();
-    for (const auto &entity1: entities) {
-        for (const auto &entity2: entities) {
-            if (entity1 == entity2) continue;
+    for (auto it1 = entities.begin(); it1 != entities.end(); ++it1) {
+        for (auto it2 = std::next(it1); it2 != entities.end(); ++it2) {
+            auto entity1 = *it1;
+            auto entity2 = *it2;
             RectangleCollider *collider1 = entity1->getComponent<RectangleCollider>();
             RectangleCollider *collider2 = entity2->getComponent<RectangleCollider>();
             Transform *transform1 = entity1->getComponent<Transform>();
@@ -180,6 +181,7 @@ void RectangleColliderSystem::update() {
         }
     }
 }
+
 
 
 void RectangleColliderSystem::init() {

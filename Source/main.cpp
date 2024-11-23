@@ -9,9 +9,11 @@
 #include "Game/Common/Time.h"
 #include "Game/Components/Transform.h"
 #include "Game/Entities/Brick.h"
+#include "Game/Entities/SpawnPoint.h"
 #include "Game/Entities/Tank.h"
 #include "Game/Entities/Tree.h"
 #include "Game/Systems/ControlSystem.h"
+#include "Game/Systems/EffectSystem.h"
 #include "Game/Systems/FlySystem.h"
 #include "Game/Systems/RectangleColliderSystem.h"
 #include "Game/Systems/SpriteSystem.h"
@@ -32,23 +34,24 @@ void Init() {
         return;
     }
 
-    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) < 0) {
         std::cerr << "Failed to initialize SDL_mixer: " << Mix_GetError() << std::endl;
         SDL_Quit();
         return;
     }
     LoadResourceManager::getInstance()->InitWindow();
-    SystemManager::getInstance()->registerSystem<SpriteSystem>();
     SystemManager::getInstance()->registerSystem<ControlSystem>();
     SystemManager::getInstance()->registerSystem<FlySystem>();
     SystemManager::getInstance()->registerSystem<RectangleColliderSystem>();
-    Tank *tank = EntityManager::getInstance()->createEntity<Tank>();
+    SystemManager::getInstance()->registerSystem<EffectSystem>();
+    SystemManager::getInstance()->registerSystem<SpriteSystem>();
+    SystemManager::getInstance()->init();
+    SpawnPoint *spawnPoint = EntityManager::getInstance()->createEntity<SpawnPoint>();
+    spawnPoint->getComponent<Transform>()->position = VECTOR2(100, 100);
     Brick *brick = EntityManager::getInstance()->createEntity<Brick>();
     Tree *tree = EntityManager::getInstance()->createEntity<Tree>();
     brick->getComponent<Transform>()->position = VECTOR2(400, 400);
     brick->getComponent<Sprite>()->layer = 2;
-    tank->getComponent<Transform>()->position = VECTOR2(100, 100);
-    tank->getComponent<Sprite>()->layer = 1;
     tree->getComponent<Transform>()->position = VECTOR2(200, 200);
 }
 
@@ -56,6 +59,8 @@ void Update() {
     SDL_SetRenderDrawColor(LoadResourceManager::getInstance()->GetRenderer(), 0, 0, 0, 255);
     SystemManager::getInstance()->update();
     EntityManager::getInstance()->lateUpdate();
+    SDL_RenderPresent(LoadResourceManager::getInstance()->GetRenderer());
+    SDL_RenderClear(LoadResourceManager::getInstance()->GetRenderer());
 }
 
 int main(int argc, char *argv[]) {

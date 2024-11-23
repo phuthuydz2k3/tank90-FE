@@ -60,6 +60,15 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Entities/Tree.h
         Source/Game/Manager/SoundManager.cpp
         Source/Game/Manager/SoundManager.h
+        Source/Game/Components/Effect.cpp
+        Source/Game/Components/Effect.h
+        Source/Game/Components/Effect.cpp
+        Source/Game/Entities/CollideExplosion.cpp
+        Source/Game/Entities/CollideExplosion.h
+        Source/Game/Systems/EffectSystem.cpp
+        Source/Game/Systems/EffectSystem.h
+        Source/Game/Entities/SpawnPoint.cpp
+        Source/Game/Entities/SpawnPoint.h
 )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 

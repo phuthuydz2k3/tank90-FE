@@ -4,7 +4,6 @@
 
 #include "ControlSystem.h"
 
-#include <iostream>
 
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Common/Time.h"
@@ -14,7 +13,6 @@
 #include "Game/Manager/SoundManager.h"
 #include "Math/Vector2.h"
 
-class ControlComponent;
 
 void ControlSystem::update() {
     System::update();
@@ -36,15 +34,24 @@ void ControlSystem::update() {
         if (control->isRight()) {
             rotationMove += 1;
         }
+        if (control->isSpeedup()) {
+            control->speed = 150;
+            control->rotationSpeed = 150;
+        } else {
+            control->speed = 100;
+            control->rotationSpeed = 100;
+        }
         if (control->isShoot()) {
-            SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/shoot.wav");
-            Bullet* bullet = EntityManager::getInstance()->createEntity<Bullet>();
-            bullet->getComponent<Transform>()->position = entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
+            // SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
+            Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
+            bullet->getComponent<Transform>()->position =
+                    entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
+                    ->getComponent<Sprite>()->size.magnitude() * 0.55f;
             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
         }
         Transform *transform = entity->getComponent<Transform>();
         if (move != 0) transform->position += transform->forward() * move * Time::deltaTime * control->speed;
-        if(rotationMove != 0) transform->angle += rotationMove * Time::deltaTime * control->rotationSpeed;
+        if (rotationMove != 0) transform->angle += rotationMove * Time::deltaTime * control->rotationSpeed;
     }
 }
 
