@@ -69,6 +69,10 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Systems/EffectSystem.h
         Source/Game/Entities/SpawnPoint.cpp
         Source/Game/Entities/SpawnPoint.h
+        Source/Game/Entities/Wall.cpp
+        Source/Game/Entities/Wall.h
+        Source/Game/Services/GameplayService.cpp
+        Source/Game/Services/GameplayService.h
 )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 

@@ -2,16 +2,11 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 #include <iostream>
-#include "Math/Vector2.h"
 #include "ECS/Entity/EntityManager.h"
 #include "ECS/System/SystemManager.h"
 #include "Game/Manager/LoadResourceManager.h"
 #include "Game/Common/Time.h"
-#include "Game/Components/Transform.h"
-#include "Game/Entities/Brick.h"
-#include "Game/Entities/SpawnPoint.h"
-#include "Game/Entities/Tank.h"
-#include "Game/Entities/Tree.h"
+#include "Game/Services/GameplayService.h"
 #include "Game/Systems/ControlSystem.h"
 #include "Game/Systems/EffectSystem.h"
 #include "Game/Systems/FlySystem.h"
@@ -46,13 +41,7 @@ void Init() {
     SystemManager::getInstance()->registerSystem<EffectSystem>();
     SystemManager::getInstance()->registerSystem<SpriteSystem>();
     SystemManager::getInstance()->init();
-    SpawnPoint *spawnPoint = EntityManager::getInstance()->createEntity<SpawnPoint>();
-    spawnPoint->getComponent<Transform>()->position = VECTOR2(100, 100);
-    Brick *brick = EntityManager::getInstance()->createEntity<Brick>();
-    Tree *tree = EntityManager::getInstance()->createEntity<Tree>();
-    brick->getComponent<Transform>()->position = VECTOR2(400, 400);
-    brick->getComponent<Sprite>()->layer = 2;
-    tree->getComponent<Transform>()->position = VECTOR2(200, 200);
+    GameplayService().LoadMap(1);
 }
 
 void Update() {

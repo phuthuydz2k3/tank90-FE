@@ -19,6 +19,7 @@ Brick::Brick() {
     Sprite *sprite = this->getComponent<Sprite>();
     sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/brick.png");
     sprite->size = {50, 50};
+    sprite->layer = 3;
     this->getComponent<Transform>()->angle = 0;
     this->getComponent<RectangleCollider>()->size = {50, 50};
     this->getComponent<RectangleCollider>()->isStatic = true;
