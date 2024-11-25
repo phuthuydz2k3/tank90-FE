@@ -29,6 +29,19 @@ std::vector<int> convertToNumbers(const std::string &str) {
     return numbers;
 }
 
+void LoadBorder() {
+    for (int i = 0; i < 16; i++) {
+        EntityManager::getInstance()->createEntity<Brick>()->getComponent<Transform>()->position = VECTOR2(
+            -25.0f, i * 50 + 25);
+        EntityManager::getInstance()->createEntity<Brick>()->getComponent<Transform>()->position = VECTOR2(
+            16 * 50 + 25, i * 50 + 25);
+        EntityManager::getInstance()->createEntity<Brick>()->getComponent<Transform>()->position = VECTOR2(
+            i * 50 + 25, -25.0f);
+        EntityManager::getInstance()->createEntity<Brick>()->getComponent<Transform>()->position = VECTOR2(
+            i * 50 + 25, 16 * 50 + 25);
+    }
+}
+
 void GameplayService::LoadMap(int mapIndex) const {
     std::fstream fin;
     fin.open(this->dataPath, std::ios::in);
@@ -55,6 +68,7 @@ void GameplayService::LoadMap(int mapIndex) const {
             std::vector<int> brickIndexes = convertToNumbers(row[1]);
             std::vector<int> treeIndexes = convertToNumbers(row[2]);
             std::vector<int> playerIndex = convertToNumbers(row[3]);
+            LoadBorder();
             for (auto &index: brickIndexes) {
                 int row = index / 16;
                 int col = index % 16;

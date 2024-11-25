@@ -31,10 +31,10 @@ Bullet::Bullet() {
     // this->addComponent<DestroyCounter>();
     Sprite *sprite = this->getComponent<Sprite>();
     sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/bulletUp.png");
-    sprite->size = {10, 10};
+    sprite->size = {5, 5};
     this->getComponent<Transform>()->angle = 0;
     this->getComponent<FlyComponent>()->speed = 200;
     this->getComponent<RectangleCollider>()->onTriggerEnter = onTriggerEnter;
-    this->getComponent<RectangleCollider>()->size = {10, 10};
+    this->getComponent<RectangleCollider>()->size = {5, 5};
     this->getComponent<RectangleCollider>()->isTrigger = true;
 }

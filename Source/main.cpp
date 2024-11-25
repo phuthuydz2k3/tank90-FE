@@ -7,11 +7,6 @@
 #include "Game/Manager/LoadResourceManager.h"
 #include "Game/Common/Time.h"
 #include "Game/Services/GameplayService.h"
-#include "Game/Systems/ControlSystem.h"
-#include "Game/Systems/EffectSystem.h"
-#include "Game/Systems/FlySystem.h"
-#include "Game/Systems/RectangleColliderSystem.h"
-#include "Game/Systems/SpriteSystem.h"
 
 void Init() {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -35,11 +30,6 @@ void Init() {
         return;
     }
     LoadResourceManager::getInstance()->InitWindow();
-    SystemManager::getInstance()->registerSystem<ControlSystem>();
-    SystemManager::getInstance()->registerSystem<FlySystem>();
-    SystemManager::getInstance()->registerSystem<RectangleColliderSystem>();
-    SystemManager::getInstance()->registerSystem<EffectSystem>();
-    SystemManager::getInstance()->registerSystem<SpriteSystem>();
     SystemManager::getInstance()->init();
     GameplayService().LoadMap(1);
 }
