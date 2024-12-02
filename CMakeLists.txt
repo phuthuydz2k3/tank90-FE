@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
 project(Tank98 LANGUAGES CXX)
 
-
+include (FindPkgConfig)
+include (FindSDL_net)
 
 # Find the SDL2 and SDL2_mixer libraries
 find_package(SDL2 REQUIRED)
+pkg_search_module (SDL_NET REQUIRED SDL2_net)
 
 include_directories(${CMAKE_SOURCE_DIR}/Source)
-include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_MIXER_INCLUDE_DIRS})
+include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_MIXER_INCLUDE_DIRS} ${SDL_NET_INCLUDE_DIRS})
 
 # Add the executable
 add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
@@ -73,8 +75,15 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Entities/Wall.h
         Source/Game/Services/GameplayService.cpp
         Source/Game/Services/GameplayService.h
+        Source/Game/Components/NetworkTracking.cpp
+        Source/Game/Components/NetworkTracking.h
+        Source/Game/Systems/NetworkTrackingSystem.cpp
+        Source/Game/Systems/NetworkTrackingSystem.h
+        Source/Game/Common/Packet.h
 )
+add_executable(Server Source/Server.cpp)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
+target_link_libraries(Server SDL2::SDL2 ${SDL_NET_LIBRARIES})
 # Link against the SDL2 and SDL2_mixer libraries
-target_link_libraries(Tank98 SDL2::SDL2 SDL2_image SDL2_mixer)
+target_link_libraries(Tank98 SDL2::SDL2 SDL2_image SDL2_mixer ${SDL_NET_LIBRARIES})

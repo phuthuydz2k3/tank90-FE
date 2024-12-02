@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/Game/tank90-FE
+CMAKE_SOURCE_DIR = /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/Game/tank90-FE/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles /mnt/d/Game/tank90-FE/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,19 @@ Tank98: cmake_check_build_system
 Tank98/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/build
 .PHONY : Tank98/fast
+
+#=============================================================================
+# Target rules for targets named Server
+
+# Build rule for target.
+Server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Server
+.PHONY : Server
+
+# fast build rule for target.
+Server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/build
+.PHONY : Server/fast
 
 Source/ECS/Component/Component.o: Source/ECS/Component/Component.cpp.o
 .PHONY : Source/ECS/Component/Component.o
@@ -321,6 +334,30 @@ Source/Game/Components/DestroyCounter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.s
 .PHONY : Source/Game/Components/DestroyCounter.cpp.s
 
+Source/Game/Components/Effect.o: Source/Game/Components/Effect.cpp.o
+.PHONY : Source/Game/Components/Effect.o
+
+# target to build an object file
+Source/Game/Components/Effect.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o
+.PHONY : Source/Game/Components/Effect.cpp.o
+
+Source/Game/Components/Effect.i: Source/Game/Components/Effect.cpp.i
+.PHONY : Source/Game/Components/Effect.i
+
+# target to preprocess a source file
+Source/Game/Components/Effect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.i
+.PHONY : Source/Game/Components/Effect.cpp.i
+
+Source/Game/Components/Effect.s: Source/Game/Components/Effect.cpp.s
+.PHONY : Source/Game/Components/Effect.s
+
+# target to generate assembly for a file
+Source/Game/Components/Effect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.s
+.PHONY : Source/Game/Components/Effect.cpp.s
+
 Source/Game/Components/FlyComponent.o: Source/Game/Components/FlyComponent.cpp.o
 .PHONY : Source/Game/Components/FlyComponent.o
 
@@ -344,6 +381,30 @@ Source/Game/Components/FlyComponent.s: Source/Game/Components/FlyComponent.cpp.s
 Source/Game/Components/FlyComponent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.s
 .PHONY : Source/Game/Components/FlyComponent.cpp.s
+
+Source/Game/Components/NetworkTracking.o: Source/Game/Components/NetworkTracking.cpp.o
+.PHONY : Source/Game/Components/NetworkTracking.o
+
+# target to build an object file
+Source/Game/Components/NetworkTracking.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o
+.PHONY : Source/Game/Components/NetworkTracking.cpp.o
+
+Source/Game/Components/NetworkTracking.i: Source/Game/Components/NetworkTracking.cpp.i
+.PHONY : Source/Game/Components/NetworkTracking.i
+
+# target to preprocess a source file
+Source/Game/Components/NetworkTracking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.i
+.PHONY : Source/Game/Components/NetworkTracking.cpp.i
+
+Source/Game/Components/NetworkTracking.s: Source/Game/Components/NetworkTracking.cpp.s
+.PHONY : Source/Game/Components/NetworkTracking.s
+
+# target to generate assembly for a file
+Source/Game/Components/NetworkTracking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.s
+.PHONY : Source/Game/Components/NetworkTracking.cpp.s
 
 Source/Game/Components/RectangleCollider.o: Source/Game/Components/RectangleCollider.cpp.o
 .PHONY : Source/Game/Components/RectangleCollider.o
@@ -465,6 +526,54 @@ Source/Game/Entities/Bullet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.s
 .PHONY : Source/Game/Entities/Bullet.cpp.s
 
+Source/Game/Entities/CollideExplosion.o: Source/Game/Entities/CollideExplosion.cpp.o
+.PHONY : Source/Game/Entities/CollideExplosion.o
+
+# target to build an object file
+Source/Game/Entities/CollideExplosion.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o
+.PHONY : Source/Game/Entities/CollideExplosion.cpp.o
+
+Source/Game/Entities/CollideExplosion.i: Source/Game/Entities/CollideExplosion.cpp.i
+.PHONY : Source/Game/Entities/CollideExplosion.i
+
+# target to preprocess a source file
+Source/Game/Entities/CollideExplosion.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.i
+.PHONY : Source/Game/Entities/CollideExplosion.cpp.i
+
+Source/Game/Entities/CollideExplosion.s: Source/Game/Entities/CollideExplosion.cpp.s
+.PHONY : Source/Game/Entities/CollideExplosion.s
+
+# target to generate assembly for a file
+Source/Game/Entities/CollideExplosion.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.s
+.PHONY : Source/Game/Entities/CollideExplosion.cpp.s
+
+Source/Game/Entities/SpawnPoint.o: Source/Game/Entities/SpawnPoint.cpp.o
+.PHONY : Source/Game/Entities/SpawnPoint.o
+
+# target to build an object file
+Source/Game/Entities/SpawnPoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o
+.PHONY : Source/Game/Entities/SpawnPoint.cpp.o
+
+Source/Game/Entities/SpawnPoint.i: Source/Game/Entities/SpawnPoint.cpp.i
+.PHONY : Source/Game/Entities/SpawnPoint.i
+
+# target to preprocess a source file
+Source/Game/Entities/SpawnPoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.i
+.PHONY : Source/Game/Entities/SpawnPoint.cpp.i
+
+Source/Game/Entities/SpawnPoint.s: Source/Game/Entities/SpawnPoint.cpp.s
+.PHONY : Source/Game/Entities/SpawnPoint.s
+
+# target to generate assembly for a file
+Source/Game/Entities/SpawnPoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.s
+.PHONY : Source/Game/Entities/SpawnPoint.cpp.s
+
 Source/Game/Entities/Tank.o: Source/Game/Entities/Tank.cpp.o
 .PHONY : Source/Game/Entities/Tank.o
 
@@ -512,6 +621,30 @@ Source/Game/Entities/Tree.s: Source/Game/Entities/Tree.cpp.s
 Source/Game/Entities/Tree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s
 .PHONY : Source/Game/Entities/Tree.cpp.s
+
+Source/Game/Entities/Wall.o: Source/Game/Entities/Wall.cpp.o
+.PHONY : Source/Game/Entities/Wall.o
+
+# target to build an object file
+Source/Game/Entities/Wall.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o
+.PHONY : Source/Game/Entities/Wall.cpp.o
+
+Source/Game/Entities/Wall.i: Source/Game/Entities/Wall.cpp.i
+.PHONY : Source/Game/Entities/Wall.i
+
+# target to preprocess a source file
+Source/Game/Entities/Wall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.i
+.PHONY : Source/Game/Entities/Wall.cpp.i
+
+Source/Game/Entities/Wall.s: Source/Game/Entities/Wall.cpp.s
+.PHONY : Source/Game/Entities/Wall.s
+
+# target to generate assembly for a file
+Source/Game/Entities/Wall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.s
+.PHONY : Source/Game/Entities/Wall.cpp.s
 
 Source/Game/Manager/LoadResourceManager.o: Source/Game/Manager/LoadResourceManager.cpp.o
 .PHONY : Source/Game/Manager/LoadResourceManager.o
@@ -561,6 +694,30 @@ Source/Game/Manager/SoundManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.s
 .PHONY : Source/Game/Manager/SoundManager.cpp.s
 
+Source/Game/Services/GameplayService.o: Source/Game/Services/GameplayService.cpp.o
+.PHONY : Source/Game/Services/GameplayService.o
+
+# target to build an object file
+Source/Game/Services/GameplayService.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o
+.PHONY : Source/Game/Services/GameplayService.cpp.o
+
+Source/Game/Services/GameplayService.i: Source/Game/Services/GameplayService.cpp.i
+.PHONY : Source/Game/Services/GameplayService.i
+
+# target to preprocess a source file
+Source/Game/Services/GameplayService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.i
+.PHONY : Source/Game/Services/GameplayService.cpp.i
+
+Source/Game/Services/GameplayService.s: Source/Game/Services/GameplayService.cpp.s
+.PHONY : Source/Game/Services/GameplayService.s
+
+# target to generate assembly for a file
+Source/Game/Services/GameplayService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.s
+.PHONY : Source/Game/Services/GameplayService.cpp.s
+
 Source/Game/Systems/ControlSystem.o: Source/Game/Systems/ControlSystem.cpp.o
 .PHONY : Source/Game/Systems/ControlSystem.o
 
@@ -609,6 +766,30 @@ Source/Game/Systems/DestroyCounterSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.s
 .PHONY : Source/Game/Systems/DestroyCounterSystem.cpp.s
 
+Source/Game/Systems/EffectSystem.o: Source/Game/Systems/EffectSystem.cpp.o
+.PHONY : Source/Game/Systems/EffectSystem.o
+
+# target to build an object file
+Source/Game/Systems/EffectSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o
+.PHONY : Source/Game/Systems/EffectSystem.cpp.o
+
+Source/Game/Systems/EffectSystem.i: Source/Game/Systems/EffectSystem.cpp.i
+.PHONY : Source/Game/Systems/EffectSystem.i
+
+# target to preprocess a source file
+Source/Game/Systems/EffectSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.i
+.PHONY : Source/Game/Systems/EffectSystem.cpp.i
+
+Source/Game/Systems/EffectSystem.s: Source/Game/Systems/EffectSystem.cpp.s
+.PHONY : Source/Game/Systems/EffectSystem.s
+
+# target to generate assembly for a file
+Source/Game/Systems/EffectSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.s
+.PHONY : Source/Game/Systems/EffectSystem.cpp.s
+
 Source/Game/Systems/FlySystem.o: Source/Game/Systems/FlySystem.cpp.o
 .PHONY : Source/Game/Systems/FlySystem.o
 
@@ -632,6 +813,30 @@ Source/Game/Systems/FlySystem.s: Source/Game/Systems/FlySystem.cpp.s
 Source/Game/Systems/FlySystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.s
 .PHONY : Source/Game/Systems/FlySystem.cpp.s
+
+Source/Game/Systems/NetworkTrackingSystem.o: Source/Game/Systems/NetworkTrackingSystem.cpp.o
+.PHONY : Source/Game/Systems/NetworkTrackingSystem.o
+
+# target to build an object file
+Source/Game/Systems/NetworkTrackingSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o
+.PHONY : Source/Game/Systems/NetworkTrackingSystem.cpp.o
+
+Source/Game/Systems/NetworkTrackingSystem.i: Source/Game/Systems/NetworkTrackingSystem.cpp.i
+.PHONY : Source/Game/Systems/NetworkTrackingSystem.i
+
+# target to preprocess a source file
+Source/Game/Systems/NetworkTrackingSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.i
+.PHONY : Source/Game/Systems/NetworkTrackingSystem.cpp.i
+
+Source/Game/Systems/NetworkTrackingSystem.s: Source/Game/Systems/NetworkTrackingSystem.cpp.s
+.PHONY : Source/Game/Systems/NetworkTrackingSystem.s
+
+# target to generate assembly for a file
+Source/Game/Systems/NetworkTrackingSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.s
+.PHONY : Source/Game/Systems/NetworkTrackingSystem.cpp.s
 
 Source/Game/Systems/RectangleColliderSystem.o: Source/Game/Systems/RectangleColliderSystem.cpp.o
 .PHONY : Source/Game/Systems/RectangleColliderSystem.o
@@ -705,6 +910,30 @@ Source/Math/Vector2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.s
 .PHONY : Source/Math/Vector2.cpp.s
 
+Source/Server.o: Source/Server.cpp.o
+.PHONY : Source/Server.o
+
+# target to build an object file
+Source/Server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Source/Server.cpp.o
+.PHONY : Source/Server.cpp.o
+
+Source/Server.i: Source/Server.cpp.i
+.PHONY : Source/Server.i
+
+# target to preprocess a source file
+Source/Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Source/Server.cpp.i
+.PHONY : Source/Server.cpp.i
+
+Source/Server.s: Source/Server.cpp.s
+.PHONY : Source/Server.s
+
+# target to generate assembly for a file
+Source/Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Source/Server.cpp.s
+.PHONY : Source/Server.cpp.s
+
 Source/main.o: Source/main.cpp.o
 .PHONY : Source/main.o
 
@@ -737,6 +966,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Server"
 	@echo "... Tank98"
 	@echo "... Source/ECS/Component/Component.o"
 	@echo "... Source/ECS/Component/Component.i"
@@ -762,9 +992,15 @@ help:
 	@echo "... Source/Game/Components/DestroyCounter.o"
 	@echo "... Source/Game/Components/DestroyCounter.i"
 	@echo "... Source/Game/Components/DestroyCounter.s"
+	@echo "... Source/Game/Components/Effect.o"
+	@echo "... Source/Game/Components/Effect.i"
+	@echo "... Source/Game/Components/Effect.s"
 	@echo "... Source/Game/Components/FlyComponent.o"
 	@echo "... Source/Game/Components/FlyComponent.i"
 	@echo "... Source/Game/Components/FlyComponent.s"
+	@echo "... Source/Game/Components/NetworkTracking.o"
+	@echo "... Source/Game/Components/NetworkTracking.i"
+	@echo "... Source/Game/Components/NetworkTracking.s"
 	@echo "... Source/Game/Components/RectangleCollider.o"
 	@echo "... Source/Game/Components/RectangleCollider.i"
 	@echo "... Source/Game/Components/RectangleCollider.s"
@@ -780,27 +1016,45 @@ help:
 	@echo "... Source/Game/Entities/Bullet.o"
 	@echo "... Source/Game/Entities/Bullet.i"
 	@echo "... Source/Game/Entities/Bullet.s"
+	@echo "... Source/Game/Entities/CollideExplosion.o"
+	@echo "... Source/Game/Entities/CollideExplosion.i"
+	@echo "... Source/Game/Entities/CollideExplosion.s"
+	@echo "... Source/Game/Entities/SpawnPoint.o"
+	@echo "... Source/Game/Entities/SpawnPoint.i"
+	@echo "... Source/Game/Entities/SpawnPoint.s"
 	@echo "... Source/Game/Entities/Tank.o"
 	@echo "... Source/Game/Entities/Tank.i"
 	@echo "... Source/Game/Entities/Tank.s"
 	@echo "... Source/Game/Entities/Tree.o"
 	@echo "... Source/Game/Entities/Tree.i"
 	@echo "... Source/Game/Entities/Tree.s"
+	@echo "... Source/Game/Entities/Wall.o"
+	@echo "... Source/Game/Entities/Wall.i"
+	@echo "... Source/Game/Entities/Wall.s"
 	@echo "... Source/Game/Manager/LoadResourceManager.o"
 	@echo "... Source/Game/Manager/LoadResourceManager.i"
 	@echo "... Source/Game/Manager/LoadResourceManager.s"
 	@echo "... Source/Game/Manager/SoundManager.o"
 	@echo "... Source/Game/Manager/SoundManager.i"
 	@echo "... Source/Game/Manager/SoundManager.s"
+	@echo "... Source/Game/Services/GameplayService.o"
+	@echo "... Source/Game/Services/GameplayService.i"
+	@echo "... Source/Game/Services/GameplayService.s"
 	@echo "... Source/Game/Systems/ControlSystem.o"
 	@echo "... Source/Game/Systems/ControlSystem.i"
 	@echo "... Source/Game/Systems/ControlSystem.s"
 	@echo "... Source/Game/Systems/DestroyCounterSystem.o"
 	@echo "... Source/Game/Systems/DestroyCounterSystem.i"
 	@echo "... Source/Game/Systems/DestroyCounterSystem.s"
+	@echo "... Source/Game/Systems/EffectSystem.o"
+	@echo "... Source/Game/Systems/EffectSystem.i"
+	@echo "... Source/Game/Systems/EffectSystem.s"
 	@echo "... Source/Game/Systems/FlySystem.o"
 	@echo "... Source/Game/Systems/FlySystem.i"
 	@echo "... Source/Game/Systems/FlySystem.s"
+	@echo "... Source/Game/Systems/NetworkTrackingSystem.o"
+	@echo "... Source/Game/Systems/NetworkTrackingSystem.i"
+	@echo "... Source/Game/Systems/NetworkTrackingSystem.s"
 	@echo "... Source/Game/Systems/RectangleColliderSystem.o"
 	@echo "... Source/Game/Systems/RectangleColliderSystem.i"
 	@echo "... Source/Game/Systems/RectangleColliderSystem.s"
@@ -810,6 +1064,9 @@ help:
 	@echo "... Source/Math/Vector2.o"
 	@echo "... Source/Math/Vector2.i"
 	@echo "... Source/Math/Vector2.s"
+	@echo "... Source/Server.o"
+	@echo "... Source/Server.i"
+	@echo "... Source/Server.s"
 	@echo "... Source/main.o"
 	@echo "... Source/main.i"
 	@echo "... Source/main.s"

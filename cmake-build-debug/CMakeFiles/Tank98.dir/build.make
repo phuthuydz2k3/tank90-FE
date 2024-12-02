@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/Game/tank90-FE
+CMAKE_SOURCE_DIR = /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/Game/tank90-FE/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Tank98.dir/depend.make
@@ -72,352 +72,464 @@ include CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/main.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp
 CMakeFiles/Tank98.dir/Source/main.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Tank98.dir/Source/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/main.cpp.o -MF CMakeFiles/Tank98.dir/Source/main.cpp.o.d -o CMakeFiles/Tank98.dir/Source/main.cpp.o -c /mnt/d/Game/tank90-FE/Source/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Tank98.dir/Source/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/main.cpp.o -MF CMakeFiles/Tank98.dir/Source/main.cpp.o.d -o CMakeFiles/Tank98.dir/Source/main.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/main.cpp
 
 CMakeFiles/Tank98.dir/Source/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/main.cpp > CMakeFiles/Tank98.dir/Source/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/main.cpp > CMakeFiles/Tank98.dir/Source/main.cpp.i
 
 CMakeFiles/Tank98.dir/Source/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/main.cpp -o CMakeFiles/Tank98.dir/Source/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/main.cpp -o CMakeFiles/Tank98.dir/Source/main.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o: ../Source/Math/Vector2.cpp
 CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o -MF CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o -c /mnt/d/Game/tank90-FE/Source/Math/Vector2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o -MF CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Math/Vector2.cpp
 
 CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Math/Vector2.cpp > CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Math/Vector2.cpp > CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Math/Vector2.cpp -o CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Math/Vector2.cpp -o CMakeFiles/Tank98.dir/Source/Math/Vector2.cpp.s
 
 CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o: ../Source/ECS/Component/Component.cpp
 CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o -c /mnt/d/Game/tank90-FE/Source/ECS/Component/Component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Component/Component.cpp
 
 CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/ECS/Component/Component.cpp > CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Component/Component.cpp > CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.i
 
 CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/ECS/Component/Component.cpp -o CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Component/Component.cpp -o CMakeFiles/Tank98.dir/Source/ECS/Component/Component.cpp.s
 
 CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o: ../Source/ECS/Entity/Entity.cpp
 CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o -c /mnt/d/Game/tank90-FE/Source/ECS/Entity/Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/Entity.cpp
 
 CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/ECS/Entity/Entity.cpp > CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/Entity.cpp > CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.i
 
 CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/ECS/Entity/Entity.cpp -o CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/Entity.cpp -o CMakeFiles/Tank98.dir/Source/ECS/Entity/Entity.cpp.s
 
 CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o: ../Source/ECS/Entity/EntityManager.cpp
 CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o -c /mnt/d/Game/tank90-FE/Source/ECS/Entity/EntityManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/EntityManager.cpp
 
 CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/ECS/Entity/EntityManager.cpp > CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/EntityManager.cpp > CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.i
 
 CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/ECS/Entity/EntityManager.cpp -o CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/EntityManager.cpp -o CMakeFiles/Tank98.dir/Source/ECS/Entity/EntityManager.cpp.s
 
 CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o: ../Source/ECS/System/System.cpp
 CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o -c /mnt/d/Game/tank90-FE/Source/ECS/System/System.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/System.cpp
 
 CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/ECS/System/System.cpp > CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/System.cpp > CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.i
 
 CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/ECS/System/System.cpp -o CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/System.cpp -o CMakeFiles/Tank98.dir/Source/ECS/System/System.cpp.s
 
 CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o: ../Source/ECS/System/SystemManager.cpp
 CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o -c /mnt/d/Game/tank90-FE/Source/ECS/System/SystemManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/SystemManager.cpp
 
 CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/ECS/System/SystemManager.cpp > CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/SystemManager.cpp > CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.i
 
 CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/ECS/System/SystemManager.cpp -o CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/SystemManager.cpp -o CMakeFiles/Tank98.dir/Source/ECS/System/SystemManager.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o: ../Source/Game/Components/Transform.cpp
 CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Components/Transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Transform.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Components/Transform.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Transform.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Components/Transform.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Transform.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o: ../Source/Game/Components/Sprite.cpp
 CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Components/Sprite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Sprite.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Components/Sprite.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Sprite.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Components/Sprite.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Sprite.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/Sprite.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o: ../Source/Game/Manager/LoadResourceManager.cpp
 CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Manager/LoadResourceManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Manager/LoadResourceManager.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Manager/LoadResourceManager.cpp > CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Manager/LoadResourceManager.cpp > CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Manager/LoadResourceManager.cpp -o CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Manager/LoadResourceManager.cpp -o CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o: ../Source/Game/Entities/Tank.cpp
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Entities/Tank.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Tank.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Entities/Tank.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Tank.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Entities/Tank.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Tank.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o: ../Source/Game/Systems/SpriteSystem.cpp
 CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Systems/SpriteSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/SpriteSystem.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Systems/SpriteSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/SpriteSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Systems/SpriteSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/SpriteSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/SpriteSystem.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o: ../Source/Game/Common/Time.cpp
 CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Common/Time.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/Time.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Common/Time.cpp > CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/Time.cpp > CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Common/Time.cpp -o CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/Time.cpp -o CMakeFiles/Tank98.dir/Source/Game/Common/Time.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o: ../Source/Game/Components/ControlComponent.cpp
 CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Components/ControlComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/ControlComponent.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Components/ControlComponent.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/ControlComponent.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Components/ControlComponent.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/ControlComponent.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o: ../Source/Game/Systems/ControlSystem.cpp
 CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Systems/ControlSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/ControlSystem.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Systems/ControlSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/ControlSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Systems/ControlSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/ControlSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/ControlSystem.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o: ../Source/Game/Entities/Bullet.cpp
 CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Entities/Bullet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Bullet.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Entities/Bullet.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Bullet.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Entities/Bullet.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Bullet.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o: ../Source/Game/Components/FlyComponent.cpp
 CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Components/FlyComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/FlyComponent.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Components/FlyComponent.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/FlyComponent.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Components/FlyComponent.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/FlyComponent.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o: ../Source/Game/Components/DestroyCounter.cpp
 CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Components/DestroyCounter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/DestroyCounter.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Components/DestroyCounter.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/DestroyCounter.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Components/DestroyCounter.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/DestroyCounter.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/DestroyCounter.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o: ../Source/Game/Systems/FlySystem.cpp
 CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Systems/FlySystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/FlySystem.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Systems/FlySystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/FlySystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Systems/FlySystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/FlySystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o: ../Source/Game/Systems/DestroyCounterSystem.cpp
 CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Systems/DestroyCounterSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/DestroyCounterSystem.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Systems/DestroyCounterSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/DestroyCounterSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Systems/DestroyCounterSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/DestroyCounterSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/DestroyCounterSystem.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o: ../Source/Game/Entities/Brick.cpp
 CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Entities/Brick.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Brick.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Entities/Brick.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Brick.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Entities/Brick.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Brick.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Brick.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o: ../Source/Game/Components/RectangleCollider.cpp
 CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Components/RectangleCollider.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/RectangleCollider.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Components/RectangleCollider.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/RectangleCollider.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Components/RectangleCollider.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/RectangleCollider.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o: ../Source/Game/Systems/RectangleColliderSystem.cpp
 CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Systems/RectangleColliderSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/RectangleColliderSystem.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Systems/RectangleColliderSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/RectangleColliderSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Systems/RectangleColliderSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/RectangleColliderSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o: ../Source/Game/Entities/Tree.cpp
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Entities/Tree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Tree.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Entities/Tree.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Tree.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Entities/Tree.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Tree.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.s
 
 CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o: CMakeFiles/Tank98.dir/flags.make
 CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o: ../Source/Game/Manager/SoundManager.cpp
 CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o -c /mnt/d/Game/tank90-FE/Source/Game/Manager/SoundManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Manager/SoundManager.cpp
 
 CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Game/tank90-FE/Source/Game/Manager/SoundManager.cpp > CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Manager/SoundManager.cpp > CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.i
 
 CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Game/tank90-FE/Source/Game/Manager/SoundManager.cpp -o CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Manager/SoundManager.cpp -o CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o: ../Source/Game/Components/Effect.cpp
+CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Effect.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Effect.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Effect.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o: ../Source/Game/Entities/CollideExplosion.cpp
+CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/CollideExplosion.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/CollideExplosion.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/CollideExplosion.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o: ../Source/Game/Systems/EffectSystem.cpp
+CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/EffectSystem.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/EffectSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/EffectSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o: ../Source/Game/Entities/SpawnPoint.cpp
+CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/SpawnPoint.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/SpawnPoint.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/SpawnPoint.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o: ../Source/Game/Entities/Wall.cpp
+CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Wall.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Wall.cpp > CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Entities/Wall.cpp -o CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o: ../Source/Game/Services/GameplayService.cpp
+CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Services/GameplayService.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Services/GameplayService.cpp > CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Services/GameplayService.cpp -o CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o: ../Source/Game/Components/NetworkTracking.cpp
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkTracking.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkTracking.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkTracking.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o: ../Source/Game/Systems/NetworkTrackingSystem.cpp
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/NetworkTrackingSystem.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/NetworkTrackingSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/NetworkTrackingSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.s
 
 # Object files for target Tank98
 Tank98_OBJECTS = \
@@ -445,7 +557,15 @@ Tank98_OBJECTS = \
 "CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o" \
-"CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o"
+"CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o"
 
 # External object files for target Tank98
 Tank98_EXTERNAL_OBJECTS =
@@ -475,10 +595,18 @@ Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/RectangleCollider.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/RectangleColliderSystem.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/Effect.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/CollideExplosion.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/EffectSystem.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/SpawnPoint.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o
 Tank98: CMakeFiles/Tank98.dir/build.make
 Tank98: /usr/lib/x86_64-linux-gnu/libSDL2.so
 Tank98: CMakeFiles/Tank98.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable Tank98"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking CXX executable Tank98"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tank98.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -490,6 +618,6 @@ CMakeFiles/Tank98.dir/clean:
 .PHONY : CMakeFiles/Tank98.dir/clean
 
 CMakeFiles/Tank98.dir/depend:
-	cd /mnt/d/Game/tank90-FE/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/d/Game/tank90-FE /mnt/d/Game/tank90-FE /mnt/d/Game/tank90-FE/cmake-build-debug /mnt/d/Game/tank90-FE/cmake-build-debug /mnt/d/Game/tank90-FE/cmake-build-debug/CMakeFiles/Tank98.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles/Tank98.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Tank98.dir/depend
 

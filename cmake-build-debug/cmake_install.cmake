@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/d/Game/tank90-FE
+# Install script for directory: /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/d/Game/tank90-FE/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,7 +1,12 @@
-CMakeFiles/Tank98.dir/Source/Math/math.cpp.o: \
- /mnt/d/Game/tank90-FE/Source/Math/math.cpp /usr/include/stdc-predef.h \
- /mnt/d/Game/tank90-FE/Source/Math/math.h /usr/include/math.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+CMakeFiles/Tank98.dir/Source/Game/Components/Transform.cpp.o: \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Transform.cpp \
+ /usr/include/stdc-predef.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Transform.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Component/Component.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Math/Vector2.h \
+ /usr/include/c++/11/math.h /usr/include/c++/11/cmath \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
@@ -9,6 +14,11 @@ CMakeFiles/Tank98.dir/Source/Math/math.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
+ /usr/include/c++/11/pstl/pstl_config.h \
+ /usr/include/c++/11/bits/cpp_type_traits.h \
+ /usr/include/c++/11/ext/type_traits.h /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
@@ -23,13 +33,6 @@ CMakeFiles/Tank98.dir/Source/Math/math.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/11/cmath \
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
- /usr/include/c++/11/pstl/pstl_config.h \
- /usr/include/c++/11/bits/cpp_type_traits.h \
- /usr/include/c++/11/ext/type_traits.h /usr/include/math.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/stdlib.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \

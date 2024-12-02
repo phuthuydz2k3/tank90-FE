@@ -1,16 +1,37 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
+#include <cstring>
+#include <SDL2/SDL_net.h>
 #include <iostream>
 #include "ECS/Entity/EntityManager.h"
 #include "ECS/System/SystemManager.h"
+#include "Game/Common/Packet.h"
 #include "Game/Manager/LoadResourceManager.h"
 #include "Game/Common/Time.h"
+#include "Game/Components/Transform.h"
 #include "Game/Services/GameplayService.h"
+#include "Game/Systems/NetworkTrackingSystem.h"
+
+NetworkTrackingSystem networkTrackingSystem;
+UDPsocket clientSocket;
+UDPpacket* recvPacket;
+
+struct TankState {
+    int id;
+    Packet packet;
+};
 
 void Init() {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "SDL haven't been initialized: " << SDL_GetError() << std::endl;
+        return;
+    }
+
+    // Initialize SDL_net
+    if (SDLNet_Init() < 0) {
+        std::cerr << "SDL_net haven't been initialized: " << SDLNet_GetError() << std::endl;
+        SDL_Quit();
         return;
     }
 
@@ -32,6 +53,23 @@ void Init() {
     LoadResourceManager::getInstance()->InitWindow();
     SystemManager::getInstance()->init();
     GameplayService().LoadMap(1);
+    networkTrackingSystem.init();
+
+    // Initialize client socket
+    clientSocket = SDLNet_UDP_Open(8081);
+    if (!clientSocket) {
+        std::cerr << "Failed to open UDP socket: " << SDLNet_GetError() << std::endl;
+        SDL_Quit();
+        return;
+    }
+
+    recvPacket = SDLNet_AllocPacket(sizeof(Packet));
+    if (!recvPacket) {
+        std::cerr << "Failed to allocate packet: " << SDLNet_GetError() << std::endl;
+        SDLNet_UDP_Close(clientSocket);
+        SDL_Quit();
+        return;
+    }
 }
 
 void Update() {
@@ -40,6 +78,31 @@ void Update() {
     EntityManager::getInstance()->lateUpdate();
     SDL_RenderPresent(LoadResourceManager::getInstance()->GetRenderer());
     SDL_RenderClear(LoadResourceManager::getInstance()->GetRenderer());
+
+    // Receive broadcasted state from server
+    while (SDLNet_UDP_Recv(clientSocket, recvPacket)) {
+        if (recvPacket->len % sizeof(TankState) != 0) {
+            std::cerr << "Received packet size mismatch" << std::endl;
+            continue;
+        }
+        std::cout << recvPacket << std::endl;
+
+        std::vector<TankState> receivedTankStates;
+        int numPackets = recvPacket->len / sizeof(TankState);
+        for (int i = 0; i < numPackets; ++i) {
+            TankState receivedPacket;
+            std::memcpy(&receivedPacket, recvPacket->data + i * sizeof(TankState), sizeof(TankState));
+            receivedTankStates.push_back(receivedPacket);
+        }
+
+        // Print received tank states
+        for (const auto& tankState : receivedTankStates) {
+            std::cout << "Tank ID: " << tankState.id << std::endl;
+            std::cout << "Position: (" << tankState.packet.positionX << ", " << tankState.packet.positionY << ")" << std::endl;
+            std::cout << "Scale: (" << tankState.packet.scaleX << ", " << tankState.packet.scaleY << ")" << std::endl;
+            std::cout << "Angle: " << tankState.packet.angle << std::endl;
+        }
+    }
 }
 
 int main(int argc, char *argv[]) {
@@ -47,6 +110,8 @@ int main(int argc, char *argv[]) {
     bool running = true;
     SDL_Event event;
     Uint32 lastTime = SDL_GetTicks();
+    Uint32 sendInterval = 1000 / 60; // 60 FPS
+    Uint32 lastSendTime = SDL_GetTicks();
     while (running) {
         Uint32 currentTime = SDL_GetTicks();
         Time::deltaTime = (currentTime - lastTime) / 1000.0f;
@@ -57,11 +122,19 @@ int main(int argc, char *argv[]) {
             }
         }
         Update();
+
+        // Ensure sending data at 60 FPS
+        if (currentTime - lastSendTime >= sendInterval) {
+            networkTrackingSystem.update();
+            lastSendTime = currentTime;
+        }
         SDL_Delay(16);
     }
 
     LoadResourceManager::getInstance()->CleanUp();
     EntityManager::getInstance()->clearEntities();
+    SDLNet_FreePacket(recvPacket);
+    SDLNet_UDP_Close(clientSocket);
 
     return 0;
 }
