@@ -1,7 +1,8 @@
 CMakeFiles/Tank98.dir/Source/main.cpp.o: \
- /mnt/d/Game/tank90-FE/Source/main.cpp /usr/include/stdc-predef.h \
- /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
- /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/main.cpp \
+ /usr/include/stdc-predef.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
  /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \
@@ -213,7 +214,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_mixer.h /usr/include/c++/11/iostream \
+ /usr/include/SDL2/SDL_mixer.h /usr/include/c++/11/cstring \
+ /usr/include/SDL2/SDL_net.h /usr/include/c++/11/iostream \
  /usr/include/c++/11/ostream /usr/include/c++/11/ios \
  /usr/include/c++/11/iosfwd /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/memoryfwd.h /usr/include/c++/11/bits/postypes.h \
@@ -283,8 +285,7 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /mnt/d/Game/tank90-FE/Source/Math/Vector2.h \
- /mnt/d/Game/tank90-FE/Source/ECS/Entity/EntityManager.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/EntityManager.h \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
@@ -312,34 +313,36 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/bits/erase_if.h \
- /mnt/d/Game/tank90-FE/Source/ECS/Entity/Entity.h \
- /mnt/d/Game/tank90-FE/Source/ECS/Entity/../Component/Component.h \
- /mnt/d/Game/tank90-FE/Source/ECS/Entity/../../SingletonTemplate.h \
- /mnt/d/Game/tank90-FE/Source/ECS/System/SystemManager.h \
- /mnt/d/Game/tank90-FE/Source/ECS/System/System.h \
- /mnt/d/Game/tank90-FE/Source/ECS/System/../../SingletonTemplate.h \
- /mnt/d/Game/tank90-FE/Source/Game/Manager/LoadResourceManager.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/Entity.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/../Component/Component.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Entity/../../SingletonTemplate.h \
+ /usr/include/c++/11/random /usr/include/c++/11/bits/random.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
+ /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/SystemManager.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/System.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/../../SingletonTemplate.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/Packet.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Manager/LoadResourceManager.h \
  /usr/include/SDL2/SDL_render.h \
- /mnt/d/Game/tank90-FE/Source/SingletonTemplate.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/SingletonTemplate.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL_mixer.h \
- /mnt/d/Game/tank90-FE/Source/Game/Common/Time.h \
- /mnt/d/Game/tank90-FE/Source/Game/Components/Transform.h \
- /mnt/d/Game/tank90-FE/Source/ECS/Component/Component.h \
- /mnt/d/Game/tank90-FE/Source/Math/Vector2.h \
- /mnt/d/Game/tank90-FE/Source/Game/Entities/Brick.h \
- /mnt/d/Game/tank90-FE/Source/ECS/Entity/Entity.h \
- /mnt/d/Game/tank90-FE/Source/Game/Entities/Tank.h \
- /mnt/d/Game/tank90-FE/Source/Game/Manager/LoadResourceManager.h \
- /mnt/d/Game/tank90-FE/Source/Game/Components/ControlComponent.h \
- /usr/include/SDL2/SDL_keyboard.h /usr/include/SDL2/SDL_stdinc.h \
- /mnt/d/Game/tank90-FE/Source/Game/Components/Sprite.h \
- /mnt/d/Game/tank90-FE/Source/Game/Components/Transform.h \
- /mnt/d/Game/tank90-FE/Source/Game/Entities/Tree.h \
- /mnt/d/Game/tank90-FE/Source/Game/Systems/ControlSystem.h \
- /mnt/d/Game/tank90-FE/Source/ECS/System/System.h \
- /mnt/d/Game/tank90-FE/Source/Game/Systems/FlySystem.h \
- /mnt/d/Game/tank90-FE/Source/Game/Common/Time.h \
- /mnt/d/Game/tank90-FE/Source/Game/Components/FlyComponent.h \
- /mnt/d/Game/tank90-FE/Source/ECS/Entity/EntityManager.h \
- /mnt/d/Game/tank90-FE/Source/Game/Systems/RectangleColliderSystem.h \
- /mnt/d/Game/tank90-FE/Source/Game/Systems/SpriteSystem.h
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/Time.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Transform.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Component/Component.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Math/Vector2.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Services/GameplayService.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
+ /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/bits/stl_heap.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/NetworkTrackingSystem.h \
+ /usr/include/SDL2/SDL_net.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/System.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Transform.h
