@@ -4,6 +4,8 @@
 #include <vector>
 #include <cstring>
 #include "Game/Common/Packet.h"
+#include <arpa/inet.h> // Include for inet_addr and htonl
+#include <sys/socket.h>
 
 struct TankState {
     int id;
@@ -39,14 +41,22 @@ void broadcastTankStates(UDPsocket serverSocket) {
         return;
     }
 
-    // Copy the tank states into the packet data
+    // Set the broadcast address
+    udpPacket->address.host = SDL_SwapBE32(INADDR_BROADCAST); // Broadcast address
+    udpPacket->address.port = SDL_SwapBE16(8082);             // Port for clients
     std::memcpy(udpPacket->data, tankStates.data(), packetSize);
     udpPacket->len = packetSize;
-    udpPacket->address.host = INADDR_BROADCAST; // Broadcast address
-    udpPacket->address.port = 8081; // Broadcast port for clients
 
-    if (SDLNet_UDP_Send(serverSocket, -1, udpPacket) == 0) {
+
+     if (SDLNet_UDP_Send(serverSocket, -1, udpPacket) == 0){
         std::cerr << "Failed to send packet: " << SDLNet_GetError() << std::endl;
+    } else {
+        for (const auto& tankState : tankStates) {
+            std::cout << "Tank ID: " << tankState.id << std::endl;
+            std::cout << "Position: (" << tankState.packet.positionX << ", " << tankState.packet.positionY << ")" << std::endl;
+            std::cout << "Scale: (" << tankState.packet.scaleX << ", " << tankState.packet.scaleY << ")" << std::endl;
+            std::cout << "Angle: " << tankState.packet.angle << std::endl;
+        }
     }
 
     SDLNet_FreePacket(udpPacket);
@@ -89,10 +99,10 @@ int main(int argc, char* argv[]) {
         if (SDLNet_UDP_Recv(serverSocket, packet)) {
             Packet receivedPacket;
             std::memcpy(&receivedPacket, packet->data, sizeof(Packet));
-            printPacket(receivedPacket);
+            // printPacket(receivedPacket);
 
             // Update tank state
-            updateTankState(packet->address.host, receivedPacket);
+            updateTankState(packet->address.port, receivedPacket);
         }
 
         // Broadcast tank states at 60 FPS
