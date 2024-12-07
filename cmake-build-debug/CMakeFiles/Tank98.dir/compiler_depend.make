@@ -7678,6 +7678,26 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
   /usr/include/SDL2/SDL_mixer.h \
   /usr/include/c++/11/cstring \
   /usr/include/SDL2/SDL_net.h \
+  /usr/include/arpa/inet.h \
+  /usr/include/netinet/in.h \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/asm-generic/sockios.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -7846,6 +7866,14 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
   ../Source/Game/Components/Transform.h
 
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
 ../Source/main.cpp:
 
 ../Source/Math/Vector2.cpp:
@@ -7857,6 +7885,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 ../Source/Game/Systems/DestroyCounterSystem.h:
 
 /usr/include/c++/11/sstream:
+
+/usr/include/asm-generic/posix_types.h:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
@@ -7893,6 +7923,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 ../Source/Game/Entities/Brick.h:
 
 ../Source/Game/Entities/Brick.cpp:
+
+/usr/include/arpa/inet.h:
 
 /usr/include/SDL2/SDL_locale.h:
 
@@ -7946,6 +7978,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vnniintrin.h:
 
+/usr/include/asm-generic/sockios.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmi2vlintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vpopcntdqintrin.h:
@@ -7979,6 +8013,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/pmmintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
 
@@ -8098,6 +8134,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 
 ../Source/Game/Components/RectangleCollider.cpp:
 
+/usr/include/netinet/in.h:
+
 ../Source/Game/Components/NetworkTracking.cpp:
 
 /usr/include/c++/11/bits/stl_map.h:
@@ -8158,6 +8196,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 
 /usr/include/time.h:
 
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
+
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/tmmintrin.h:
@@ -8191,6 +8231,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/c++/11/numeric:
+
+/usr/include/linux/stddef.h:
 
 /usr/include/c++/11/bits/refwrap.h:
 
@@ -8260,6 +8302,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
+/usr/include/asm-generic/socket.h:
+
 /usr/include/SDL2/SDL_keycode.h:
 
 /usr/include/c++/11/bits/invoke.h:
@@ -8274,11 +8318,17 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 
 /usr/include/c++/11/bits/functional_hash.h:
 
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+
 /usr/include/c++/11/backward/binders.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+
+/usr/include/x86_64-linux-gnu/sys/socket.h:
 
 ../Source/Game/Components/Transform.cpp:
 
@@ -8392,6 +8442,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
 /usr/include/SDL2/SDL_version.h:
 
 /usr/include/SDL2/begin_code.h:
@@ -8467,6 +8519,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
 /usr/include/c++/11/debug/assertions.h:
+
+/usr/include/asm-generic/bitsperlong.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
@@ -8553,6 +8607,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 /usr/include/SDL2/SDL_clipboard.h:
 
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
@@ -8696,6 +8752,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 
 /usr/include/c++/11/random:
 
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
 /usr/include/c++/11/cstring:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
@@ -8735,6 +8793,8 @@ CMakeFiles/Tank98.dir/Source/main.cpp.o: ../Source/main.cpp \
 /usr/include/c++/11/bits/node_handle.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/x86_64-linux-gnu/bits/in.h:
 
 /usr/include/c++/11/bits/postypes.h:
 

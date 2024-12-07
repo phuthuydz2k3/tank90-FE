@@ -3,6 +3,8 @@
 #include <SDL2/SDL_mixer.h>
 #include <cstring>
 #include <SDL2/SDL_net.h>
+#include <arpa/inet.h> // Include for inet_addr and htonl
+#include <sys/socket.h>
 #include <iostream>
 #include "ECS/Entity/EntityManager.h"
 #include "ECS/System/SystemManager.h"
@@ -56,14 +58,14 @@ void Init() {
     networkTrackingSystem.init();
 
     // Initialize client socket
-    clientSocket = SDLNet_UDP_Open(8081);
+    clientSocket = SDLNet_UDP_Open(8082);
     if (!clientSocket) {
         std::cerr << "Failed to open UDP socket: " << SDLNet_GetError() << std::endl;
         SDL_Quit();
         return;
     }
 
-    recvPacket = SDLNet_AllocPacket(sizeof(Packet));
+    recvPacket = SDLNet_AllocPacket(1024);
     if (!recvPacket) {
         std::cerr << "Failed to allocate packet: " << SDLNet_GetError() << std::endl;
         SDLNet_UDP_Close(clientSocket);
@@ -83,9 +85,8 @@ void Update() {
     while (SDLNet_UDP_Recv(clientSocket, recvPacket)) {
         if (recvPacket->len % sizeof(TankState) != 0) {
             std::cerr << "Received packet size mismatch" << std::endl;
-            continue;
+            break;
         }
-        std::cout << recvPacket << std::endl;
 
         std::vector<TankState> receivedTankStates;
         int numPackets = recvPacket->len / sizeof(TankState);

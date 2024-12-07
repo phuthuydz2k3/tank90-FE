@@ -355,8 +355,42 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
   /usr/include/c++/11/cstring \
-  ../Source/Game/Common/Packet.h
+  ../Source/Game/Common/Packet.h \
+  /usr/include/arpa/inet.h \
+  /usr/include/netinet/in.h \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/asm-generic/sockios.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h
 
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
+/usr/include/netinet/in.h:
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
@@ -408,6 +442,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 
 /usr/include/c++/11/bits/basic_string.h:
 
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+
 /usr/include/c++/11/backward/binders.h:
 
 /usr/include/c++/11/ext/new_allocator.h:
@@ -425,6 +461,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
@@ -488,6 +526,10 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 
 /usr/include/SDL2/SDL_audio.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+
+/usr/include/x86_64-linux-gnu/sys/socket.h:
+
 /usr/include/c++/11/bits/stl_function.h:
 
 /usr/include/c++/11/bits/memoryfwd.h:
@@ -512,6 +554,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
+/usr/include/x86_64-linux-gnu/bits/in.h:
+
 /usr/include/c++/11/bits/postypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
@@ -533,6 +577,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 /usr/include/c++/11/bits/allocator.h:
 
 /usr/include/c++/11/cmath:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
@@ -561,6 +607,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/c++/11/bits/functexcept.h:
+
+/usr/include/asm-generic/bitsperlong.h:
 
 /usr/include/c++/11/bits/concept_check.h:
 
@@ -595,6 +643,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 /usr/include/c++/11/bits/exception_defines.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
+
+/usr/include/asm-generic/socket.h:
 
 /usr/include/SDL2/SDL_keycode.h:
 
@@ -690,6 +740,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
+/usr/include/arpa/inet.h:
+
 /usr/include/SDL2/SDL_locale.h:
 
 /usr/include/SDL2/SDL.h:
@@ -709,6 +761,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
 /usr/include/SDL2/SDL_config.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
 /usr/include/SDL2/SDL_version.h:
 
@@ -779,6 +833,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/pconfigintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
 
 /usr/include/c++/11/cstring:
 
@@ -881,6 +937,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/clzerointrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/lzcntintrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
 
@@ -991,6 +1049,8 @@ CMakeFiles/Server.dir/Source/Server.cpp.o: ../Source/Server.cpp \
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmi2intrin.h:
+
+/usr/include/asm-generic/sockios.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmi2vlintrin.h:
 
