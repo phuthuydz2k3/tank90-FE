@@ -6,10 +6,12 @@
 #include "Game/Common/Packet.h"
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Components/Transform.h"
+#include "Game/Common/Time.h"
 
 IPaddress NetworkTrackingSystem::serverAddress;
 UDPsocket NetworkTrackingSystem::udpSocket;
-
+float countTime = 0;
+float timeSend = 1.0f/60.0f; // 60fps
 void NetworkTrackingSystem::init() {
     System::init();
 
@@ -63,6 +65,10 @@ void NetworkTrackingSystem::sendTankPosition(const Transform* transform) {
 }
 
 void NetworkTrackingSystem::update() {
+    System::update();
+    countTime += Time::deltaTime;
+    if (countTime < timeSend) return;
+    countTime = 0;
     const auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkTracking>();
     for (auto& entity : entities) {
         Transform* transform = entity->getComponent<Transform>();

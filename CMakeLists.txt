@@ -80,6 +80,10 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Systems/NetworkTrackingSystem.cpp
         Source/Game/Systems/NetworkTrackingSystem.h
         Source/Game/Common/Packet.h
+        Source/Game/Components/NetworkReceiver.cpp
+        Source/Game/Components/NetworkReceiver.h
+        Source/Game/Systems/NetworkReceiverSystem.cpp
+        Source/Game/Systems/NetworkReceiverSystem.h
 )
 add_executable(Server Source/Server.cpp)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
