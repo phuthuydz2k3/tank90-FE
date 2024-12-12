@@ -1,26 +1,19 @@
-//
-// Created by AnPhatPC on 26/11/2024.
-//
-
 #ifndef NETWORKTRACKINGSYSTEM_H
 #define NETWORKTRACKINGSYSTEM_H
-#include <SDL_net.h>
 
+#include <boost/asio.hpp>
 #include "ECS/System/System.h"
 #include "Game/Components/Transform.h"
 
-
-class NetworkTrackingSystem : public System{
+class NetworkTrackingSystem : public System {
 public:
     void update() override;
     void init() override;
 
 private:
-    static IPaddress serverAddress;
-    static UDPsocket udpSocket;
+    static boost::asio::ip::udp::endpoint serverEndpoint;
+    static boost::asio::ip::udp::socket udpSocket;
     void sendTankPosition(const Transform* transform);
 };
-
-
 
 #endif //NETWORKTRACKINGSYSTEM_H

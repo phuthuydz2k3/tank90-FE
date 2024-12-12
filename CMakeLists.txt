@@ -79,7 +79,7 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Components/NetworkTracking.h
         Source/Game/Systems/NetworkTrackingSystem.cpp
         Source/Game/Systems/NetworkTrackingSystem.h
-        Source/Game/Common/Packet.h
+        Source/Game/Common/TankStatePacket.h
         Source/Game/Components/NetworkReceiver.cpp
         Source/Game/Components/NetworkReceiver.h
         Source/Game/Systems/NetworkReceiverSystem.cpp

@@ -5,11 +5,10 @@
 #ifndef PACKET_H
 #define PACKET_H
 
-struct Packet {
+struct TankStatePacket {
+    int id;
     float positionX;
     float positionY;
-    float scaleX;
-    float scaleY;
     float angle;
 };
 

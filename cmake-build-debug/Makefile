@@ -382,6 +382,30 @@ Source/Game/Components/FlyComponent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/FlyComponent.cpp.s
 .PHONY : Source/Game/Components/FlyComponent.cpp.s
 
+Source/Game/Components/NetworkReceiver.o: Source/Game/Components/NetworkReceiver.cpp.o
+.PHONY : Source/Game/Components/NetworkReceiver.o
+
+# target to build an object file
+Source/Game/Components/NetworkReceiver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o
+.PHONY : Source/Game/Components/NetworkReceiver.cpp.o
+
+Source/Game/Components/NetworkReceiver.i: Source/Game/Components/NetworkReceiver.cpp.i
+.PHONY : Source/Game/Components/NetworkReceiver.i
+
+# target to preprocess a source file
+Source/Game/Components/NetworkReceiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.i
+.PHONY : Source/Game/Components/NetworkReceiver.cpp.i
+
+Source/Game/Components/NetworkReceiver.s: Source/Game/Components/NetworkReceiver.cpp.s
+.PHONY : Source/Game/Components/NetworkReceiver.s
+
+# target to generate assembly for a file
+Source/Game/Components/NetworkReceiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.s
+.PHONY : Source/Game/Components/NetworkReceiver.cpp.s
+
 Source/Game/Components/NetworkTracking.o: Source/Game/Components/NetworkTracking.cpp.o
 .PHONY : Source/Game/Components/NetworkTracking.o
 
@@ -814,6 +838,30 @@ Source/Game/Systems/FlySystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/FlySystem.cpp.s
 .PHONY : Source/Game/Systems/FlySystem.cpp.s
 
+Source/Game/Systems/NetworkReceiverSystem.o: Source/Game/Systems/NetworkReceiverSystem.cpp.o
+.PHONY : Source/Game/Systems/NetworkReceiverSystem.o
+
+# target to build an object file
+Source/Game/Systems/NetworkReceiverSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o
+.PHONY : Source/Game/Systems/NetworkReceiverSystem.cpp.o
+
+Source/Game/Systems/NetworkReceiverSystem.i: Source/Game/Systems/NetworkReceiverSystem.cpp.i
+.PHONY : Source/Game/Systems/NetworkReceiverSystem.i
+
+# target to preprocess a source file
+Source/Game/Systems/NetworkReceiverSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.i
+.PHONY : Source/Game/Systems/NetworkReceiverSystem.cpp.i
+
+Source/Game/Systems/NetworkReceiverSystem.s: Source/Game/Systems/NetworkReceiverSystem.cpp.s
+.PHONY : Source/Game/Systems/NetworkReceiverSystem.s
+
+# target to generate assembly for a file
+Source/Game/Systems/NetworkReceiverSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.s
+.PHONY : Source/Game/Systems/NetworkReceiverSystem.cpp.s
+
 Source/Game/Systems/NetworkTrackingSystem.o: Source/Game/Systems/NetworkTrackingSystem.cpp.o
 .PHONY : Source/Game/Systems/NetworkTrackingSystem.o
 
@@ -998,6 +1046,9 @@ help:
 	@echo "... Source/Game/Components/FlyComponent.o"
 	@echo "... Source/Game/Components/FlyComponent.i"
 	@echo "... Source/Game/Components/FlyComponent.s"
+	@echo "... Source/Game/Components/NetworkReceiver.o"
+	@echo "... Source/Game/Components/NetworkReceiver.i"
+	@echo "... Source/Game/Components/NetworkReceiver.s"
 	@echo "... Source/Game/Components/NetworkTracking.o"
 	@echo "... Source/Game/Components/NetworkTracking.i"
 	@echo "... Source/Game/Components/NetworkTracking.s"
@@ -1052,6 +1103,9 @@ help:
 	@echo "... Source/Game/Systems/FlySystem.o"
 	@echo "... Source/Game/Systems/FlySystem.i"
 	@echo "... Source/Game/Systems/FlySystem.s"
+	@echo "... Source/Game/Systems/NetworkReceiverSystem.o"
+	@echo "... Source/Game/Systems/NetworkReceiverSystem.i"
+	@echo "... Source/Game/Systems/NetworkReceiverSystem.s"
 	@echo "... Source/Game/Systems/NetworkTrackingSystem.o"
 	@echo "... Source/Game/Systems/NetworkTrackingSystem.i"
 	@echo "... Source/Game/Systems/NetworkTrackingSystem.s"
