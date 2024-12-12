@@ -531,6 +531,34 @@ CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/NetworkTrackingSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.s
 
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o: ../Source/Game/Components/NetworkReceiver.cpp
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkReceiver.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkReceiver.cpp > CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkReceiver.cpp -o CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.s
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o: CMakeFiles/Tank98.dir/flags.make
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o: ../Source/Game/Systems/NetworkReceiverSystem.cpp
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o: CMakeFiles/Tank98.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o -MF CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o.d -o CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o -c /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/NetworkReceiverSystem.cpp
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/NetworkReceiverSystem.cpp > CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.i
+
+CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/NetworkReceiverSystem.cpp -o CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.s
+
 # Object files for target Tank98
 Tank98_OBJECTS = \
 "CMakeFiles/Tank98.dir/Source/main.cpp.o" \
@@ -565,7 +593,9 @@ Tank98_OBJECTS = \
 "CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o" \
 "CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o" \
-"CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o"
+"CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o" \
+"CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o"
 
 # External object files for target Tank98
 Tank98_EXTERNAL_OBJECTS =
@@ -603,10 +633,12 @@ Tank98: CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Services/GameplayService.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/NetworkTracking.cpp.o
 Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Components/NetworkReceiver.cpp.o
+Tank98: CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkReceiverSystem.cpp.o
 Tank98: CMakeFiles/Tank98.dir/build.make
 Tank98: /usr/lib/x86_64-linux-gnu/libSDL2.so
 Tank98: CMakeFiles/Tank98.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking CXX executable Tank98"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable Tank98"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tank98.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

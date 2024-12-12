@@ -2,29 +2,19 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 #include <cstring>
-#include <SDL2/SDL_net.h>
 #include <arpa/inet.h> // Include for inet_addr and htonl
 #include <sys/socket.h>
 #include <iostream>
 #include "ECS/Entity/EntityManager.h"
 #include "ECS/System/SystemManager.h"
-#include "Game/Common/Packet.h"
 #include "Game/Manager/LoadResourceManager.h"
 #include "Game/Common/Time.h"
-#include "Game/Components/NetworkReceiver.h"
 #include "Game/Services/GameplayService.h"
 #include "Game/Systems/NetworkTrackingSystem.h"
 
 void Init() {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "SDL haven't been initialized: " << SDL_GetError() << std::endl;
-        return;
-    }
-
-    // Initialize SDL_net
-    if (SDLNet_Init() < 0) {
-        std::cerr << "SDL_net haven't been initialized: " << SDLNet_GetError() << std::endl;
-        SDL_Quit();
         return;
     }
 
@@ -76,8 +66,6 @@ int main(int argc, char *argv[]) {
 
     LoadResourceManager::getInstance()->CleanUp();
     EntityManager::getInstance()->clearEntities();
-    SDLNet_FreePacket(NetworkReceiver::recvPacket);
-    SDLNet_UDP_Close(NetworkReceiver::clientSocket);
 
     return 0;
 }
