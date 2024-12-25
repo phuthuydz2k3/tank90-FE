@@ -9,6 +9,7 @@
 #include "Game/Common/Time.h"
 #include "Game/Components/ControlComponent.h"
 #include "Game/Components/NetworkReceiver.h"
+#include "Game/Feature/BeDestroy.h"
 
 boost::asio::io_context io_context;
 boost::asio::ip::udp::socket NetworkTrackingSystem::udpSocket(io_context);
@@ -28,12 +29,13 @@ void NetworkTrackingSystem::init() {
     serverEndpoint = *resolver.resolve(query).begin();
 }
 
-void serializePacket(TankStatePacket &packet, const Transform *transform, ControlComponent *controlComponent) {
+void serializePacket(TankStatePacket &packet, const Transform *transform, ControlComponent *controlComponent, BeDestroy *beDestroy) {
     packet.id = NetworkTracking::id;
     packet.positionX = transform->position.x;
     packet.positionY = transform->position.y;
     packet.angle = transform->angle;
     packet.isShooting = controlComponent->isShooting;
+    packet.isDie = beDestroy->isDestroyed;
 }
 
 void NetworkTrackingSystem::sendTankPacket(const TankStatePacket &packet) {
@@ -59,7 +61,8 @@ void NetworkTrackingSystem::update() {
         Transform *transform = entity->getComponent<Transform>();
         NetworkTracking *networkTracking = entity->getComponent<NetworkTracking>();
         ControlComponent *controlComponent = entity->getComponent<ControlComponent>();
-        serializePacket(packet, transform, controlComponent);
+        BeDestroy *beDestroy = entity->getComponent<BeDestroy>();
+        serializePacket(packet, transform, controlComponent, beDestroy);
         if (networkTracking->typeTracking == 0) {
             this->sendTankPacket(packet);
         }

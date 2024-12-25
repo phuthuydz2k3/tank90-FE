@@ -13,7 +13,10 @@
 
 void onTriggerEnter(Entity *entity, Entity *other) {
     if (other->getComponent<RectangleCollider>()->layer == entity->getComponent<RectangleCollider>()->layer) return;
-    if(other->hasComponent<BeDestroy>()) other->getComponent<BeDestroy>()->Destroy();
+    if(other->hasComponent<BeDestroy>()) {
+        other->getComponent<BeDestroy>()->Destroy();
+        other->getComponent<BeDestroy>()->isDestroyed = true;
+    }
     CollideExplosion *collide_explosion = EntityManager::getInstance()->createEntity<CollideExplosion>();
     collide_explosion->getComponent<Transform>()->position = entity->getComponent<Transform>()->position;
     collide_explosion->getComponent<Effect>()->size = {25, 25};

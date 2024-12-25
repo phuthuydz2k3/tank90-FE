@@ -88,8 +88,6 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Feature/BeDestroy.h
 )
 add_executable(Server Source/Server.cpp
-        Source/Game/Feature/BeDestroy.cpp
-        Source/Game/Feature/BeDestroy.h
 )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 

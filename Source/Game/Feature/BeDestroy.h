@@ -10,6 +10,7 @@
 class BeDestroy : public Component {
 public:
     void Destroy();
+    bool isDestroyed = false;
 };
 
 

@@ -94,7 +94,7 @@ void NetworkReceiverSystem::update() {
                     break;
                 }
             }
-            if (!haveTank) {
+            if (!haveTank && !tankState.isDie) {
                 Tank *tank = EntityManager::getInstance()->createEntity<Tank>();
                 tank->removeComponent<ControlComponent>();
                 tank->removeComponent<NetworkTracking>();
