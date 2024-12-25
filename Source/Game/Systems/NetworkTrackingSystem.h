@@ -3,6 +3,7 @@
 
 #include <boost/asio.hpp>
 #include "ECS/System/System.h"
+#include "Game/Common/TankStatePacket.h"
 #include "Game/Components/Transform.h"
 
 class NetworkTrackingSystem : public System {
@@ -13,7 +14,7 @@ public:
 private:
     static boost::asio::ip::udp::endpoint serverEndpoint;
     static boost::asio::ip::udp::socket udpSocket;
-    void sendTankPosition(const Transform* transform);
+    void sendTankPacket(const TankStatePacket& packet);
 };
 
 #endif //NETWORKTRACKINGSYSTEM_H

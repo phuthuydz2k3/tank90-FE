@@ -7,6 +7,7 @@
 #include "Game/Components/Effect.h"
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Components/RectangleCollider.h"
+#include "Game/Feature/BeDestroy.h"
 #include "Game/Systems/RectangleColliderSystem.h"
 
 Tank::Tank() {
@@ -16,6 +17,7 @@ Tank::Tank() {
     this->addComponent<RectangleCollider>();
     this->addComponent<Effect>();
     this->addComponent<NetworkTracking>();
+    this->addComponent<BeDestroy>();
 
     this->getComponent<Transform>()->angle = 0;
     const auto sprite = this->getComponent<Sprite>();

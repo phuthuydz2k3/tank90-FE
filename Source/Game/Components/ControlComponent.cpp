@@ -3,9 +3,6 @@
 //
 
 #include "ControlComponent.h"
-
-#include <ctime>
-
 #include "Game/Common/Time.h"
 float timeCounter = 0;
 float deltaTimeShooting = 0.5f;
@@ -26,14 +23,16 @@ bool ControlComponent::isRight() const {
     return this->currentKeyStates[SDL_SCANCODE_RIGHT] || this->currentKeyStates[SDL_SCANCODE_D];
 }
 
-bool ControlComponent::isShoot() const {
+bool ControlComponent::isShoot() {
     timeCounter += Time::deltaTime;
     if (timeCounter >= deltaTimeShooting) {
         if (this->currentKeyStates[SDL_SCANCODE_SPACE] || this->currentKeyStates[SDL_SCANCODE_M]) {
             timeCounter = 0;
+            this->isShooting = true;
             return true;
         }
     }
+    this->isShooting = false;
     return false;
 }
 

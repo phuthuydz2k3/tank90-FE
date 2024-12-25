@@ -19,6 +19,7 @@ public:
         static_assert(std::is_base_of_v<Component, T>, "T must be a component");
         if (this->components.find(typeid(T).name()) != this->components.end()) return;
         this->components[typeid(T).name()] = std::unique_ptr<Component>(std::make_unique<T>());
+        this->components[typeid(T).name()]->owner = this;
     }
 
     template<typename T>

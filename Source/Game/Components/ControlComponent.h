@@ -22,12 +22,13 @@ public:
 
     bool isRight() const;
 
-    bool isShoot() const;
+    bool isShoot();
 
     bool isSpeedup() const;
 
     float speed;
     float rotationSpeed;
+    bool isShooting = false;
 };
 
 

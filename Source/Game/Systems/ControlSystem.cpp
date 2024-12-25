@@ -8,6 +8,7 @@
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Common/Time.h"
 #include "Game/Components/ControlComponent.h"
+#include "Game/Components/RectangleCollider.h"
 #include "Game/Components/Transform.h"
 #include "Game/Entities/Bullet.h"
 #include "Game/Manager/SoundManager.h"
@@ -48,6 +49,7 @@ void ControlSystem::update() {
                     entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
                     ->getComponent<Sprite>()->size.magnitude() * 0.55f;
             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
+            bullet->getComponent<RectangleCollider>()->layer = Player;
         }
         Transform *transform = entity->getComponent<Transform>();
         if (move != 0) transform->position += transform->forward() * move * Time::deltaTime * control->speed;

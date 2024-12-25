@@ -12,10 +12,12 @@
 
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Components/NetworkTracking.h"
+#include "Game/Components/RectangleCollider.h"
 #include "Game/Components/Transform.h"
+#include "Game/Entities/Bullet.h"
 #include "Game/Entities/Tank.h"
+#include "Game/Manager/SoundManager.h"
 
-class Tank;
 boost::asio::io_context io_context3;
 
 void NetworkReceiverSystem::update() {
@@ -51,21 +53,47 @@ void NetworkReceiverSystem::update() {
 
         // Print received tank states
         auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkReceiver>();
-        for (const auto &tankState: receivedTankStates) {
+        for(const auto& entity: entities) {
             bool haveTank = false;
-            if (tankState.id == NetworkTracking::id) continue;
-            for (const auto &entity: entities) {
-                NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
-                std:: cout << networkReceiver->id << " "<< tankState.id << std::endl;
-                if (networkReceiver->id == tankState.id) {
+            for (const auto &tankState: receivedTankStates) {
+                if (tankState.id == NetworkTracking::id) continue;
+                if(tankState.id == entity->getComponent<NetworkReceiver>()->id) {
                     haveTank = true;
-                    std::cout << "Found tank with id: " << tankState.id << std::endl;
-                    entity->getComponent<Transform>()->position = VECTOR2(tankState.positionX, tankState.positionY);
-                    entity->getComponent<Transform>()->angle = tankState.angle;
                     break;
                 }
             }
-            std:: cout << entities.size() << std::endl;
+            if (!haveTank) {
+                EntityManager::getInstance()->removeEntity(entity->getId());
+            }
+        }
+        for (const auto &tankState: receivedTankStates) {
+            bool haveTank = false;
+            if (tankState.id == NetworkTracking::id) continue;
+            if (tankState.isShooting) {
+                std::cout << receivedTankStates.size() << std::endl;
+                for(int i = 0; i < receivedTankStates.size(); i++) {
+                    std::cout << "Tank " << receivedTankStates[i].id<< "  " << receivedTankStates[i].isShooting << std::endl;
+                }
+            }
+            for (const auto &entity: entities) {
+                NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
+                if (networkReceiver->id == tankState.id) {
+                    haveTank = true;
+                    entity->getComponent<Transform>()->position = VECTOR2(tankState.positionX, tankState.positionY);
+                    entity->getComponent<Transform>()->angle = tankState.angle;
+                    if (tankState.isShooting) {
+                        SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
+                        Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
+                        bullet->getComponent<Transform>()->position =
+                                entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
+                                ->getComponent<Sprite>()->size.magnitude() * 0.55f;
+                        bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
+                        bullet->getComponent<RectangleCollider>()->layer = Enemy;
+                    }
+
+                    break;
+                }
+            }
             if (!haveTank) {
                 Tank *tank = EntityManager::getInstance()->createEntity<Tank>();
                 tank->removeComponent<ControlComponent>();
@@ -74,9 +102,8 @@ void NetworkReceiverSystem::update() {
                 tank->getComponent<Transform>()->angle = tankState.angle;
                 tank->addComponent<NetworkReceiver>();
                 tank->getComponent<NetworkReceiver>()->id = tankState.id;
+                tank->getComponent<RectangleCollider>()->layer = Enemy;
             }
-            std::cout << "Received tank state: " << tankState.id << " " << tankState.positionX << " " << tankState.positionY
-                    << " " << tankState.angle << std::endl;
         }
     }
 }

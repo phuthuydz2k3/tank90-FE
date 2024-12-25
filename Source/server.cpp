@@ -57,9 +57,13 @@ void broadcastTankStates(boost::asio::ip::udp::socket& socket, boost::asio::ip::
         std::cerr << "Failed to send packet: " << error.message() << std::endl;
     } else {
         for (const auto& tankState : tankStates) {
-            std::cout << "Tank ID: " << tankState.id << std::endl;
-            std::cout << "Position: (" << tankState.positionX << ", " << tankState.positionY << ")" << std::endl;
-            std::cout << "Angle: " << tankState.angle << std::endl;
+            // std::cout << "Tank ID: " << tankState.id << std::endl;
+            // std::cout << "Position: (" << tankState.positionX << ", " << tankState.positionY << ")" << std::endl;
+            // std::cout << "Angle: " << tankState.angle << std::endl;
+            if(tankState.isShooting) {
+                std::cout << tankStates.size() << std::endl;
+                std::cout << "Tank " << tankState.id << " is shooting" << std::endl;
+            }
         }
     }
 }

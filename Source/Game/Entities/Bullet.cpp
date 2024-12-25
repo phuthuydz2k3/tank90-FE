@@ -9,9 +9,11 @@
 #include "Game/Components/DestroyCounter.h"
 #include "Game/Components/Effect.h"
 #include "Game/Components/RectangleCollider.h"
+#include "Game/Feature/BeDestroy.h"
 
 void onTriggerEnter(Entity *entity, Entity *other) {
-    if (other->getComponent<RectangleCollider>()->layer == Player) return;
+    if (other->getComponent<RectangleCollider>()->layer == entity->getComponent<RectangleCollider>()->layer) return;
+    if(other->hasComponent<BeDestroy>()) other->getComponent<BeDestroy>()->Destroy();
     CollideExplosion *collide_explosion = EntityManager::getInstance()->createEntity<CollideExplosion>();
     collide_explosion->getComponent<Transform>()->position = entity->getComponent<Transform>()->position;
     collide_explosion->getComponent<Effect>()->size = {25, 25};

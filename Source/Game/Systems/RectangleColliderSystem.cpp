@@ -9,6 +9,7 @@
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Components/Transform.h"
+#include "Game/Entities/Tank.h"
 
 VECTOR2 getCorner(RectangleCollider &collider, const int index, const float &angle, const VECTOR2 &center) {
     const float hw = collider.size.x / 2;
@@ -162,6 +163,7 @@ void RectangleColliderSystem::update() {
                               transform2->position)) {
                 if (collider1->onTriggerEnter != nullptr) collider1->onTriggerEnter(entity1, entity2);
                 if (collider2->onTriggerEnter != nullptr) collider2->onTriggerEnter(entity2, entity1);
+                if (dynamic_cast<Tank*>(entity1) != nullptr && dynamic_cast<Tank*>(entity2) != nullptr) return;
                 if (!collider1->isTrigger && !collider2->isTrigger) {
                     if (collider2->isStatic) {
                         handleStaticCollider(*collider1, *collider2, transform1->angle, transform2->angle,

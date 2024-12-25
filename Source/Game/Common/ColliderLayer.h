@@ -9,7 +9,6 @@
 enum ColliderLayer {
     Player = 0x0001,
     Enemy = 0x0002,
-    Bullet = 0x0004,
     Brick = 0x0008,
 };
 

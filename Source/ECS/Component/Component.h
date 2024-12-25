@@ -7,8 +7,9 @@
 
 class Component {
 public:
+    void* owner = nullptr;
     Component() = default;
-     virtual ~Component() = default;
+    virtual ~Component() = default;
 };
 
 #endif //COMPONENT_H

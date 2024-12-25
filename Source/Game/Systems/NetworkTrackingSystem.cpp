@@ -7,6 +7,7 @@
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Components/Transform.h"
 #include "Game/Common/Time.h"
+#include "Game/Components/ControlComponent.h"
 #include "Game/Components/NetworkReceiver.h"
 
 boost::asio::io_context io_context;
@@ -27,18 +28,15 @@ void NetworkTrackingSystem::init() {
     serverEndpoint = *resolver.resolve(query).begin();
 }
 
-void serializeTransform(const Transform* transform, TankStatePacket& packet, int tankId) {
-    packet.id = tankId;
+void serializePacket(TankStatePacket &packet, const Transform *transform, ControlComponent *controlComponent) {
+    packet.id = NetworkTracking::id;
     packet.positionX = transform->position.x;
     packet.positionY = transform->position.y;
     packet.angle = transform->angle;
+    packet.isShooting = controlComponent->isShooting;
 }
 
-void NetworkTrackingSystem::sendTankPosition(const Transform* transform) {
-    TankStatePacket packet;
-    int tankId = NetworkTracking::id;
-    serializeTransform(transform, packet, tankId);
-
+void NetworkTrackingSystem::sendTankPacket(const TankStatePacket &packet) {
     std::vector<char> buffer(sizeof(TankStatePacket));
     std::memcpy(buffer.data(), &packet, sizeof(TankStatePacket));
 
@@ -56,11 +54,14 @@ void NetworkTrackingSystem::update() {
     if (countTime < timeSend) return;
     countTime = 0;
     const auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkTracking>();
-    for (auto& entity : entities) {
-        Transform* transform = entity->getComponent<Transform>();
-        NetworkTracking* networkTracking = entity->getComponent<NetworkTracking>();
+    for (auto &entity: entities) {
+        TankStatePacket packet;
+        Transform *transform = entity->getComponent<Transform>();
+        NetworkTracking *networkTracking = entity->getComponent<NetworkTracking>();
+        ControlComponent *controlComponent = entity->getComponent<ControlComponent>();
+        serializePacket(packet, transform, controlComponent);
         if (networkTracking->typeTracking == 0) {
-            sendTankPosition(transform);
+            this->sendTankPacket(packet);
         }
     }
 }

@@ -21,13 +21,13 @@ void SystemManager::update() const {
 }
 
 void SystemManager::init() {
+    this->registerSystem<NetworkTrackingSystem>();
     this->registerSystem<ControlSystem>();
     this->registerSystem<FlySystem>();
     this->registerSystem<RectangleColliderSystem>();
     this->registerSystem<EffectSystem>();
-    this->registerSystem<SpriteSystem>();
-    this->registerSystem<NetworkTrackingSystem>();
     this->registerSystem<NetworkReceiverSystem>();
+    this->registerSystem<SpriteSystem>();
     for (const auto &system: this->systems) {
         system.second->init();
     }
