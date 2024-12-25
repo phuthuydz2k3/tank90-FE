@@ -10,6 +10,7 @@
 class NetworkTracking : public Component{
 public:
     int typeTracking;
+    static int id;
 };
 
 

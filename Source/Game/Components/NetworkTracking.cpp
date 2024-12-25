@@ -3,3 +3,4 @@
 //
 
 #include "NetworkTracking.h"
+int NetworkTracking::id = 0;

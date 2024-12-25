@@ -36,7 +36,7 @@ void serializeTransform(const Transform* transform, TankStatePacket& packet, int
 
 void NetworkTrackingSystem::sendTankPosition(const Transform* transform) {
     TankStatePacket packet;
-    int tankId = NetworkReceiver::id;
+    int tankId = NetworkTracking::id;
     serializeTransform(transform, packet, tankId);
 
     std::vector<char> buffer(sizeof(TankStatePacket));

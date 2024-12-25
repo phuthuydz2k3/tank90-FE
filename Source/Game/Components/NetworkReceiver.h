@@ -8,7 +8,7 @@ class NetworkReceiver : public Component {
 public:
     static boost::asio::ip::udp::socket clientSocket;
     static std::vector<char> recvBuffer;
-    static int id;
+    int id = 0;
 };
 
 #endif //NETWORKRECEIVER_H

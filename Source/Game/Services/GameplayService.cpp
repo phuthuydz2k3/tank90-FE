@@ -9,10 +9,16 @@
 #include <sstream>
 
 #include "ECS/Entity/EntityManager.h"
+#include "Game/Components/NetworkReceiver.h"
 #include "Game/Components/Transform.h"
 #include "Game/Entities/Brick.h"
 #include "Game/Entities/SpawnPoint.h"
+#include "Game/Entities/Tank.h"
 #include "Game/Entities/Tree.h"
+#include <filesystem>
+
+class NetworkTracking;
+class Tank;
 
 bool isDigit(const std::string &str) {
     return std::all_of(str.begin(), str.end(), ::isdigit);
