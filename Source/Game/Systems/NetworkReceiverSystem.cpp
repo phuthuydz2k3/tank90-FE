@@ -12,10 +12,12 @@
 
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Common/ActionStatePacket.h"
+#include "Game/Components/Effect.h"
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Components/Transform.h"
 #include "Game/Entities/Bullet.h"
+#include "Game/Entities/Smoke.h"
 #include "Game/Entities/Tank.h"
 #include "Game/Manager/SoundManager.h"
 #include "Game/Manager/UIManager.h"
@@ -134,6 +136,15 @@ void NetworkReceiverSystem::update() {
                                     forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
                             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
                             bullet->getComponent<RectangleCollider>()->layer = Enemy;
+
+                            Smoke *smoke = EntityManager::getInstance()->createEntity<Smoke>();
+                            smoke->getComponent<Transform>()->position = bullet->getComponent<Transform>()->position;
+                            smoke->getComponent<Effect>()->size = {25, 25};
+                            smoke->getComponent<Effect>()->timePerFrame = 0.1f;
+                            smoke->getComponent<Effect>()->loop = 1;
+                            smoke->getComponent<Effect>()->onEnd = [smoke] {
+                                EntityManager::getInstance()->removeEntity(smoke->getId());
+                            };
                         }
                     }
                 }

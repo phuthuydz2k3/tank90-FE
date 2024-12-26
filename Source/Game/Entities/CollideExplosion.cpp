@@ -12,8 +12,10 @@ CollideExplosion::CollideExplosion() {
     this->addComponent<Transform>();
     this->addComponent<Effect>();
     std::list<Frame> frames;
-    frames.push_back(Frame({LoadResourceManager::getInstance()->LoadTexture("../Data/Images/destroy_1.png"), nullptr}));
-    frames.push_back(Frame({LoadResourceManager::getInstance()->LoadTexture("../Data/Images/destroy_2.png"), nullptr}));
-    frames.push_back(Frame({LoadResourceManager::getInstance()->LoadTexture("../Data/Images/destroy_3.png"), nullptr}));
+    frames.push_back(Frame({LoadResourceManager::getInstance()->LoadTexture("../Data/Images/Explosion/explosion1.png"), nullptr}));
+    frames.push_back(Frame({LoadResourceManager::getInstance()->LoadTexture("../Data/Images/Explosion/explosion2.png"), nullptr}));
+    frames.push_back(Frame({LoadResourceManager::getInstance()->LoadTexture("../Data/Images/Explosion/explosion3.png"), nullptr}));
+    frames.push_back(Frame({LoadResourceManager::getInstance()->LoadTexture("../Data/Images/Explosion/explosion4.png"), nullptr}));
+    frames.push_back(Frame({LoadResourceManager::getInstance()->LoadTexture("../Data/Images/Explosion/explosion5.png"), nullptr}));
     this->getComponent<Effect>()->frames = frames;
 }

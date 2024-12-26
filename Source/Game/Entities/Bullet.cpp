@@ -6,7 +6,6 @@
 
 #include "CollideExplosion.h"
 #include "ECS/Entity/EntityManager.h"
-#include "Game/Components/DestroyCounter.h"
 #include "Game/Components/Effect.h"
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Feature/BeDestroy.h"
@@ -33,9 +32,8 @@ Bullet::Bullet() {
     this->addComponent<Sprite>();
     this->addComponent<FlyComponent>();
     this->addComponent<RectangleCollider>();
-    // this->addComponent<DestroyCounter>();
     Sprite *sprite = this->getComponent<Sprite>();
-    sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/bulletUp.png");
+    sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/bulletGreenSilver_outline.png");
     sprite->size = {5, 5};
     this->getComponent<Transform>()->angle = 0;
     this->getComponent<FlyComponent>()->speed = 200;

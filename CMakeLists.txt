@@ -115,6 +115,16 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/UIs/Text.h
         Source/Game/Systems/TextSystem.cpp
         Source/Game/Systems/TextSystem.h
+        Source/Game/Entities/GameObject.cpp
+        Source/Game/Entities/GameObject.h
+        Source/Game/Entities/Smoke.cpp
+        Source/Game/Entities/Smoke.h
+        Source/Game/Entities/Mouse.cpp
+        Source/Game/Entities/Mouse.h
+        Source/Game/Systems/CursorSystem.cpp
+        Source/Game/Systems/CursorSystem.h
+        Source/Game/Components/Cursor.cpp
+        Source/Game/Components/Cursor.h
 )
 add_executable(Server Source/Server.cpp
 )

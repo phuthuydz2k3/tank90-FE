@@ -73,3 +73,12 @@ VECTOR2 VECTOR2::normalize() const {
     float mag = magnitude();
     return VECTOR2(x / mag, y / mag);
 }
+
+VECTOR2 VECTOR2::rotate(float angle) const {
+    float radians = angle * M_PI / 180.0f;
+    float cosTheta = std::cos(radians);
+    float sinTheta = std::sin(radians);
+    float newX = x * cosTheta - y * sinTheta;
+    float newY = x * sinTheta + y * cosTheta;
+    return VECTOR2(newX, newY);
+}

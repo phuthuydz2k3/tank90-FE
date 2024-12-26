@@ -4,6 +4,8 @@
 
 #include "Tank.h"
 
+#include "GameObject.h"
+#include "ECS/Entity/EntityManager.h"
 #include "Game/Components/Effect.h"
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Components/RectangleCollider.h"
@@ -21,8 +23,7 @@ Tank::Tank() {
 
     this->getComponent<Transform>()->angle = 0;
     const auto sprite = this->getComponent<Sprite>();
-    sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/green_tank.png");
-    sprite->srcRect = new SDL_Rect{0, 0, 16, 16};
+    sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/tankGreen_outline.png");
     sprite->size = {30, 30};
     ControlComponent *control = this->getComponent<ControlComponent>();
     control->speed = 100;
@@ -40,5 +41,15 @@ Tank::Tank() {
     effect->onEnd = [this] {
         this->removeComponent<Effect>();
     };
+
+    GameObject *barrel = EntityManager::getInstance()->createEntity<GameObject>();
+    barrel->addComponent<Transform>();
+    barrel->addComponent<Sprite>();
+    barrel->getComponent<Transform>()->parent = this->getComponent<Transform>();
+    barrel->getComponent<Transform>()->localPosition = {0, -8};
+    barrel->getComponent<Transform>()->localAngle = 0;
+    barrel->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/barrelGreen_outline.png");
+    barrel->getComponent<Sprite>()->size = {30.0f/83.0f * 24, 30.0f/78.0f * 58};
+    barrel->getComponent<Sprite>()->layer = 2;
     this->getComponent<NetworkTracking>()->typeTracking = 0;
 }

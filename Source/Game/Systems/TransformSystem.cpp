@@ -13,7 +13,7 @@ void TransformSystem::update() {
     for (auto entity: entities) {
         auto transform = entity->getComponent<Transform>();
         if (transform->parent == nullptr) continue;
-        transform->position = transform->parent->position + transform->localPosition;
         transform->angle = transform->parent->angle + transform->localAngle;
+        transform->position = transform->parent->position + transform->localPosition.rotate(transform->parent->angle);
     }
 }

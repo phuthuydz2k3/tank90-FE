@@ -34,6 +34,7 @@ struct VECTOR2 {
     float magnitude() const;
 
     VECTOR2 normalize() const;
+    VECTOR2 rotate(float angle) const;
 };
 
 #endif // MATH_H

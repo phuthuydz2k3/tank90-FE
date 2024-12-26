@@ -19,6 +19,7 @@ public:
     Transform* parent;
 
     VECTOR2 forward() const;
+    VECTOR2 right() const;
 
     Transform();
 

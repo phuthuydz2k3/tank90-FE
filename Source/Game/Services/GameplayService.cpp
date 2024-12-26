@@ -19,6 +19,8 @@
 
 #include "Game/Common/ActionStatePacket.h"
 #include "Game/Components/NetworkTracking.h"
+#include "Game/Entities/GameObject.h"
+#include "Game/Entities/Mouse.h"
 
 #include "Game/Manager/UIManager.h"
 #include "Game/UIs/GameplayUI.h"
@@ -56,6 +58,29 @@ void LoadBorder() {
     }
 }
 
+void LoadEnvironment() {
+    std::string path;
+    int random = rand() % 2;
+    if (random == 0) {
+        path = "../Data/Images/dirt.png";
+    } else {
+        path = "../Data/Images/sand.png";
+    }
+    for (int i = 0; i < 16; i++) {
+        for (int j = 0; j < 16; j++) {
+            GameObject *environment = EntityManager::getInstance()->createEntity<GameObject>();
+            environment->addComponent<Transform>();
+            environment->addComponent<Sprite>();
+            environment->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                path);
+            environment->getComponent<Sprite>()->size = {50, 50};
+            environment->getComponent<Transform>()->position = VECTOR2(j * 50 + 25, i * 50 + 25);
+            environment->getComponent<Sprite>()->layer = -1;
+            environment->getComponent<Transform>()->angle = 0;
+        }
+    }
+}
+
 void GameplayService::LoadMap(int mapIndex) const {
     std::fstream fin;
     fin.open(this->dataPath, std::ios::in);
@@ -83,6 +108,7 @@ void GameplayService::LoadMap(int mapIndex) const {
             std::vector<int> treeIndexes = convertToNumbers(row[2]);
             std::vector<int> playerIndex = convertToNumbers(row[3]);
             LoadBorder();
+            LoadEnvironment();
             for (auto &index: brickIndexes) {
                 int row = index / 16;
                 int col = index % 16;
@@ -115,6 +141,7 @@ void GameplayService::WinGame() const {
 
 void GameplayService::EnterGame() const {
     UIManager::getInstance()->openUIUnit<GameplayUI>();
+    EntityManager::getInstance()->createEntity<Mouse>();
 }
 
 void GameplayService::PauseGame(bool isPause) const {

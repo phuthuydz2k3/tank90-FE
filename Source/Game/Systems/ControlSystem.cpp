@@ -14,11 +14,13 @@
 #include "Game/Common/ActionStatePacket.h"
 #include "Game/Common/Time.h"
 #include "Game/Components/ControlComponent.h"
+#include "Game/Components/Effect.h"
 #include "Game/Components/NetworkReceiver.h"
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Components/Transform.h"
 #include "Game/Entities/Bullet.h"
+#include "Game/Entities/Smoke.h"
 #include "Game/Manager/SoundManager.h"
 #include "Math/Vector2.h"
 
@@ -64,6 +66,17 @@ void ControlSystem::update() {
                     ->getComponent<Sprite>()->size.magnitude() * 0.55f;
             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
             bullet->getComponent<RectangleCollider>()->layer = Player;
+
+            Smoke *smoke = EntityManager::getInstance()->createEntity<Smoke>();
+            smoke->getComponent<Transform>()->position = bullet->getComponent<Transform>()->position;
+            smoke->getComponent<Effect>()->size = {25, 25};
+            smoke->getComponent<Effect>()->timePerFrame = 0.1f;
+            smoke->getComponent<Effect>()->loop = 1;
+            smoke->getComponent<Effect>()->onEnd = [smoke] {
+                EntityManager::getInstance()->removeEntity(smoke->getId());
+            };
+
+
             ActionStatePacket actionPacket;
             actionPacket.type = 2;
             actionPacket.id = NetworkTracking::id;
