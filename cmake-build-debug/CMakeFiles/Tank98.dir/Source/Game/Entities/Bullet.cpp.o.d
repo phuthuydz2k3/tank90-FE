@@ -342,4 +342,5 @@ CMakeFiles/Tank98.dir/Source/Game/Entities/Bullet.cpp.o: \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/RectangleCollider.h \
- /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/ColliderLayer.h
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/ColliderLayer.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Feature/BeDestroy.h

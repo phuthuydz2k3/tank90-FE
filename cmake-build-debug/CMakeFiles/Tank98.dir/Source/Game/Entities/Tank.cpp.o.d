@@ -333,5 +333,6 @@ CMakeFiles/Tank98.dir/Source/Game/Entities/Tank.cpp.o: \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkTracking.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/RectangleCollider.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/ColliderLayer.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Feature/BeDestroy.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Systems/RectangleColliderSystem.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/System.h

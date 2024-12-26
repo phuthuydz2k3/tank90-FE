@@ -43,6 +43,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Tank98.dir/Source/Game/Entities/Tree.cpp.o.d"
   "CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o"
   "CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.o.d"
+  "CMakeFiles/Tank98.dir/Source/Game/Feature/BeDestroy.cpp.o"
+  "CMakeFiles/Tank98.dir/Source/Game/Feature/BeDestroy.cpp.o.d"
   "CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o"
   "CMakeFiles/Tank98.dir/Source/Game/Manager/LoadResourceManager.cpp.o.d"
   "CMakeFiles/Tank98.dir/Source/Game/Manager/SoundManager.cpp.o"

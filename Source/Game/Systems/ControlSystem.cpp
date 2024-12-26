@@ -4,16 +4,29 @@
 
 #include "ControlSystem.h"
 
+#include <boost/asio/io_context.hpp>
+#include <boost/asio/write.hpp>
+#include <boost/asio/ip/network_v4.hpp>
+#include <boost/asio/ip/tcp.hpp>
+
 
 #include "ECS/Entity/EntityManager.h"
+#include "Game/Common/ActionStatePacket.h"
 #include "Game/Common/Time.h"
 #include "Game/Components/ControlComponent.h"
+#include "Game/Components/NetworkReceiver.h"
+#include "Game/Components/NetworkTracking.h"
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Components/Transform.h"
 #include "Game/Entities/Bullet.h"
 #include "Game/Manager/SoundManager.h"
 #include "Math/Vector2.h"
 
+boost::asio::io_context io_context4;
+
+void sendActionStatePacket(const ActionStatePacket& packet) {
+    boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(&packet, sizeof(ActionStatePacket)));
+}
 
 void ControlSystem::update() {
     System::update();
@@ -50,6 +63,10 @@ void ControlSystem::update() {
                     ->getComponent<Sprite>()->size.magnitude() * 0.55f;
             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
             bullet->getComponent<RectangleCollider>()->layer = Player;
+            ActionStatePacket actionPacket;
+            actionPacket.id = NetworkTracking::id;
+            actionPacket.isShooting = true;
+            sendActionStatePacket(actionPacket);
         }
         Transform *transform = entity->getComponent<Transform>();
         if (move != 0) transform->position += transform->forward() * move * Time::deltaTime * control->speed;

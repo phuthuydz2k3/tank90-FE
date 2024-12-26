@@ -10,7 +10,6 @@ struct TankStatePacket {
     float positionX;
     float positionY;
     float angle;
-    bool isShooting = false;
     bool isDie;
 };
 
