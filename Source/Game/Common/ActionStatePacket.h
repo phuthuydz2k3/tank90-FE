@@ -8,6 +8,7 @@
 struct ActionStatePacket {
     int id;
     bool isShooting = false;
+    bool isOut = false;
 };
 
 #endif //ACTIONSTATEPACKET_H

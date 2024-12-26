@@ -10,9 +10,10 @@
 class GameplayService {
 public:
     void LoadMap(int mapIndex) const;
-
+    void outGame() const;
     std::function<void()> onWinGame;
     std::function<void()> onLoseGame;
+
 
 private:
     std::string dataPath = "../Data/MapData/map.csv";

@@ -18,6 +18,20 @@ void printPacket(const TankStatePacket& packet) {
     std::cout << "Angle: " << packet.angle << std::endl;
 }
 
+void handleClientOutPacket(const ActionStatePacket& packet, boost::asio::ip::tcp::socket& tcpSocket) {
+    // Remove the client from tankStates
+    tankStates.erase(std::remove_if(tankStates.begin(), tankStates.end(), [&](const TankStatePacket& tankState) {
+        return tankState.id == packet.id;
+    }), tankStates.end());
+
+    // Remove the client from clientSockets
+    clientSockets.erase(std::remove_if(clientSockets.begin(), clientSockets.end(), [&](const boost::asio::ip::tcp::socket& socket) {
+     return socket.remote_endpoint() == tcpSocket.remote_endpoint();
+ }), clientSockets.end());
+
+    std::cout << "Client " << packet.id << " removed from the game." << std::endl;
+}
+
 void broadcastActionStatePacket(const ActionStatePacket& packet) {
     try {
     printf("Tank %d is shooting\n", packet.id);
@@ -47,7 +61,11 @@ void handleIncomingPackets(boost::asio::ip::tcp::socket& tcpSocket) {
 
             if (len == sizeof(ActionStatePacket)) {
                 // Broadcast the ActionStatePacket to all clients
+                if (actionPacket.isOut) {
+                    handleClientOutPacket(actionPacket, tcpSocket);
+                } else {
                 broadcastActionStatePacket(actionPacket);
+                }
             }
         }
     } catch (std::exception& e) {

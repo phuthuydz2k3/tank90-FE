@@ -17,6 +17,9 @@
 #include "Game/Entities/Tree.h"
 #include <filesystem>
 
+#include "Game/Common/ActionStatePacket.h"
+#include "Game/Components/NetworkTracking.h"
+
 class NetworkTracking;
 class Tank;
 
@@ -92,5 +95,21 @@ void GameplayService::LoadMap(int mapIndex) const {
             EntityManager::getInstance()->createEntity<SpawnPoint>()->getComponent<Transform>()->position = VECTOR2(
                 col * 50 + 25, row * 50 + 25);
         }
+    }
+}
+
+void GameplayService::outGame() const {
+    // Create a packet to notify the server
+    ActionStatePacket packet;
+    packet.id = NetworkTracking::id;
+    packet.isOut = true;
+
+    boost::system::error_code error;
+    boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(&packet, sizeof(ActionStatePacket)), error);
+
+    if (error) {
+        std::cerr << "Failed to send packet: " << error.message() << std::endl;
+    } else {
+        std::cout << "Notified server that client " << NetworkTracking::id << " is out of the game." << std::endl;
     }
 }
