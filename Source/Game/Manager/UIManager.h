@@ -16,6 +16,7 @@
 class UIManager : public SingletonTemplate<UIManager> {
 public:
     std::unordered_map<std::string, std::unique_ptr<UIUnit> > uiUnits;
+    std::string currentUIUnit;
 
     void Init();
 
@@ -31,7 +32,8 @@ public:
             if (typeid(T).name() == uiUnit.first) continue;
             uiUnit.second->Close();
         }
-        this->uiUnits[typeid(T).name()]->Init();
+        if (this->currentUIUnit != typeid(T).name()) this->uiUnits[typeid(T).name()]->Init();
+        this->currentUIUnit = typeid(T).name();
     }
 
     template<typename T>

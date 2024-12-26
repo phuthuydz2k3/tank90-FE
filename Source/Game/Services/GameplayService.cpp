@@ -105,18 +105,12 @@ void GameplayService::LoadMap(int mapIndex) const {
 
 void GameplayService::LoseGame() const {
     UIManager::getInstance()->openUIUnit<LoseUI>();
-    auto entities = EntityManager::getInstance()->getEntitiesWithComponent<ControlComponent>();
-    for (auto &entity: entities) {
-        entity->getComponent<ControlComponent>()->isPaused = true;
-    }
+    this->PauseGame(true);
 }
 
 void GameplayService::WinGame() const {
     UIManager::getInstance()->openUIUnit<WinUI>();
-    auto entities = EntityManager::getInstance()->getEntitiesWithComponent<ControlComponent>();
-    for (auto &entity: entities) {
-        entity->getComponent<ControlComponent>()->isPaused = true;
-    }
+    this->PauseGame(true);
 }
 
 void GameplayService::EnterGame() const {
@@ -133,6 +127,7 @@ void GameplayService::PauseGame(bool isPause) const {
 void GameplayService::outGame() const {
     // Create a packet to notify the server
     ActionStatePacket packet;
+    packet.type = 1;
     packet.id = NetworkTracking::id;
     packet.isOut = true;
 

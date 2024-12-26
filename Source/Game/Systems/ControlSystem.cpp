@@ -65,6 +65,7 @@ void ControlSystem::update() {
             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
             bullet->getComponent<RectangleCollider>()->layer = Player;
             ActionStatePacket actionPacket;
+            actionPacket.type = 2;
             actionPacket.id = NetworkTracking::id;
             actionPacket.isShooting = true;
             sendActionStatePacket(actionPacket);

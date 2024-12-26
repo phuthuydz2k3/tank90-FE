@@ -4,18 +4,40 @@
 
 #include "PauseUI.h"
 
+#include <boost/asio/write.hpp>
+#include <boost/system/error_code.hpp>
+
 #include "Button.h"
 #include "Clickable.h"
 #include "GameplayUI.h"
 #include "ECS/Entity/EntityManager.h"
+#include "Game/Common/ActionStatePacket.h"
+#include "Game/Components/NetworkReceiver.h"
+#include "Game/Components/NetworkTracking.h"
 #include "Game/Components/Sprite.h"
 #include "Game/Components/Transform.h"
 #include "Game/Manager/LoadResourceManager.h"
 #include "Game/Manager/UIManager.h"
 #include "Game/Services/GameplayService.h"
+void pause(bool isPause) {
 
+    ActionStatePacket packet;
+    packet.type = 3;
+    packet.id = NetworkTracking::id;
+    packet.isPause = isPause;
+
+    boost::system::error_code error;
+    boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(&packet, sizeof(ActionStatePacket)), error);
+
+    if (error) {
+        std::cerr << "Failed to send packet: " << error.message() << std::endl;
+    } else {
+        std::cout << "Notified server that client " << NetworkTracking::id << " is " << (isPause ? "paused" : "resumed") << std::endl;
+    }
+}
 void PauseUI::Init() {
     UIUnit::Init();
+    pause(true);
     Button *container = EntityManager::getInstance()->createEntity<Button>();
     idEntities.push_back(container->getId());
     container->removeComponent<Clickable>();
@@ -30,6 +52,7 @@ void PauseUI::Init() {
     button->getComponent<Clickable>()->onClick = []() {
         UIManager::getInstance()->openUIUnit<GameplayUI>();
         GameplayService().PauseGame(false);
+        pause(false);
     };
     Sprite *sprite1 = button->getComponent<Sprite>();
     sprite1->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/RecBtnOrange.png");

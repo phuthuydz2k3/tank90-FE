@@ -11,7 +11,6 @@ struct TankStatePacket {
     float positionY;
     float angle;
     bool isDie;
-    bool isPause;
 };
 
 #endif //PACKET_H

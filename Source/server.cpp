@@ -61,10 +61,10 @@ void handleIncomingPackets(boost::asio::ip::tcp::socket& tcpSocket) {
 
             if (len == sizeof(ActionStatePacket)) {
                 // Broadcast the ActionStatePacket to all clients
-                if (actionPacket.isOut) {
+                if (actionPacket.type == 1 && actionPacket.isOut) {
                     handleClientOutPacket(actionPacket, tcpSocket);
                 } else {
-                broadcastActionStatePacket(actionPacket);
+                    broadcastActionStatePacket(actionPacket);
                 }
             }
         }

@@ -111,19 +111,30 @@ void NetworkReceiverSystem::update() {
         }
 
         if (actionLen == sizeof(ActionStatePacket)) {
-            auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkReceiver>();
-
-            for (const auto &entity: entities) {
-                NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
-                if (networkReceiver->id == actionPacket.id) {
-                    if (actionPacket.isShooting) {
-                        // SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
-                        Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
-                        bullet->getComponent<Transform>()->position =
-                                entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->
-                                forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
-                        bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
-                        bullet->getComponent<RectangleCollider>()->layer = Enemy;
+            if (actionPacket.type == 3) {
+                if (actionPacket.isPause) {
+                    GameplayService().PauseGame(true);
+                    UIManager::getInstance()->openUIUnit<PauseUI>();
+                } else {
+                    GameplayService().PauseGame(false);
+                    UIManager::getInstance()->openUIUnit<GameplayUI>();
+                }
+                return;
+            }
+            if (actionPacket.type == 2) {
+                auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkReceiver>();
+                for (const auto &entity: entities) {
+                    NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
+                    if (networkReceiver->id == actionPacket.id) {
+                        if (actionPacket.isShooting) {
+                            // SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
+                            Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
+                            bullet->getComponent<Transform>()->position =
+                                    entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->
+                                    forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
+                            bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
+                            bullet->getComponent<RectangleCollider>()->layer = Enemy;
+                        }
                     }
                 }
             }
