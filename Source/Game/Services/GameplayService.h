@@ -10,10 +10,16 @@
 class GameplayService {
 public:
     void LoadMap(int mapIndex) const;
-    void outGame() const;
-    std::function<void()> onWinGame;
-    std::function<void()> onLoseGame;
 
+    void outGame() const;
+
+    void LoseGame() const;
+
+    void WinGame() const;
+
+    void EnterGame() const;
+
+    void PauseGame(bool isPause) const;
 
 private:
     std::string dataPath = "../Data/MapData/map.csv";

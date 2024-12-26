@@ -101,6 +101,12 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/UIs/UIUnit.cpp
         Source/Game/UIs/WinUI.cpp
         Source/Game/UIs/WinUI.h
+        Source/Game/UIs/LoseUI.cpp
+        Source/Game/UIs/LoseUI.h
+        Source/Game/UIs/PauseUI.cpp
+        Source/Game/UIs/PauseUI.h
+        Source/Game/UIs/GameplayUI.cpp
+        Source/Game/UIs/GameplayUI.h
 )
 add_executable(Server Source/Server.cpp
 )

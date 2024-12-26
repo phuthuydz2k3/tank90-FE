@@ -3,4 +3,4 @@
 //
 
 #include "Event.h"
-SDL_Event Event:: event;
+SDL_Event Event:: event = SDL_Event();

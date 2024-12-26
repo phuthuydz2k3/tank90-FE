@@ -20,6 +20,11 @@
 #include "Game/Common/ActionStatePacket.h"
 #include "Game/Components/NetworkTracking.h"
 
+#include "Game/Manager/UIManager.h"
+#include "Game/UIs/GameplayUI.h"
+#include "Game/UIs/LoseUI.h"
+#include "Game/UIs/WinUI.h"
+
 class NetworkTracking;
 class Tank;
 
@@ -95,6 +100,33 @@ void GameplayService::LoadMap(int mapIndex) const {
             EntityManager::getInstance()->createEntity<SpawnPoint>()->getComponent<Transform>()->position = VECTOR2(
                 col * 50 + 25, row * 50 + 25);
         }
+    }
+}
+
+void GameplayService::LoseGame() const {
+    UIManager::getInstance()->openUIUnit<LoseUI>();
+    auto entities = EntityManager::getInstance()->getEntitiesWithComponent<ControlComponent>();
+    for (auto &entity: entities) {
+        entity->getComponent<ControlComponent>()->isPaused = true;
+    }
+}
+
+void GameplayService::WinGame() const {
+    UIManager::getInstance()->openUIUnit<WinUI>();
+    auto entities = EntityManager::getInstance()->getEntitiesWithComponent<ControlComponent>();
+    for (auto &entity: entities) {
+        entity->getComponent<ControlComponent>()->isPaused = true;
+    }
+}
+
+void GameplayService::EnterGame() const {
+    UIManager::getInstance()->openUIUnit<GameplayUI>();
+}
+
+void GameplayService::PauseGame(bool isPause) const {
+    auto entities = EntityManager::getInstance()->getEntitiesWithComponent<ControlComponent>();
+    for (auto &entity: entities) {
+        entity->getComponent<ControlComponent>()->isPaused = isPause;
     }
 }
 

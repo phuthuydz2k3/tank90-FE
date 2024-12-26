@@ -24,7 +24,7 @@
 
 boost::asio::io_context io_context4;
 
-void sendActionStatePacket(const ActionStatePacket& packet) {
+void sendActionStatePacket(const ActionStatePacket &packet) {
     boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(&packet, sizeof(ActionStatePacket)));
 }
 
@@ -33,6 +33,7 @@ void ControlSystem::update() {
     auto entities = EntityManager::getInstance()->getEntitiesWithComponent<ControlComponent>();
     for (auto &entity: entities) {
         ControlComponent *control = entity->getComponent<ControlComponent>();
+        if (control->isPaused) return;
         control->currentKeyStates = SDL_GetKeyboardState(nullptr);
         int rotationMove = 0;
         int move = 0;

@@ -39,6 +39,7 @@ void Init() {
     SystemManager::getInstance()->init();
     UIManager::getInstance()->Init();
     GameplayService().LoadMap(1);
+    GameplayService().EnterGame();
 }
 
 void Update() {
@@ -65,7 +66,7 @@ int main(int argc, char *argv[]) {
         Update();
         SDL_Delay(16);
     }
-
+    GameplayService().outGame();
     LoadResourceManager::getInstance()->CleanUp();
     EntityManager::getInstance()->clearEntities();
 

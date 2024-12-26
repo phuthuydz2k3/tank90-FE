@@ -13,6 +13,7 @@
 class ControlComponent : public Component {
 public:
     const Uint8 *currentKeyStates = SDL_GetKeyboardState(NULL);
+    bool isPaused = false;
 
     bool isUp() const;
 

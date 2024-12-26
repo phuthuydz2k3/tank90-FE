@@ -35,6 +35,7 @@ void serializePacket(TankStatePacket &packet, const Transform *transform, Contro
     packet.positionY = transform->position.y;
     packet.angle = transform->angle;
     packet.isDie = beDestroy->isDestroyed;
+    packet.isPause = controlComponent->isPaused;
 }
 
 void NetworkTrackingSystem::sendTankPacket(const TankStatePacket &packet) {

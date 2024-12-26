@@ -3,8 +3,15 @@
 //
 
 #include "UIManager.h"
+
+#include "Game/UIs/GameplayUI.h"
+#include "Game/UIs/LoseUI.h"
+#include "Game/UIs/PauseUI.h"
 #include "Game/UIs/WinUI.h"
 
 void UIManager::Init() {
     this->addUIUnit<WinUI>();
+    this->addUIUnit<LoseUI>();
+    this->addUIUnit<PauseUI>();
+    this->addUIUnit<GameplayUI>();
 }
