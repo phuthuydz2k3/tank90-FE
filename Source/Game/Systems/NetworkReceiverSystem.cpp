@@ -25,6 +25,7 @@ void NetworkReceiverSystem::update()
 {
     System::update();
     NetworkReceiver::clientSocket.non_blocking(true);
+    NetworkReceiver::tcpSocket.non_blocking(true);
     while (true)
     {
         boost::system::error_code error;
@@ -120,10 +121,6 @@ void NetworkReceiverSystem::update()
             }
         }
     }
-}
-
-void handleActionStatePackets()
-{
     while (true)
     {
         ActionStatePacket actionPacket;
@@ -132,12 +129,12 @@ void handleActionStatePackets()
 
         if (error == boost::asio::error::eof)
         {
-            continue; // Connection closed cleanly by peer
+            break; // Connection closed cleanly by peer
         }
         else if (error)
         {
             std::cerr << "Receive failed: " << error.message() << std::endl;
-            continue;
+            break;
         }
 
         if (actionLen == sizeof(ActionStatePacket))
@@ -160,6 +157,7 @@ void handleActionStatePackets()
                         bullet->getComponent<Transform>()->position =
                             entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
                         bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
+                        std::cout << bullet->getComponent<Transform>()->position.x << " " << bullet->getComponent<Transform>()->position.y << std::endl;
                         bullet->getComponent<RectangleCollider>()->layer = Enemy;
                     }
                 }
@@ -193,5 +191,5 @@ void NetworkReceiverSystem::init()
     std::cout << "Received unique ID: " << NetworkTracking::id << std::endl;
 
     // Start a new thread to handle ActionStatePacket
-    std::thread(handleActionStatePackets).detach();
+    // std::thread(handleActionStatePackets).detach();
 }
