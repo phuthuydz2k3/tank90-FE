@@ -7,8 +7,10 @@
 #include <iostream>
 #include "ECS/Entity/EntityManager.h"
 #include "ECS/System/SystemManager.h"
+#include "Game/Common/Event.h"
 #include "Game/Manager/LoadResourceManager.h"
 #include "Game/Common/Time.h"
+#include "Game/Manager/UIManager.h"
 #include "Game/Services/GameplayService.h"
 #include "Game/Systems/NetworkTrackingSystem.h"
 
@@ -35,6 +37,7 @@ void Init() {
     }
     LoadResourceManager::getInstance()->InitWindow();
     SystemManager::getInstance()->init();
+    UIManager::getInstance()->Init();
     GameplayService().LoadMap(1);
 }
 
@@ -49,14 +52,13 @@ void Update() {
 int main(int argc, char *argv[]) {
     Init();
     bool running = true;
-    SDL_Event event;
     Uint32 lastTime = SDL_GetTicks();
     while (running) {
         Uint32 currentTime = SDL_GetTicks();
         Time::deltaTime = (currentTime - lastTime) / 1000.0f;
         lastTime = currentTime;
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
+        while (SDL_PollEvent(&Event::event)) {
+            if (Event::event.type == SDL_QUIT) {
                 running = false;
             }
         }

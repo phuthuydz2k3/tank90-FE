@@ -10,12 +10,17 @@
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Components/ControlComponent.h"
 #include "Game/Components/RectangleCollider.h"
+#include "Game/Manager/UIManager.h"
+#include "Game/UIs/WinUI.h"
 
 void BeDestroy::Destroy() {
     if (static_cast<Entity *>(this->owner)->hasComponent<ControlComponent>()) std::cout << "Game Over" << std::endl;
     if (static_cast<Entity *>(this->owner)->getComponent<RectangleCollider>()->layer == Enemy) {
         auto entities = EntityManager::getInstance()->getEntitiesWithComponent<BeDestroy>();
-        if (entities.size() == 2) std::cout << "You Win" << std::endl;
+        if (entities.size() == 2) {
+            std::cout << "You Win" << std::endl;
+            UIManager::getInstance()->openUIUnit<WinUI>();
+        }
     }
     EntityManager::getInstance()->removeEntity(static_cast<Entity *>(this->owner)->getId());
 }

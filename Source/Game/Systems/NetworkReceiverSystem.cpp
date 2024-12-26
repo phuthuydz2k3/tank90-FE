@@ -55,7 +55,7 @@ void NetworkReceiverSystem::update() {
         for (const auto &tankState: receivedTankStates) {
             bool haveTank = false;
             if (tankState.id == NetworkTracking::id) continue;
-            if(tankState.isDie) continue;
+            if (tankState.isDie) continue;
             for (const auto &entity: entities) {
                 NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
                 if (networkReceiver->id == tankState.id) {

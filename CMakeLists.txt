@@ -86,6 +86,20 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Systems/NetworkReceiverSystem.h
         Source/Game/Feature/BeDestroy.cpp
         Source/Game/Feature/BeDestroy.h
+        Source/Game/Common/Event.cpp
+        Source/Game/Common/Event.h
+        Source/Game/Systems/ClickableSystem.cpp
+        Source/Game/Systems/ClickableSystem.h
+        Source/Game/Manager/UIManager.cpp
+        Source/Game/Manager/UIManager.h
+        Source/Game/UIs/Button.cpp
+        Source/Game/UIs/Button.h
+        Source/Game/UIs/Clickable.h
+        Source/Game/UIs/Clickable.cpp
+        Source/Game/UIs/UIUnit.h
+        Source/Game/UIs/UIUnit.cpp
+        Source/Game/UIs/WinUI.cpp
+        Source/Game/UIs/WinUI.h
 )
 add_executable(Server Source/Server.cpp
 )
