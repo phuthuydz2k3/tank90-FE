@@ -21,46 +21,58 @@
 
 boost::asio::io_context io_context3;
 
-void NetworkReceiverSystem::update() {
+void NetworkReceiverSystem::update()
+{
     System::update();
     NetworkReceiver::clientSocket.non_blocking(true);
-    while (true) {
+    while (true)
+    {
         boost::system::error_code error;
         size_t len = NetworkReceiver::clientSocket.receive(boost::asio::buffer(NetworkReceiver::recvBuffer), 0, error);
 
-        if (error && error != boost::asio::error::message_size) {
-            if (error == boost::asio::error::would_block || error == boost::asio::error::try_again) {
+        if (error && error != boost::asio::error::message_size)
+        {
+            if (error == boost::asio::error::would_block || error == boost::asio::error::try_again)
+            {
                 // No data received, break the loop
                 break;
-            } else {
+            }
+            else
+            {
                 std::cerr << "Receive failed: " << error.message() << std::endl;
                 break;
             }
         }
 
-        if (len % sizeof(TankStatePacket) != 0) {
+        if (len % sizeof(TankStatePacket) != 0)
+        {
             std::cerr << "Received packet size mismatch" << std::endl;
             break;
         }
 
         std::vector<TankStatePacket> receivedTankStates;
         int numPackets = len / sizeof(TankStatePacket);
-        for (int i = 0; i < numPackets; ++i) {
+        for (int i = 0; i < numPackets; ++i)
+        {
             TankStatePacket receivedPacket;
             std::memcpy(&receivedPacket, NetworkReceiver::recvBuffer.data() + i * sizeof(TankStatePacket),
                         sizeof(TankStatePacket));
             receivedTankStates.push_back(receivedPacket);
         }
 
-        // Print received tank states
         auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkReceiver>();
-        for (const auto &tankState: receivedTankStates) {
+        for (const auto &tankState : receivedTankStates)
+        {
             bool haveTank = false;
-            if (tankState.id == NetworkTracking::id) continue;
-            if (tankState.isDie) continue;
-            for (const auto &entity: entities) {
+            if (tankState.id == NetworkTracking::id)
+                continue;
+            if (tankState.isDie)
+                continue;
+            for (const auto &entity : entities)
+            {
                 NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
-                if (networkReceiver->id == tankState.id) {
+                if (networkReceiver->id == tankState.id)
+                {
                     haveTank = true;
                     entity->getComponent<Transform>()->position = VECTOR2(tankState.positionX, tankState.positionY);
                     entity->getComponent<Transform>()->angle = tankState.angle;
@@ -77,7 +89,8 @@ void NetworkReceiverSystem::update() {
                     break;
                 }
             }
-            if (!haveTank && !tankState.isDie) {
+            if (!haveTank && !tankState.isDie)
+            {
                 Tank *tank = EntityManager::getInstance()->createEntity<Tank>();
                 tank->removeComponent<ControlComponent>();
                 tank->removeComponent<NetworkTracking>();
@@ -88,51 +101,64 @@ void NetworkReceiverSystem::update() {
                 tank->getComponent<RectangleCollider>()->layer = Enemy;
             }
         }
-        for(const auto& entity: entities) {
+        for (const auto &entity : entities)
+        {
             bool haveTank = false;
-            for (const auto &tankState: receivedTankStates) {
-                if (tankState.id == NetworkTracking::id) continue;
-                if(tankState.id == entity->getComponent<NetworkReceiver>()->id && !tankState.isDie) {
+            for (const auto &tankState : receivedTankStates)
+            {
+                if (tankState.id == NetworkTracking::id)
+                    continue;
+                if (tankState.id == entity->getComponent<NetworkReceiver>()->id && !tankState.isDie)
+                {
                     haveTank = true;
                     break;
                 }
             }
-            if (!haveTank) {
+            if (!haveTank)
+            {
                 EntityManager::getInstance()->removeEntity(entity->getId());
             }
         }
     }
 }
 
-void handleActionStatePackets() {
-    while (true) {
+void handleActionStatePackets()
+{
+    while (true)
+    {
         ActionStatePacket actionPacket;
         boost::system::error_code error;
         size_t actionLen = NetworkReceiver::tcpSocket.read_some(boost::asio::buffer(&actionPacket, sizeof(ActionStatePacket)), error);
 
-        if (error == boost::asio::error::eof) {
+        if (error == boost::asio::error::eof)
+        {
             continue; // Connection closed cleanly by peer
-        } else if (error) {
+        }
+        else if (error)
+        {
             std::cerr << "Receive failed: " << error.message() << std::endl;
             continue;
         }
 
-        if (actionLen == sizeof(ActionStatePacket)) {
+        if (actionLen == sizeof(ActionStatePacket))
+        {
             std::cout << actionPacket.isShooting << std::endl;
             std::cout << NetworkTracking::id << std::endl;
 
             auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkReceiver>();
             std::cout << entities.size() << std::endl;
 
-            for (const auto &entity: entities) {
+            for (const auto &entity : entities)
+            {
                 NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
-                if (networkReceiver->id == actionPacket.id) {
-                    if (actionPacket.isShooting) {
+                if (networkReceiver->id == actionPacket.id)
+                {
+                    if (actionPacket.isShooting)
+                    {
                         // SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
                         Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
                         bullet->getComponent<Transform>()->position =
-                                entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
-                                ->getComponent<Sprite>()->size.magnitude() * 0.55f;
+                            entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
                         bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
                         bullet->getComponent<RectangleCollider>()->layer = Enemy;
                     }
@@ -142,7 +168,8 @@ void handleActionStatePackets() {
     }
 }
 
-void NetworkReceiverSystem::init() {
+void NetworkReceiverSystem::init()
+{
     System::init();
 
     // Open UDP socket

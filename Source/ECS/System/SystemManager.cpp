@@ -6,6 +6,7 @@
 
 #include <Game/Systems/NetworkTrackingSystem.h>
 
+#include "Game/Systems/ClickableSystem.h"
 #include "Game/Systems/ControlSystem.h"
 #include "Game/Systems/EffectSystem.h"
 #include "Game/Systems/FlySystem.h"
@@ -21,8 +22,9 @@ void SystemManager::update() const {
 }
 
 void SystemManager::init() {
-    this->registerSystem<NetworkReceiverSystem>();
     this->registerSystem<NetworkTrackingSystem>();
+    this->registerSystem<ClickableSystem>();
+    this->registerSystem<NetworkReceiverSystem>();
     this->registerSystem<ControlSystem>();
     this->registerSystem<FlySystem>();
     this->registerSystem<RectangleColliderSystem>();

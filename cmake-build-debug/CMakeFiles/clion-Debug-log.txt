@@ -2,5 +2,17 @@
 -- Could NOT find SDL_net (missing: SDL_NET_LIBRARIES SDL_NET_INCLUDE_DIRS) 
 -- Checking for one of the modules 'SDL2_net'
 -- Configuring done
--- Generating done
--- Build files have been written to: /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug
+CMake Error at CMakeLists.txt:15 (add_executable):
+  Cannot find source file:
+
+    <<<<<<<
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+
+
+CMake Error at CMakeLists.txt:15 (add_executable):
+  No SOURCES given to target: Tank98
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
