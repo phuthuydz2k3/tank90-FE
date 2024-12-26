@@ -51,30 +51,11 @@ void NetworkReceiverSystem::update() {
             receivedTankStates.push_back(receivedPacket);
         }
 
-        // Print received tank states
         auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkReceiver>();
-        for(const auto& entity: entities) {
-            bool haveTank = false;
-            for (const auto &tankState: receivedTankStates) {
-                if (tankState.id == NetworkTracking::id) continue;
-                if(tankState.id == entity->getComponent<NetworkReceiver>()->id) {
-                    haveTank = true;
-                    break;
-                }
-            }
-            if (!haveTank) {
-                EntityManager::getInstance()->removeEntity(entity->getId());
-            }
-        }
         for (const auto &tankState: receivedTankStates) {
             bool haveTank = false;
             if (tankState.id == NetworkTracking::id) continue;
-            if (tankState.isShooting) {
-                std::cout << receivedTankStates.size() << std::endl;
-                for(int i = 0; i < receivedTankStates.size(); i++) {
-                    std::cout << "Tank " << receivedTankStates[i].id<< "  " << receivedTankStates[i].isShooting << std::endl;
-                }
-            }
+            if(tankState.isDie) continue;
             for (const auto &entity: entities) {
                 NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
                 if (networkReceiver->id == tankState.id) {
@@ -82,7 +63,7 @@ void NetworkReceiverSystem::update() {
                     entity->getComponent<Transform>()->position = VECTOR2(tankState.positionX, tankState.positionY);
                     entity->getComponent<Transform>()->angle = tankState.angle;
                     if (tankState.isShooting) {
-                        SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
+                        // SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
                         Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
                         bullet->getComponent<Transform>()->position =
                                 entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
@@ -90,7 +71,6 @@ void NetworkReceiverSystem::update() {
                         bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
                         bullet->getComponent<RectangleCollider>()->layer = Enemy;
                     }
-
                     break;
                 }
             }
@@ -103,6 +83,20 @@ void NetworkReceiverSystem::update() {
                 tank->addComponent<NetworkReceiver>();
                 tank->getComponent<NetworkReceiver>()->id = tankState.id;
                 tank->getComponent<RectangleCollider>()->layer = Enemy;
+            }
+        }
+
+        for(const auto& entity: entities) {
+            bool haveTank = false;
+            for (const auto &tankState: receivedTankStates) {
+                if (tankState.id == NetworkTracking::id) continue;
+                if(tankState.id == entity->getComponent<NetworkReceiver>()->id && !tankState.isDie) {
+                    haveTank = true;
+                    break;
+                }
+            }
+            if (!haveTank) {
+                EntityManager::getInstance()->removeEntity(entity->getId());
             }
         }
     }

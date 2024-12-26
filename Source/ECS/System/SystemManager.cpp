@@ -21,8 +21,8 @@ void SystemManager::update() const {
 }
 
 void SystemManager::init() {
-    this->registerSystem<NetworkReceiverSystem>();
     this->registerSystem<NetworkTrackingSystem>();
+    this->registerSystem<NetworkReceiverSystem>();
     this->registerSystem<ControlSystem>();
     this->registerSystem<FlySystem>();
     this->registerSystem<RectangleColliderSystem>();
