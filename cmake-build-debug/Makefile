@@ -670,6 +670,30 @@ Source/Game/Entities/Wall.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Entities/Wall.cpp.s
 .PHONY : Source/Game/Entities/Wall.cpp.s
 
+Source/Game/Feature/BeDestroy.o: Source/Game/Feature/BeDestroy.cpp.o
+.PHONY : Source/Game/Feature/BeDestroy.o
+
+# target to build an object file
+Source/Game/Feature/BeDestroy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Feature/BeDestroy.cpp.o
+.PHONY : Source/Game/Feature/BeDestroy.cpp.o
+
+Source/Game/Feature/BeDestroy.i: Source/Game/Feature/BeDestroy.cpp.i
+.PHONY : Source/Game/Feature/BeDestroy.i
+
+# target to preprocess a source file
+Source/Game/Feature/BeDestroy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Feature/BeDestroy.cpp.i
+.PHONY : Source/Game/Feature/BeDestroy.cpp.i
+
+Source/Game/Feature/BeDestroy.s: Source/Game/Feature/BeDestroy.cpp.s
+.PHONY : Source/Game/Feature/BeDestroy.s
+
+# target to generate assembly for a file
+Source/Game/Feature/BeDestroy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tank98.dir/build.make CMakeFiles/Tank98.dir/Source/Game/Feature/BeDestroy.cpp.s
+.PHONY : Source/Game/Feature/BeDestroy.cpp.s
+
 Source/Game/Manager/LoadResourceManager.o: Source/Game/Manager/LoadResourceManager.cpp.o
 .PHONY : Source/Game/Manager/LoadResourceManager.o
 
@@ -1082,6 +1106,9 @@ help:
 	@echo "... Source/Game/Entities/Wall.o"
 	@echo "... Source/Game/Entities/Wall.i"
 	@echo "... Source/Game/Entities/Wall.s"
+	@echo "... Source/Game/Feature/BeDestroy.o"
+	@echo "... Source/Game/Feature/BeDestroy.i"
+	@echo "... Source/Game/Feature/BeDestroy.s"
 	@echo "... Source/Game/Manager/LoadResourceManager.o"
 	@echo "... Source/Game/Manager/LoadResourceManager.i"
 	@echo "... Source/Game/Manager/LoadResourceManager.s"

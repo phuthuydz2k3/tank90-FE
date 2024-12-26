@@ -1114,6 +1114,7 @@ CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o: \
  /usr/include/boost/asio/write_at.hpp \
  /usr/include/boost/asio/impl/write_at.hpp \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/System/System.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/TankStatePacket.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/Transform.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Component/Component.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Math/Vector2.h \
@@ -1129,7 +1130,20 @@ CMakeFiles/Tank98.dir/Source/Game/Systems/NetworkTrackingSystem.cpp.o: \
  /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
  /usr/include/c++/11/bits/stl_numeric.h \
  /usr/include/c++/11/pstl/glue_numeric_defs.h \
- /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/TankStatePacket.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkTracking.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/Time.h \
- /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkReceiver.h
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/ControlComponent.h \
+ /usr/include/SDL2/SDL_keyboard.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h \
+ /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/c++/11/stdlib.h \
+ /usr/include/inttypes.h /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+ /usr/include/SDL2/SDL_error.h /usr/include/SDL2/SDL_keycode.h \
+ /usr/include/SDL2/SDL_scancode.h /usr/include/SDL2/SDL_video.h \
+ /usr/include/SDL2/SDL_pixels.h /usr/include/SDL2/SDL_endian.h \
+ /usr/include/SDL2/SDL_rect.h /usr/include/SDL2/SDL_rwops.h \
+ /usr/include/SDL2/SDL_surface.h /usr/include/SDL2/SDL_blendmode.h \
+ /usr/include/SDL2/SDL_stdinc.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Components/NetworkReceiver.h \
+ /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Feature/BeDestroy.h

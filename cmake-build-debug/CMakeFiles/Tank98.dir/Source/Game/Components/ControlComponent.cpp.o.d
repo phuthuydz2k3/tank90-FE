@@ -115,9 +115,4 @@ CMakeFiles/Tank98.dir/Source/Game/Components/ControlComponent.cpp.o: \
  /usr/include/SDL2/SDL_surface.h /usr/include/SDL2/SDL_blendmode.h \
  /usr/include/SDL2/SDL_stdinc.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/ECS/Component/Component.h \
- /usr/include/c++/11/ctime /usr/include/time.h \
- /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/timex.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
  /mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/Source/Game/Common/Time.h
