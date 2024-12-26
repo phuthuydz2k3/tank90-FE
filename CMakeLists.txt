@@ -86,6 +86,7 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Systems/NetworkReceiverSystem.h
         Source/Game/Feature/BeDestroy.cpp
         Source/Game/Feature/BeDestroy.h
+        Source/Game/Common/ActionStatePacket.h
 )
 add_executable(Server Source/Server.cpp
 )

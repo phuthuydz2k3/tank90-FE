@@ -11,6 +11,7 @@
 #include <cstring>
 
 #include "ECS/Entity/EntityManager.h"
+#include "Game/Common/ActionStatePacket.h"
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Components/Transform.h"
@@ -69,27 +70,27 @@ void NetworkReceiverSystem::update() {
         for (const auto &tankState: receivedTankStates) {
             bool haveTank = false;
             if (tankState.id == NetworkTracking::id) continue;
-            if (tankState.isShooting) {
-                std::cout << receivedTankStates.size() << std::endl;
-                for(int i = 0; i < receivedTankStates.size(); i++) {
-                    std::cout << "Tank " << receivedTankStates[i].id<< "  " << receivedTankStates[i].isShooting << std::endl;
-                }
-            }
+            // if (tankState.isShooting) {
+            //     std::cout << receivedTankStates.size() << std::endl;
+            //     for(int i = 0; i < receivedTankStates.size(); i++) {
+            //         std::cout << "Tank " << receivedTankStates[i].id<< "  " << receivedTankStates[i].isShooting << std::endl;
+            //     }
+            // }
             for (const auto &entity: entities) {
                 NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
                 if (networkReceiver->id == tankState.id) {
                     haveTank = true;
                     entity->getComponent<Transform>()->position = VECTOR2(tankState.positionX, tankState.positionY);
                     entity->getComponent<Transform>()->angle = tankState.angle;
-                    if (tankState.isShooting) {
-                        SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
-                        Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
-                        bullet->getComponent<Transform>()->position =
-                                entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
-                                ->getComponent<Sprite>()->size.magnitude() * 0.55f;
-                        bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
-                        bullet->getComponent<RectangleCollider>()->layer = Enemy;
-                    }
+                    // if (tankState.isShooting) {
+                    //     SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
+                    //     Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
+                    //     bullet->getComponent<Transform>()->position =
+                    //             entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
+                    //             ->getComponent<Sprite>()->size.magnitude() * 0.55f;
+                    //     bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
+                    //     bullet->getComponent<RectangleCollider>()->layer = Enemy;
+                    // }
 
                     break;
                 }
@@ -103,6 +104,44 @@ void NetworkReceiverSystem::update() {
                 tank->addComponent<NetworkReceiver>();
                 tank->getComponent<NetworkReceiver>()->id = tankState.id;
                 tank->getComponent<RectangleCollider>()->layer = Enemy;
+            }
+        }
+    }
+}
+
+void handleActionStatePackets() {
+    while (true) {
+        ActionStatePacket actionPacket;
+        boost::system::error_code error;
+        size_t actionLen = NetworkReceiver::tcpSocket.read_some(boost::asio::buffer(&actionPacket, sizeof(ActionStatePacket)), error);
+
+        if (error == boost::asio::error::eof) {
+            continue; // Connection closed cleanly by peer
+        } else if (error) {
+            std::cerr << "Receive failed: " << error.message() << std::endl;
+            continue;
+        }
+
+        if (actionLen == sizeof(ActionStatePacket)) {
+            std::cout << actionPacket.isShooting << std::endl;
+            std::cout << NetworkTracking::id << std::endl;
+
+            auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkReceiver>();
+            std::cout << entities.size() << std::endl;
+
+            for (const auto &entity: entities) {
+                NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
+                if (networkReceiver->id == actionPacket.id) {
+                    if (actionPacket.isShooting) {
+                        // SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
+                        Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
+                        bullet->getComponent<Transform>()->position =
+                                entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
+                                ->getComponent<Sprite>()->size.magnitude() * 0.55f;
+                        bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
+                        bullet->getComponent<RectangleCollider>()->layer = Enemy;
+                    }
+                }
             }
         }
     }
@@ -122,13 +161,15 @@ void NetworkReceiverSystem::init() {
     NetworkReceiver::clientSocket.bind(localEndpoint);
 
     // Connect to server using TCP to get unique ID
-    boost::asio::ip::tcp::socket tcpSocket(io_context3);
-    tcpSocket.connect(boost::asio::ip::tcp::endpoint(boost::asio::ip::address::from_string("127.0.0.1"), 8081));
+    NetworkReceiver::tcpSocket.connect(boost::asio::ip::tcp::endpoint(boost::asio::ip::address::from_string("127.0.0.1"), 8081));
 
     // Receive unique ID from server
     int uniqueId;
-    boost::asio::read(tcpSocket, boost::asio::buffer(&uniqueId, sizeof(uniqueId)));
+    boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(&uniqueId, sizeof(uniqueId)));
     NetworkTracking::id = uniqueId;
 
     std::cout << "Received unique ID: " << NetworkTracking::id << std::endl;
+
+    // Start a new thread to handle ActionStatePacket
+    std::thread(handleActionStatePackets).detach();
 }
