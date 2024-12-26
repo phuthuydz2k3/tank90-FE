@@ -13,7 +13,10 @@ class Transform : public Component {
 public:
     VECTOR2 position;
     VECTOR2 scale;
+    VECTOR2 localPosition;
     float angle;
+    float localAngle;
+    Transform* parent;
 
     VECTOR2 forward() const;
 

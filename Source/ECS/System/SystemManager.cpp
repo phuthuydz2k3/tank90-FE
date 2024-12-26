@@ -13,6 +13,8 @@
 #include "Game/Systems/NetworkReceiverSystem.h"
 #include "Game/Systems/RectangleColliderSystem.h"
 #include "Game/Systems/SpriteSystem.h"
+#include "Game/Systems/TextSystem.h"
+#include "Game/Systems/TransformSystem.h"
 
 
 void SystemManager::update() const {
@@ -22,13 +24,15 @@ void SystemManager::update() const {
 }
 
 void SystemManager::init() {
-    this->registerSystem<NetworkTrackingSystem>();
+    this->registerSystem<TransformSystem>();
     this->registerSystem<ClickableSystem>();
+    this->registerSystem<NetworkTrackingSystem>();
     this->registerSystem<NetworkReceiverSystem>();
     this->registerSystem<ControlSystem>();
     this->registerSystem<FlySystem>();
     this->registerSystem<RectangleColliderSystem>();
     this->registerSystem<EffectSystem>();
+    this->registerSystem<TextSystem>();
     this->registerSystem<SpriteSystem>();
     for (const auto &system: this->systems) {
         system.second->init();

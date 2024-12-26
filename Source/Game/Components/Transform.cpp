@@ -13,10 +13,12 @@ VECTOR2 Transform::forward() const {
 Transform::Transform() {
     this->position = VECTOR2(0, 0);
     this->scale = VECTOR2(1, 1);
+    this->parent = nullptr;
 }
 
 Transform::Transform(VECTOR2 position, VECTOR2 scale, float angle) {
     this->position = position;
     this->scale = scale;
     this->angle = angle;
+    this->parent = nullptr;
 }

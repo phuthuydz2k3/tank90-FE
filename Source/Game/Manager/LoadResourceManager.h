@@ -10,6 +10,7 @@
 #include <iostream>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
+#include <SDL_ttf.h>
 #include <unordered_map>
 #include <SDL2/SDL_mixer.h>
 
@@ -19,6 +20,8 @@ public:
     SDL_Texture *LoadTexture(const std::string &);
 
     Mix_Chunk *LoadSound(const std::string &);
+
+    TTF_Font *LoadFont(const std::string &path, int size);
 
     void InitWindow();
 
@@ -33,6 +36,7 @@ private:
     SDL_Window *window;
     std::unordered_map<std::string, SDL_Texture *> cacheTexture;
     std::unordered_map<std::string, Mix_Chunk *> cacheSound;
+    std::unordered_map<std::string, TTF_Font *> cacheFont;
 };
 
 

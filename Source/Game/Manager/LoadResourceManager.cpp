@@ -36,6 +36,21 @@ Mix_Chunk *LoadResourceManager::LoadSound(const std::string &path) {
     return sound;
 }
 
+TTF_Font * LoadResourceManager::LoadFont(const std::string &path, int size) {
+    if (this->cacheFont.find(path) != this->cacheFont.end()) {
+        return this->cacheFont.at(path);
+    }
+    TTF_Font *font = TTF_OpenFont(path.c_str(), size);
+    if (!font) {
+        TTF_CloseFont(font);
+        TTF_Quit();
+        std::cerr << "Path is not correct" << TTF_GetError() << std::endl;
+        return nullptr;
+    }
+    this->cacheFont[path] = font;
+    return font;
+}
+
 void LoadResourceManager::InitWindow() {
     this->window = SDL_CreateWindow("Tank Game",
                                     SDL_WINDOWPOS_CENTERED,

@@ -107,6 +107,14 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/UIs/PauseUI.h
         Source/Game/UIs/GameplayUI.cpp
         Source/Game/UIs/GameplayUI.h
+        Source/Game/Systems/TransformSystem.cpp
+        Source/Game/Systems/TransformSystem.h
+        Source/Game/UIs/Image.cpp
+        Source/Game/UIs/Image.h
+        Source/Game/UIs/Text.cpp
+        Source/Game/UIs/Text.h
+        Source/Game/Systems/TextSystem.cpp
+        Source/Game/Systems/TextSystem.h
 )
 add_executable(Server Source/Server.cpp
 )
@@ -114,4 +122,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
 target_link_libraries(Server SDL2::SDL2 ${SDL_NET_LIBRARIES})
 # Link against the SDL2 and SDL2_mixer libraries
-target_link_libraries(Tank98 SDL2::SDL2 SDL2_image SDL2_mixer ${SDL_NET_LIBRARIES})
+target_link_libraries(Tank98 SDL2::SDL2 SDL2_image SDL2_mixer SDL2_ttf ${SDL_NET_LIBRARIES})

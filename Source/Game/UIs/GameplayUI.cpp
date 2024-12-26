@@ -6,6 +6,7 @@
 
 #include "Button.h"
 #include "Clickable.h"
+#include "Image.h"
 #include "PauseUI.h"
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Components/Sprite.h"
@@ -20,15 +21,27 @@ void pauseGame() {
 }
 void GameplayUI::Init() {
     UIUnit::Init();
-    Button *button = EntityManager::getInstance()->createEntity<Button>();
-    idEntities.push_back(button->getId());
-    button->getComponent<Clickable>()->onClick = pauseGame;
-    button->getComponent<Clickable>()->size = {50, 50};
-    Sprite *sprite = button->getComponent<Sprite>();
-    sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/BluePause.png");
-    sprite->size = {50, 50};
-    button->getComponent<Transform>()->position = {50, 50};
-    button->getComponent<Transform>()->angle = 0;
+    Button *container = EntityManager::getInstance()->createEntity<Button>();
+    idEntities.push_back(container->getId());
+    container->getComponent<Transform>()->position = {50,50};
+    container->getComponent<Transform>()->angle = 0;
+    container->getComponent<Clickable>()->onClick = pauseGame;
+    container->getComponent<Clickable>()->size = {70, 70};
+    Sprite *sprite = container->getComponent<Sprite>();
+    sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/button_round_border.png");
+    sprite->size = {70, 70};
+    sprite->layer = 100;
+
+    Image *image = EntityManager::getInstance()->createEntity<Image>();
+    idEntities.push_back(image->getId());
+    Sprite *sprite1 = image->getComponent<Sprite>();
+    sprite1->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/pause.png");
+    sprite1->size = {30, 30};
+    sprite1->layer = 101;
+    image->getComponent<Transform>()->parent = container->getComponent<Transform>();
+    image->getComponent<Transform>()->localPosition = {0, 0};
+    image->getComponent<Transform>()->angle = 0;
+
 }
 
 void GameplayUI::Close() {

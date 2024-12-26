@@ -10,6 +10,7 @@
 #include "Button.h"
 #include "Clickable.h"
 #include "GameplayUI.h"
+#include "Image.h"
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Common/ActionStatePacket.h"
 #include "Game/Components/NetworkReceiver.h"
@@ -38,28 +39,75 @@ void pause(bool isPause) {
 void PauseUI::Init() {
     UIUnit::Init();
     pause(true);
-    Button *container = EntityManager::getInstance()->createEntity<Button>();
-    idEntities.push_back(container->getId());
-    container->removeComponent<Clickable>();
+    Image *container = EntityManager::getInstance()->createEntity<Image>();
+    this->idEntities.push_back(container->getId());
+    Transform *transform = container->getComponent<Transform>();
+    transform->position = {400,400};
+    transform->angle = 0;
     Sprite *sprite = container->getComponent<Sprite>();
-    sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/GreenBox.png");
-    sprite->size = {400, 400};
-    container->getComponent<Transform>()->position = {400, 400};
-    container->getComponent<Transform>()->angle = 0;
-    Button * button = EntityManager::getInstance()->createEntity<Button>();
-    this->idEntities.push_back(button->getId());
-    button->getComponent<Clickable>()->size = {200, 100};
-    button->getComponent<Clickable>()->onClick = []() {
+    sprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/panel_glass.png");
+    sprite->size = {600,300};
+    sprite->layer = 100;
+
+    Button *continueBtn = EntityManager::getInstance()->createEntity<Button>();
+    this->idEntities.push_back(continueBtn->getId());
+    Transform* continueBtnTransform = continueBtn->getComponent<Transform>();
+    // continueBtnTransform->parent = transform;
+    continueBtnTransform->position = {500,400};
+    continueBtnTransform->angle = 0;
+    Sprite *continueBtnSprite = continueBtn->getComponent<Sprite>();
+    continueBtnSprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/button_square_depth_flat.png");
+    continueBtnSprite->size = {100,100};
+    continueBtnSprite->layer = 101;
+    Clickable *continueBtnClickable = continueBtn->getComponent<Clickable>();
+    continueBtnClickable->onClick = []() {
+        pause(false);
         UIManager::getInstance()->openUIUnit<GameplayUI>();
         GameplayService().PauseGame(false);
-        pause(false);
     };
-    Sprite *sprite1 = button->getComponent<Sprite>();
-    sprite1->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/RecBtnOrange.png");
-    sprite1->size = {200, 100};
-    sprite1->layer = 101;
-    button->getComponent<Transform>()->position = {400, 400};
-    button->getComponent<Transform>()->angle = 0;
+    continueBtnClickable->size = {100,100};
+
+    Image *continueBtnText = EntityManager::getInstance()->createEntity<Image>();
+    this->idEntities.push_back(continueBtnText->getId());
+    Transform *continueBtnTextTransform = continueBtnText->getComponent<Transform>();
+    continueBtnTextTransform->parent = continueBtnTransform;
+    continueBtnTextTransform->localPosition = {0,0};
+    continueBtnTextTransform->localAngle = 0;
+    Sprite *continueBtnTextSprite = continueBtnText->getComponent<Sprite>();
+    continueBtnTextSprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/right.png");
+    continueBtnTextSprite->size = {100,100};
+    continueBtnTextSprite->layer = 102;
+
+    Button *exitBtn = EntityManager::getInstance()->createEntity<Button>();
+    this->idEntities.push_back(exitBtn->getId());
+    Transform* exitBtnTransform = exitBtn->getComponent<Transform>();
+    exitBtnTransform->parent = transform;
+    exitBtnTransform->localPosition = {-100,0};
+    exitBtnTransform->localAngle = 0;
+    Sprite *exitBtnSprite = exitBtn->getComponent<Sprite>();
+    exitBtnSprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/button_square_depth_flat.png");
+    exitBtnSprite->size = {100,100};
+    exitBtnSprite->layer = 101;
+    Clickable *exitBtnClickable = exitBtn->getComponent<Clickable>();
+    exitBtnClickable->onClick = []() {
+        // pause(false);
+        // GameplayService().outGame();
+        // LoadResourceManager::getInstance()->CleanUp();
+        // EntityManager::getInstance()->clearEntities();
+    };
+    exitBtnClickable->size = {100,100};
+
+    Image *exitBtnText = EntityManager::getInstance()->createEntity<Image>();
+    this->idEntities.push_back(exitBtnText->getId());
+    Transform *exitBtnTextTransform = exitBtnText->getComponent<Transform>();
+    exitBtnTextTransform->parent = exitBtnTransform;
+    exitBtnTextTransform->localPosition = {0,0};
+    exitBtnTextTransform->localAngle = 0;
+    Sprite *exitBtnTextSprite = exitBtnText->getComponent<Sprite>();
+    exitBtnTextSprite->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/home.png");
+    exitBtnTextSprite->size = {100,100};
+    exitBtnTextSprite->layer = 102;
+
 }
 
 void PauseUI::Close() {
