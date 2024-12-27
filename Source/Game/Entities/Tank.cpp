@@ -7,6 +7,7 @@
 #include "GameObject.h"
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Components/Effect.h"
+#include "Game/Components/Footprint.h"
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Feature/BeDestroy.h"
@@ -20,6 +21,7 @@ Tank::Tank() {
     this->addComponent<Effect>();
     this->addComponent<NetworkTracking>();
     this->addComponent<BeDestroy>();
+    this->addComponent<Footprint>();
 
     this->getComponent<Transform>()->angle = 0;
     const auto sprite = this->getComponent<Sprite>();

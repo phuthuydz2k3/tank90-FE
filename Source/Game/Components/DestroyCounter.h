@@ -12,6 +12,7 @@ public:
     DestroyCounter();
     DestroyCounter(float time);
     float timeCounter;
+    float countTime = 0.0f;
 };
 
 

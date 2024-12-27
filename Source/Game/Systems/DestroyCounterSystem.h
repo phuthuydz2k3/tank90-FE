@@ -4,11 +4,12 @@
 
 #ifndef DESTROYCOUNTERSYSTEM_H
 #define DESTROYCOUNTERSYSTEM_H
+#include "ECS/System/System.h"
 
 
-
-class DestroyCounterSystem {
-
+class DestroyCounterSystem : public System{
+public:
+    void update() override;
 };
 
 

@@ -125,6 +125,10 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Systems/CursorSystem.h
         Source/Game/Components/Cursor.cpp
         Source/Game/Components/Cursor.h
+        Source/Game/Systems/FootprintSystem.cpp
+        Source/Game/Systems/FootprintSystem.h
+        Source/Game/Components/Footprint.cpp
+        Source/Game/Components/Footprint.h
 )
 add_executable(Server Source/Server.cpp
 )

@@ -75,7 +75,7 @@ void LoadEnvironment() {
                 path);
             environment->getComponent<Sprite>()->size = {50, 50};
             environment->getComponent<Transform>()->position = VECTOR2(j * 50 + 25, i * 50 + 25);
-            environment->getComponent<Sprite>()->layer = -1;
+            environment->getComponent<Sprite>()->layer = -2;
             environment->getComponent<Transform>()->angle = 0;
         }
     }
