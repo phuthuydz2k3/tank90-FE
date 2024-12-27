@@ -20,6 +20,7 @@
 #include "Game/Entities/GameObject.h"
 #include "Game/Entities/Smoke.h"
 #include "Game/Entities/Tank.h"
+#include "Game/Feature/BeDestroy.h"
 #include "Game/Manager/SoundManager.h"
 #include "Game/Manager/UIManager.h"
 #include "Game/Services/GameplayService.h"
@@ -127,6 +128,13 @@ void NetworkReceiverSystem::update() {
         }
 
         if (actionLen == sizeof(ActionStatePacket)) {
+            if(actionPacket.type == 1) {
+                auto entities = EntityManager::getInstance()->getEntitiesWithComponent<BeDestroy>();
+                if (entities.size() == 2) {
+                    GameplayService().WinGame();
+                }
+                return;
+            }
             if (actionPacket.type == 3) {
                 if (actionPacket.isPause) {
                     GameplayService().PauseGame(true);

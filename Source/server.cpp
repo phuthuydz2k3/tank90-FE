@@ -34,13 +34,12 @@ void handleClientOutPacket(const ActionStatePacket& packet, boost::asio::ip::tcp
 
 void broadcastActionStatePacket(const ActionStatePacket& packet) {
     try {
-    printf("Tank %d is shooting\n", packet.id);
     for (auto& socket : clientSockets) {
         boost::asio::write(socket, boost::asio::buffer(&packet, sizeof(ActionStatePacket)));
     }
 
     } catch (std::exception& e) {
-        std::cerr << "Exception in broadCast: " << e.what() << std::endl;
+        // std::cerr << "Exception in broadCast: " << e.what() << std::endl;
     }
 }
 
@@ -63,9 +62,8 @@ void handleIncomingPackets(boost::asio::ip::tcp::socket& tcpSocket) {
                 // Broadcast the ActionStatePacket to all clients
                 if (actionPacket.type == 1 && actionPacket.isOut) {
                     handleClientOutPacket(actionPacket, tcpSocket);
-                } else {
-                    broadcastActionStatePacket(actionPacket);
                 }
+                broadcastActionStatePacket(actionPacket);
             }
         }
     } catch (std::exception& e) {
