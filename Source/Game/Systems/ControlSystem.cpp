@@ -59,7 +59,6 @@ void ControlSystem::update() {
             control->rotationSpeed = 100;
         }
         if (control->isShoot()) {
-            SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/shoot_notfix.wav");
             Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
             bullet->getComponent<Transform>()->position =
                     entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
@@ -82,6 +81,7 @@ void ControlSystem::update() {
             actionPacket.id = NetworkTracking::id;
             actionPacket.isShooting = true;
             sendActionStatePacket(actionPacket);
+            SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/shoot_notfix.wav");
         }
         Transform *transform = entity->getComponent<Transform>();
         if (move != 0) transform->position += transform->forward() * move * Time::deltaTime * control->speed;

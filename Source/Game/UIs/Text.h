@@ -10,7 +10,7 @@
 #include "ECS/Component/Component.h"
 
 
-class Text : Component {
+class Text : public Component {
 public:
     TTF_Font *font;
     SDL_Color color;

@@ -151,15 +151,14 @@ void NetworkReceiverSystem::update() {
                     NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
                     if (networkReceiver->id == actionPacket.id) {
                         if (actionPacket.isShooting) {
-                            SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/shoot_notfix.wav");
                             Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
+                            bullet->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                                "../Data/Images/bulletRedSilver_outline.png");
                             bullet->getComponent<Transform>()->position =
                                     entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->
                                     forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
                             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
                             bullet->getComponent<RectangleCollider>()->layer = Enemy;
-                            bullet->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
-                                "../Data/Images/bulletRedSilver_outline.png");
 
                             Smoke *smoke = EntityManager::getInstance()->createEntity<Smoke>();
                             smoke->getComponent<Transform>()->position = bullet->getComponent<Transform>()->position;
@@ -169,6 +168,7 @@ void NetworkReceiverSystem::update() {
                             smoke->getComponent<Effect>()->onEnd = [smoke] {
                                 EntityManager::getInstance()->removeEntity(smoke->getId());
                             };
+                            SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/shoot_notfix.wav");
                         }
                     }
                 }

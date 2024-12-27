@@ -129,6 +129,8 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/Game/Systems/FootprintSystem.h
         Source/Game/Components/Footprint.cpp
         Source/Game/Components/Footprint.h
+        Source/Game/UIs/LeaderBoardUI.cpp
+        Source/Game/UIs/LeaderBoardUI.h
 )
 add_executable(Server Source/Server.cpp
 )

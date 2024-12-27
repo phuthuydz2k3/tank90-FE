@@ -26,6 +26,7 @@
 
 #include "Game/Manager/UIManager.h"
 #include "Game/UIs/GameplayUI.h"
+#include "Game/UIs/LeaderBoardUI.h"
 #include "Game/UIs/LoseUI.h"
 #include "Game/UIs/WinUI.h"
 
@@ -150,8 +151,6 @@ void GameplayService::EnterGame() const {
     SoundManager::getInstance()->PlaySound("../Data/Audio/BGM/bgm.wav", true);
     SoundManager::getInstance()->SetVolume(30, SoundManager::getInstance()->SOUNDCHANNEL);
     SoundManager::getInstance()->SetVolume(50, SoundManager::getInstance()->EFFECTCHANNEL);
-    SoundManager::getInstance()->SetVolume(0, SoundManager::getInstance()->SOUNDCHANNEL);
-    SoundManager::getInstance()->SetVolume(0, SoundManager::getInstance()->EFFECTCHANNEL);
 }
 
 void GameplayService::PauseGame(bool isPause) const {

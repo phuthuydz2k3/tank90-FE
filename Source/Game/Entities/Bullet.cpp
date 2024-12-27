@@ -17,7 +17,6 @@ void onTriggerEnter(Entity *entity, Entity *other) {
         other->getComponent<BeDestroy>()->Destroy();
         other->getComponent<BeDestroy>()->isDestroyed = true;
     }
-    SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/tank_hit.wav", false);
     CollideExplosion *collide_explosion = EntityManager::getInstance()->createEntity<CollideExplosion>();
     collide_explosion->getComponent<Transform>()->position = entity->getComponent<Transform>()->position;
     collide_explosion->getComponent<Effect>()->size = {25, 25};
@@ -27,6 +26,7 @@ void onTriggerEnter(Entity *entity, Entity *other) {
         EntityManager::getInstance()->removeEntity(collide_explosion->getId());
     };
     EntityManager::getInstance()->removeEntity(entity->getId());
+    SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/tank_hit.wav", false);
 }
 
 Bullet::Bullet() {

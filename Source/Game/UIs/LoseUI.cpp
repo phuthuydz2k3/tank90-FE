@@ -7,10 +7,12 @@
 #include "Button.h"
 #include "Clickable.h"
 #include "Image.h"
+#include "LeaderBoardUI.h"
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Components/Sprite.h"
 #include "Game/Components/Transform.h"
 #include "Game/Manager/LoadResourceManager.h"
+#include "Game/Manager/UIManager.h"
 
 // void onClick() {
 //
@@ -49,7 +51,7 @@ void LoseUI::Init() {
     homeBtnSprite->size = {100, 100};
     homeBtnSprite->layer = 101;
     homeBtn->getComponent<Clickable>()->onClick = [] {
-        std::cout << "LoseUI::onClick" << std::endl;
+        UIManager::getInstance()->openUIUnit<LeaderBoardUI>();
     };
     homeBtn->getComponent<Clickable>()->size = {100, 100};
 
@@ -58,7 +60,7 @@ void LoseUI::Init() {
     homeBtnImage->getComponent<Transform>()->parent = homeBtnTransform;
     homeBtnImage->getComponent<Transform>()->localPosition = {0, 0};
     homeBtnImage->getComponent<Transform>()->localAngle = 0;
-    homeBtnImage->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/home.png");
+    homeBtnImage->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/UI/leaderboard.png");
     homeBtnImage->getComponent<Sprite>()->size = {50, 50};
     homeBtnImage->getComponent<Sprite>()->layer = 102;
 }
