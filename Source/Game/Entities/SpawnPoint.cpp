@@ -4,6 +4,7 @@
 
 #include "SpawnPoint.h"
 
+#include "GameObject.h"
 #include "Tank.h"
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Components/Effect.h"
@@ -37,5 +38,14 @@ SpawnPoint::SpawnPoint() {
         Tank *tank = EntityManager::getInstance()->createEntity<Tank>();
         tank->getComponent<Transform>()->position = this->getComponent<Transform>()->position;
         tank->getComponent<Sprite>()->layer = 1;
+        GameObject *barrel = EntityManager::getInstance()->createEntity<GameObject>();
+        barrel->addComponent<Transform>();
+        barrel->addComponent<Sprite>();
+        barrel->getComponent<Transform>()->parent = tank->getComponent<Transform>();
+        barrel->getComponent<Transform>()->localPosition = {0, -8};
+        barrel->getComponent<Transform>()->localAngle = 0;
+        barrel->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/barrelGreen_outline.png");
+        barrel->getComponent<Sprite>()->size = {30.0f/83.0f * 24, 30.0f/78.0f * 58};
+        barrel->getComponent<Sprite>()->layer = 2;
     };
 }

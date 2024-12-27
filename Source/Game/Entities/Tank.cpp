@@ -43,15 +43,5 @@ Tank::Tank() {
     effect->onEnd = [this] {
         this->removeComponent<Effect>();
     };
-
-    GameObject *barrel = EntityManager::getInstance()->createEntity<GameObject>();
-    barrel->addComponent<Transform>();
-    barrel->addComponent<Sprite>();
-    barrel->getComponent<Transform>()->parent = this->getComponent<Transform>();
-    barrel->getComponent<Transform>()->localPosition = {0, -8};
-    barrel->getComponent<Transform>()->localAngle = 0;
-    barrel->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture("../Data/Images/barrelGreen_outline.png");
-    barrel->getComponent<Sprite>()->size = {30.0f/83.0f * 24, 30.0f/78.0f * 58};
-    barrel->getComponent<Sprite>()->layer = 2;
     this->getComponent<NetworkTracking>()->typeTracking = 0;
 }

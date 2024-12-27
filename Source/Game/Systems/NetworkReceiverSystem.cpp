@@ -17,6 +17,7 @@
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Components/Transform.h"
 #include "Game/Entities/Bullet.h"
+#include "Game/Entities/GameObject.h"
 #include "Game/Entities/Smoke.h"
 #include "Game/Entities/Tank.h"
 #include "Game/Manager/SoundManager.h"
@@ -83,6 +84,19 @@ void NetworkReceiverSystem::update() {
                 tank->addComponent<NetworkReceiver>();
                 tank->getComponent<NetworkReceiver>()->id = tankState.id;
                 tank->getComponent<RectangleCollider>()->layer = Enemy;
+                tank->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                    "../Data/Images/tankRed_outline.png");
+
+                GameObject *barrel = EntityManager::getInstance()->createEntity<GameObject>();
+                barrel->addComponent<Transform>();
+                barrel->addComponent<Sprite>();
+                barrel->getComponent<Transform>()->parent = tank->getComponent<Transform>();
+                barrel->getComponent<Transform>()->localPosition = {0, -8};
+                barrel->getComponent<Transform>()->localAngle = 0;
+                barrel->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                    "../Data/Images/barrelRed_outline.png");
+                barrel->getComponent<Sprite>()->size = {30.0f / 83.0f * 24, 30.0f / 78.0f * 58};
+                barrel->getComponent<Sprite>()->layer = 2;
             }
         }
         for (const auto &entity: entities) {
@@ -136,6 +150,8 @@ void NetworkReceiverSystem::update() {
                                     forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
                             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
                             bullet->getComponent<RectangleCollider>()->layer = Enemy;
+                            bullet->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                                "../Data/Images/bulletRedSilver_outline.png");
 
                             Smoke *smoke = EntityManager::getInstance()->createEntity<Smoke>();
                             smoke->getComponent<Transform>()->position = bullet->getComponent<Transform>()->position;
