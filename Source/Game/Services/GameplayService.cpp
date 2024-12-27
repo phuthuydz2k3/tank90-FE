@@ -7,7 +7,8 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-
+#include <cstdlib>
+#include <ctime>
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Components/NetworkReceiver.h"
 #include "Game/Components/Transform.h"
@@ -121,8 +122,11 @@ void GameplayService::LoadMap(int mapIndex) const {
                 EntityManager::getInstance()->createEntity<Tree>()->getComponent<Transform>()->position = VECTOR2(
                     col * 50 + 25, row * 50 + 25);
             }
-            int row = playerIndex[0] / 16;
-            int col = playerIndex[0] % 16;
+            // Seed the random number generator
+            std::srand(static_cast<unsigned int>(std::time(nullptr)));
+            int randomTree = treeIndexes[rand() % treeIndexes.size()];
+            int row = randomTree / 16;
+            int col = randomTree % 16;
             EntityManager::getInstance()->createEntity<SpawnPoint>()->getComponent<Transform>()->position = VECTOR2(
                 col * 50 + 25, row * 50 + 25);
         }
