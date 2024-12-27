@@ -9,6 +9,7 @@
 #include "Game/Components/Effect.h"
 #include "Game/Components/RectangleCollider.h"
 #include "Game/Feature/BeDestroy.h"
+#include "Game/Manager/SoundManager.h"
 
 void onTriggerEnter(Entity *entity, Entity *other) {
     if (other->getComponent<RectangleCollider>()->layer == entity->getComponent<RectangleCollider>()->layer) return;
@@ -16,6 +17,7 @@ void onTriggerEnter(Entity *entity, Entity *other) {
         other->getComponent<BeDestroy>()->Destroy();
         other->getComponent<BeDestroy>()->isDestroyed = true;
     }
+    SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/tank_hit.wav", false);
     CollideExplosion *collide_explosion = EntityManager::getInstance()->createEntity<CollideExplosion>();
     collide_explosion->getComponent<Transform>()->position = entity->getComponent<Transform>()->position;
     collide_explosion->getComponent<Effect>()->size = {25, 25};

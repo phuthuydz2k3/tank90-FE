@@ -6,10 +6,22 @@
 
 #include "LoadResourceManager.h"
 
-void SoundManager::PlaySound(std::string path) {
+void SoundManager::PlaySound(std::string path, bool isLoop) {
     if (this->sounds.find(path) == this->sounds.end()) {
         Mix_Chunk *mix_chunk = LoadResourceManager::getInstance()->LoadSound(path);
         this->sounds[path] = mix_chunk;
     }
-    Mix_PlayChannel(-1, this->sounds.at(path), 0);
+    Mix_PlayChannel(SOUNDCHANNEL, this->sounds.at(path), isLoop ? -1 : 0);
+}
+
+void SoundManager::PlayEffect(std::string path, bool isLoop) {
+    if (this->sounds.find(path) == this->sounds.end()) {
+        Mix_Chunk *mix_chunk = LoadResourceManager::getInstance()->LoadSound(path);
+        this->sounds[path] = mix_chunk;
+    }
+    Mix_PlayChannel(EFFECTCHANNEL, this->sounds.at(path), isLoop ? -1 : 0);
+}
+
+void SoundManager::SetVolume(int volume, int channel) {
+    Mix_Volume(channel, volume);
 }

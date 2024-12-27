@@ -151,7 +151,7 @@ void NetworkReceiverSystem::update() {
                     NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
                     if (networkReceiver->id == actionPacket.id) {
                         if (actionPacket.isShooting) {
-                            // SoundManager::getInstance()->PlaySound("../Data/Audio/Effect/tank_hit.wav");
+                            SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/shoot_notfix.wav");
                             Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
                             bullet->getComponent<Transform>()->position =
                                     entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->

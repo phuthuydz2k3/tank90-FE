@@ -22,6 +22,7 @@
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Entities/GameObject.h"
 #include "Game/Entities/Mouse.h"
+#include "Game/Manager/SoundManager.h"
 
 #include "Game/Manager/UIManager.h"
 #include "Game/UIs/GameplayUI.h"
@@ -146,6 +147,11 @@ void GameplayService::WinGame() const {
 void GameplayService::EnterGame() const {
     UIManager::getInstance()->openUIUnit<GameplayUI>();
     EntityManager::getInstance()->createEntity<Mouse>();
+    SoundManager::getInstance()->PlaySound("../Data/Audio/BGM/bgm.wav", true);
+    SoundManager::getInstance()->SetVolume(30, SoundManager::getInstance()->SOUNDCHANNEL);
+    SoundManager::getInstance()->SetVolume(50, SoundManager::getInstance()->EFFECTCHANNEL);
+    SoundManager::getInstance()->SetVolume(0, SoundManager::getInstance()->SOUNDCHANNEL);
+    SoundManager::getInstance()->SetVolume(0, SoundManager::getInstance()->EFFECTCHANNEL);
 }
 
 void GameplayService::PauseGame(bool isPause) const {
