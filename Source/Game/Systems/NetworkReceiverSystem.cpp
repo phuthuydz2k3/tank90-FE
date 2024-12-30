@@ -34,8 +34,23 @@ boost::asio::io_context io_context3;
 
 void NetworkReceiverSystem::update() {
     System::update();
-    NetworkReceiver::clientSocket.non_blocking(true);
-    NetworkReceiver::tcpSocket.non_blocking(true);
+    if (!NetworkReceiver::clientSocket.is_open() || !NetworkReceiver::tcpSocket.is_open()) {
+        std::cerr << "Socket is not open" << std::endl;
+        return;
+    }
+
+    boost::system::error_code ec;
+    NetworkReceiver::clientSocket.non_blocking(true, ec);
+    if (ec) {
+        std::cerr << "Failed to set clientSocket to non-blocking: " << ec.message() << std::endl;
+        return;
+    }
+
+    NetworkReceiver::tcpSocket.non_blocking(true, ec);
+    if (ec) {
+        std::cerr << "Failed to set tcpSocket to non-blocking: " << ec.message() << std::endl;
+        return;
+    }
     while (true) {
         boost::system::error_code error;
         size_t len = NetworkReceiver::clientSocket.receive(boost::asio::buffer(NetworkReceiver::recvBuffer), 0, error);
@@ -181,6 +196,7 @@ void NetworkReceiverSystem::update() {
 }
 
 void NetworkReceiverSystem::init(const std::string &playerName, const std::string &roomName, const std::string &roomPassword) {
+    std::cout << "Initializing NetworkReceiverSystem" << std::endl;
     System::init();
 
     // Log initialization details
@@ -206,7 +222,11 @@ void NetworkReceiverSystem::init(const std::string &playerName, const std::strin
     // Prepare the request message
     std::string requestMessage = playerName + " " + roomName + " " + roomPassword;
     // Send the request message to the server
-    boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(requestMessage));
+    try {
+        boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(requestMessage));
+    } catch (const boost::system::system_error& e) {
+        std::cerr << "Error sending request message: " << e.what() << std::endl;
+    }
 
     // Receive unique ID from server
     int uniqueId;

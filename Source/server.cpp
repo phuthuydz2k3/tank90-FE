@@ -588,7 +588,6 @@ void updateTankState(const TankStatePacket &packet)
 
 void broadcastTankStates(boost::asio::ip::udp::socket &socket, boost::asio::ip::udp::endpoint &broadcast_endpoint)
 {
-    std::cout << broadcast_endpoint.address() << std::endl;
     // Calculate the total size of the packet
     size_t packetSize = tankStates.size() * sizeof(TankStatePacket);
     std::vector<char> buffer(packetSize);

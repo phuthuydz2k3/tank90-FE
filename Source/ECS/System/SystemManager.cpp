@@ -4,6 +4,7 @@
 
 #include "SystemManager.h"
 
+#include <iostream>
 #include <Game/Systems/NetworkTrackingSystem.h>
 
 #include "Game/Systems/ClickableSystem.h"
@@ -42,6 +43,11 @@ void SystemManager::init(const string& playerName, const string& roomName, const
     this->registerSystem<TextSystem>();
     this->registerSystem<SpriteSystem>();
     for (const auto &system: this->systems) {
-        system.second->init();
+        auto networkReceiverSystem = dynamic_cast<NetworkReceiverSystem*>(system.second.get());
+        if (networkReceiverSystem) {
+            networkReceiverSystem->init(playerName, roomName, roomPassword);
+        } else {
+            system.second->init();
+        }
     }
 }
