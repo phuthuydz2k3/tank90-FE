@@ -27,6 +27,9 @@
 #include "Game/UIs/GameplayUI.h"
 #include "Game/UIs/PauseUI.h"
 
+NetworkReceiverSystem::NetworkReceiverSystem(const std::string &playerName, const std::string &roomName, const std::string &roomPassword)
+    : playerName(playerName), roomName(roomName), roomPassword(roomPassword) {}
+
 boost::asio::io_context io_context3;
 
 void NetworkReceiverSystem::update() {
@@ -177,8 +180,14 @@ void NetworkReceiverSystem::update() {
     }
 }
 
-void NetworkReceiverSystem::init() {
+void NetworkReceiverSystem::init(const std::string &playerName, const std::string &roomName, const std::string &roomPassword) {
     System::init();
+
+    // Log initialization details
+    std::cout << "Initializing NetworkReceiverSystem with:" << std::endl;
+    std::cout << "Player Name: " << playerName << std::endl;
+    std::cout << "Room Name: " << roomName << std::endl;
+    std::cout << "Room Password: " << roomPassword << std::endl;
 
     // Open UDP socket
     NetworkReceiver::clientSocket.open(boost::asio::ip::udp::v4());
@@ -194,12 +203,20 @@ void NetworkReceiverSystem::init() {
     NetworkReceiver::tcpSocket.connect(
         boost::asio::ip::tcp::endpoint(boost::asio::ip::address::from_string("127.0.0.1"), 8081));
 
+    // Prepare the request message
+    std::string requestMessage = playerName + " " + roomName + " " + roomPassword;
+    // Send the request message to the server
+    boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(requestMessage));
+
     // Receive unique ID from server
     int uniqueId;
     boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(&uniqueId, sizeof(uniqueId)));
     NetworkTracking::id = uniqueId;
 
     std::cout << "Received unique ID: " << NetworkTracking::id << std::endl;
+
+    // Additional logic using room details (if applicable)
+    std::cout << "Connected to Room: " << roomName << " as Player: " << playerName << std::endl;
 
     // Start a new thread to handle ActionStatePacket
     // std::thread(handleActionStatePackets).detach();
