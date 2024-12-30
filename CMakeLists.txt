@@ -5,16 +5,14 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include (FindPkgConfig)
-include (FindSDL_net)
 
 # Find the SDL2 and SDL2_mixer libraries
 find_package(SDL2 REQUIRED)
 find_package(PostgreSQL REQUIRED)
 find_package(OpenSSL REQUIRED)
-pkg_search_module (SDL_NET REQUIRED SDL2_net)
 
 include_directories(${CMAKE_SOURCE_DIR}/Source)
-include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_MIXER_INCLUDE_DIRS} ${SDL_NET_INCLUDE_DIRS} ${PostgreSQL_INCLUDE_DIRS})
+include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_MIXER_INCLUDE_DIRS} ${PostgreSQL_INCLUDE_DIRS})
 # Add the executable
 add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/SingletonTemplate.h
@@ -164,7 +162,7 @@ add_executable(Server Source/Server.cpp
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
 # Link against the OpenSSL library
-target_link_libraries(Server OpenSSL::SSL OpenSSL::Crypto SDL2::SDL2 ${SDL_NET_LIBRARIES} ${PostgreSQL_LIBRARIES})
+target_link_libraries(Server OpenSSL::SSL OpenSSL::Crypto SDL2::SDL2 ${PostgreSQL_LIBRARIES})
 
 # Link against the SDL2, SDL2_mixer, and libpq libraries
-target_link_libraries(Tank98 SDL2::SDL2 SDL2_image SDL2_mixer SDL2_ttf ${SDL_NET_LIBRARIES} ${PostgreSQL_LIBRARIES})
+target_link_libraries(Tank98 SDL2::SDL2 SDL2_image SDL2_mixer SDL2_ttf ${PostgreSQL_LIBRARIES})

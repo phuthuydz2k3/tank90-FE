@@ -1,8 +1,8 @@
 #include "appconfig.h"
 
-string AppConfig::texture_path = "texture.png";
-string AppConfig::levels_path = "levels/";
-string AppConfig::font_name = "prstartk.ttf";
+string AppConfig::texture_path = "../resources/png/texture.png";
+string AppConfig::levels_path = "../resources/levels/";
+string AppConfig::font_name = "../resources/font/prstartk.ttf";
 string AppConfig::game_over_text = "GAME OVER";
 SDL_Rect AppConfig::map_rect = {0, 0, 26*16, 26*16};
 SDL_Rect AppConfig::status_rect = {26*16, 0, 3*16, AppConfig::map_rect.h};
