@@ -630,6 +630,72 @@ void handleClientOutPacket(const ActionStatePacket &packet, boost::asio::ip::tcp
     std::cout << "Client " << packet.id << " removed from the game." << std::endl;
 }
 
+void handleIncreaseScorePacket(const int playerId)
+{
+    PGconn *conn = connectDB();
+    if (PQstatus(conn) != CONNECTION_OK) {
+        std::cerr << "Connection to database failed: " << PQerrorMessage(conn) << std::endl;
+        PQfinish(conn);
+        return;
+    }
+
+    const char *paramValues[1] = {std::to_string(playerId).c_str()};
+    PGresult *res = PQexecParams(conn,
+                                 "UPDATE network_programming.users SET point = point + 1 WHERE username = $1;",
+                                 1, nullptr, paramValues, nullptr, nullptr, 0);
+
+    if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+        std::cerr << "Failed to update score: " << PQerrorMessage(conn) << std::endl;
+    } else {
+        std::cout << "Score updated for player ID: " << playerId << std::endl;
+    }
+
+    PQclear(res);
+    PQfinish(conn);
+}
+
+void handleGetLeaderBoard(boost::asio::ip::tcp::socket &tcpSocket) {
+    PGconn *conn = connectDB();
+    if (PQstatus(conn) != CONNECTION_OK) {
+        std::cerr << "Connection to database failed: " << PQerrorMessage(conn) << std::endl;
+        PQfinish(conn);
+        return;
+    }
+
+    PGresult *res = PQexec(conn, "SELECT username, point FROM network_programming.users ORDER BY point DESC;");
+
+    if (PQresultStatus(res) != PGRES_TUPLES_OK) {
+        std::cerr << "Failed to retrieve leaderboard: " << PQerrorMessage(conn) << std::endl;
+        PQclear(res);
+        PQfinish(conn);
+        return;
+    }
+
+    int rows = PQntuples(res);
+    std::vector<std::pair<std::string, int>> leaderboard;
+    for (int i = 0; i < rows; ++i) {
+        std::string username = PQgetvalue(res, i, 0);
+        int point = std::stoi(PQgetvalue(res, i, 1));
+        leaderboard.emplace_back(username, point);
+    }
+
+    PQclear(res);
+    PQfinish(conn);
+
+    // Send the size of the leaderboard
+    int size = leaderboard.size();
+    boost::asio::write(tcpSocket, boost::asio::buffer(&size, sizeof(size)));
+
+    // Send the leaderboard data
+    for (const auto &entry : leaderboard) {
+        int usernameLength = entry.first.size();
+        std::cout << "Username: " << entry.first << ", Points: " << entry.second << std::endl;
+        boost::asio::write(tcpSocket, boost::asio::buffer(&usernameLength, sizeof(usernameLength)));
+        boost::asio::write(tcpSocket, boost::asio::buffer(entry.first));
+        boost::asio::write(tcpSocket, boost::asio::buffer(&entry.second, sizeof(entry.second)));
+    }
+}
+
 void broadcastActionStatePacket(const ActionStatePacket &packet)
 {
     try
@@ -669,7 +735,13 @@ void handleIncomingPackets(boost::asio::ip::tcp::socket &tcpSocket)
             if (len == sizeof(ActionStatePacket))
             {
                 // Broadcast the ActionStatePacket to all clients
-                if (actionPacket.type == 1 && actionPacket.isOut)
+                if (actionPacket.type == 4) {
+                    handleIncreaseScorePacket(actionPacket.id);
+                    continue;
+                } else if (actionPacket.type == 5) {
+                    handleGetLeaderBoard(tcpSocket);
+                    continue;
+                } else if (actionPacket.type == 1 && actionPacket.isOut)
                 {
                     handleClientOutPacket(actionPacket, tcpSocket);
                 }

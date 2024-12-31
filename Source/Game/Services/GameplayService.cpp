@@ -29,6 +29,7 @@
 #include "Game/UIs/LeaderBoardUI.h"
 #include "Game/UIs/LoseUI.h"
 #include "Game/UIs/WinUI.h"
+#include <boost/asio.hpp>
 
 class NetworkTracking;
 class Tank;
@@ -143,6 +144,8 @@ void GameplayService::LoseGame() const {
 void GameplayService::WinGame() const {
     UIManager::getInstance()->openUIUnit<WinUI>();
     this->PauseGame(true);
+    this->NotifyServerForWinGame();
+    this->GetLeaderBoard();
 }
 
 void GameplayService::EnterGame() const {
@@ -174,5 +177,106 @@ void GameplayService::outGame() const {
         std::cerr << "Failed to send packet: " << error.message() << std::endl;
     } else {
         std::cout << "Notified server that client " << NetworkTracking::id << " is out of the game." << std::endl;
+    }
+}
+
+void GameplayService::NotifyServerForWinGame() const {
+    // Create a packet to notify the server
+    ActionStatePacket packet;
+    packet.type = 4;
+    packet.id = NetworkTracking::id;
+
+    boost::system::error_code error;
+    boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(&packet, sizeof(ActionStatePacket)), error);
+
+    if (error) {
+        std::cerr << "Failed to send packet: " << error.message() << std::endl;
+    } else {
+        std::cout << "Notified server that client " << NetworkTracking::id << " win the game and need update score" << std::endl;
+    }
+}
+
+void GameplayService::GetLeaderBoard() const {
+    // Create a packet to notify the server
+    ActionStatePacket packet;
+    packet.type = 5;
+    packet.id = NetworkTracking::id;
+
+    boost::system::error_code error;
+
+    if (NetworkReceiver::receivingEnabled) {
+        NetworkReceiver::receivingEnabled = false;
+    }
+
+    // Send the request to the server
+    boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(&packet, sizeof(ActionStatePacket)), error);
+
+    if (error) {
+        std::cerr << "Failed to send packet: " << error.message() << std::endl;
+        return;
+    }
+
+    // Set the socket to blocking mode
+    NetworkReceiver::tcpSocket.non_blocking(false);
+
+    // Receive the size of the leaderboard
+    int size;
+    boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(&size, sizeof(size)), error);
+
+    if (error) {
+        std::cerr << "Failed to receive leaderboard size: " << error.message() << std::endl;
+        // Set the socket back to non-blocking mode
+        NetworkReceiver::tcpSocket.non_blocking(true);
+        return;
+    }
+
+    std::vector<std::pair<std::string, int>> leaderboard(size);
+
+    // Receive the leaderboard data
+    for (int i = 0; i < size; ++i) {
+        int usernameLength;
+        boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(&usernameLength, sizeof(usernameLength)), error);
+
+        if (error) {
+            std::cerr << "Failed to receive username length: " << error.message() << std::endl;
+            // Set the socket back to non-blocking mode
+            NetworkReceiver::tcpSocket.non_blocking(true);
+            NetworkReceiver::receivingEnabled = true;
+            return;
+        }
+
+        std::vector<char> usernameBuffer(usernameLength);
+        boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(usernameBuffer.data(), usernameLength), error);
+
+        if (error) {
+            std::cerr << "Failed to receive username: " << error.message() << std::endl;
+            // Set the socket back to non-blocking mode
+            NetworkReceiver::tcpSocket.non_blocking(true);
+            NetworkReceiver::receivingEnabled = true;
+            return;
+        }
+
+        std::string username(usernameBuffer.begin(), usernameBuffer.end());
+        int point;
+        boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(&point, sizeof(point)), error);
+
+        if (error) {
+            std::cerr << "Failed to receive points: " << error.message() << std::endl;
+            // Set the socket back to non-blocking mode
+            NetworkReceiver::tcpSocket.non_blocking(true);
+            NetworkReceiver::receivingEnabled = true;
+            return;
+        }
+
+        leaderboard[i] = {username, point};
+    }
+
+    // Set the socket back to non-blocking mode
+    NetworkReceiver::tcpSocket.non_blocking(true);
+    NetworkReceiver::receivingEnabled = true;
+
+    // Print the leaderboard
+    for (const auto &entry : leaderboard) {
+        std::cout << "Username: " << entry.first << ", Points: " << entry.second << std::endl;
     }
 }

@@ -21,6 +21,10 @@ public:
 
     void PauseGame(bool isPause) const;
 
+    void NotifyServerForWinGame() const;
+
+    void GetLeaderBoard() const;
+
 private:
     std::string dataPath = "../Data/MapData/map.csv";
 };

@@ -33,6 +33,10 @@ NetworkReceiverSystem::NetworkReceiverSystem(const std::string &playerName, cons
 boost::asio::io_context io_context3;
 
 void NetworkReceiverSystem::update() {
+    if (!NetworkReceiver::receivingEnabled)  {
+        std::cout << "NetworkReceiverSystem is disabled" << std::endl;
+        return; // Skip receiving if disabled
+    }
     System::update();
     if (!NetworkReceiver::clientSocket.is_open() || !NetworkReceiver::tcpSocket.is_open()) {
         std::cerr << "Socket is not open" << std::endl;

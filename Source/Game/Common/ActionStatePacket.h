@@ -7,7 +7,7 @@
 
 struct ActionStatePacket {
     int id;
-    // 1: for out game, 2: for shooting, 3: for pause game
+    // 1: for out game, 2: for shooting, 3: for pause game, 4: for increase score, 5: for get leaderboard
     int type;
     bool isShooting = false;
     bool isOut = false;
