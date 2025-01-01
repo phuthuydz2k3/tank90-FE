@@ -4,6 +4,7 @@
 
 #include "SystemManager.h"
 
+#include <iostream>
 #include <Game/Systems/NetworkTrackingSystem.h>
 
 #include "Game/Systems/ClickableSystem.h"
@@ -18,6 +19,7 @@
 #include "Game/Systems/TextSystem.h"
 #include "Game/Systems/TransformSystem.h"
 #include "Game/Systems/FootprintSystem.h"
+#include <string>
 
 
 void SystemManager::update() const {
@@ -26,13 +28,13 @@ void SystemManager::update() const {
     }
 }
 
-void SystemManager::init() {
+void SystemManager::init(const string& playerName, const string& roomName, const string& roomPassword) {
     this->registerSystem<TransformSystem>();
     this->registerSystem<CursorSystem>();
     this->registerSystem<DestroyCounterSystem>();
     this->registerSystem<ClickableSystem>();
     this->registerSystem<NetworkTrackingSystem>();
-    this->registerSystem<NetworkReceiverSystem>();
+    this->registerSystem<NetworkReceiverSystem>(playerName, roomName, roomPassword);
     this->registerSystem<FootprintSystem>();
     this->registerSystem<ControlSystem>();
     this->registerSystem<FlySystem>();
@@ -41,6 +43,11 @@ void SystemManager::init() {
     this->registerSystem<TextSystem>();
     this->registerSystem<SpriteSystem>();
     for (const auto &system: this->systems) {
-        system.second->init();
+        auto networkReceiverSystem = dynamic_cast<NetworkReceiverSystem*>(system.second.get());
+        if (networkReceiverSystem) {
+            networkReceiverSystem->init(playerName, roomName, roomPassword);
+        } else {
+            system.second->init();
+        }
     }
 }

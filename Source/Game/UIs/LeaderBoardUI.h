@@ -9,7 +9,7 @@
 
 class LeaderBoardUI : public UIUnit {
 public:
-    LeaderBoardUI();
+    void Init() override;
 };
 
 

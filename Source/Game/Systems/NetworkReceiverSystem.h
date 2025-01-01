@@ -6,11 +6,22 @@
 #define NETWORKRECEIVERSYSTEM_H
 
 #include "ECS/System/System.h"
+#include <string>
 
 class NetworkReceiverSystem : public System{
+private:
+    std::string playerName;
+    std::string roomName;
+    std::string roomPassword;
 public:
+    // Constructor accepting three arguments
+    NetworkReceiverSystem(const std::string& playerName, const std::string& roomName, const std::string& roomPassword);
+
     void update() override;
-    void init() override;
+    // Modify init to accept parameters
+    // Modify init to accept parameters
+    using System::init; // Avoid hiding the base class init
+    void init(const std::string& playerName, const std::string& roomName, const std::string& roomPassword);
 };
 
 
