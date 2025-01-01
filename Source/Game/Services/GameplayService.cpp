@@ -145,7 +145,7 @@ void GameplayService::WinGame() const {
     UIManager::getInstance()->openUIUnit<WinUI>();
     this->PauseGame(true);
     this->NotifyServerForWinGame();
-    this->GetLeaderBoard();
+    // this->GetLeaderBoard();
 }
 
 void GameplayService::EnterGame() const {
@@ -154,6 +154,8 @@ void GameplayService::EnterGame() const {
     SoundManager::getInstance()->PlaySound("../Data/Audio/BGM/bgm.wav", true);
     SoundManager::getInstance()->SetVolume(30, SoundManager::getInstance()->SOUNDCHANNEL);
     SoundManager::getInstance()->SetVolume(50, SoundManager::getInstance()->EFFECTCHANNEL);
+    SoundManager::getInstance()->SetVolume(0, SoundManager::getInstance()->SOUNDCHANNEL);
+    SoundManager::getInstance()->SetVolume(0, SoundManager::getInstance()->EFFECTCHANNEL);
 }
 
 void GameplayService::PauseGame(bool isPause) const {
@@ -192,11 +194,12 @@ void GameplayService::NotifyServerForWinGame() const {
     if (error) {
         std::cerr << "Failed to send packet: " << error.message() << std::endl;
     } else {
-        std::cout << "Notified server that client " << NetworkTracking::id << " win the game and need update score" << std::endl;
+        std::cout << "Notified server that client " << NetworkTracking::id << " win the game and need update score" <<
+                std::endl;
     }
 }
 
-void GameplayService::GetLeaderBoard() const {
+std::vector<std::pair<std::string, int> > GameplayService::GetLeaderBoard() const {
     // Create a packet to notify the server
     ActionStatePacket packet;
     packet.type = 5;
@@ -213,7 +216,7 @@ void GameplayService::GetLeaderBoard() const {
 
     if (error) {
         std::cerr << "Failed to send packet: " << error.message() << std::endl;
-        return;
+        return {};
     }
 
     // Set the socket to blocking mode
@@ -227,33 +230,35 @@ void GameplayService::GetLeaderBoard() const {
         std::cerr << "Failed to receive leaderboard size: " << error.message() << std::endl;
         // Set the socket back to non-blocking mode
         NetworkReceiver::tcpSocket.non_blocking(true);
-        return;
+        return {};
     }
 
-    std::vector<std::pair<std::string, int>> leaderboard(size);
+    std::vector<std::pair<std::string, int> > leaderboard(size);
 
     // Receive the leaderboard data
     for (int i = 0; i < size; ++i) {
         int usernameLength;
-        boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(&usernameLength, sizeof(usernameLength)), error);
+        boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(&usernameLength, sizeof(usernameLength)),
+                          error);
 
         if (error) {
             std::cerr << "Failed to receive username length: " << error.message() << std::endl;
             // Set the socket back to non-blocking mode
             NetworkReceiver::tcpSocket.non_blocking(true);
             NetworkReceiver::receivingEnabled = true;
-            return;
+            return {};
         }
 
         std::vector<char> usernameBuffer(usernameLength);
-        boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(usernameBuffer.data(), usernameLength), error);
+        boost::asio::read(NetworkReceiver::tcpSocket, boost::asio::buffer(usernameBuffer.data(), usernameLength),
+                          error);
 
         if (error) {
             std::cerr << "Failed to receive username: " << error.message() << std::endl;
             // Set the socket back to non-blocking mode
             NetworkReceiver::tcpSocket.non_blocking(true);
             NetworkReceiver::receivingEnabled = true;
-            return;
+            return {};
         }
 
         std::string username(usernameBuffer.begin(), usernameBuffer.end());
@@ -265,7 +270,7 @@ void GameplayService::GetLeaderBoard() const {
             // Set the socket back to non-blocking mode
             NetworkReceiver::tcpSocket.non_blocking(true);
             NetworkReceiver::receivingEnabled = true;
-            return;
+            return {};
         }
 
         leaderboard[i] = {username, point};
@@ -276,7 +281,8 @@ void GameplayService::GetLeaderBoard() const {
     NetworkReceiver::receivingEnabled = true;
 
     // Print the leaderboard
-    for (const auto &entry : leaderboard) {
+    for (const auto &entry: leaderboard) {
         std::cout << "Username: " << entry.first << ", Points: " << entry.second << std::endl;
     }
+    return leaderboard;
 }

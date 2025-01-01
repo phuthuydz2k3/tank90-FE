@@ -23,7 +23,7 @@ public:
 
     void NotifyServerForWinGame() const;
 
-    void GetLeaderBoard() const;
+    std::vector<std::pair<std::string, int> > GetLeaderBoard() const;
 
 private:
     std::string dataPath = "../Data/MapData/map.csv";
