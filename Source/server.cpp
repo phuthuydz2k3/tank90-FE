@@ -471,7 +471,7 @@ void handleClient(boost::asio::ip::tcp::socket socket)
 
                 if (roomManager.getRoomStatus(roomName) == 1)
                 {
-                    boost::asio::write(socket, boost::asio::buffer("START_GAME_SIGNAL"));
+                    boost::asio::write(socket, boost::asio::buffer("START_GAME_SIGNAL " + to_string(roomManager.getRoomMapIndex(roomName))));
                     continue;
                 }
 
@@ -518,11 +518,11 @@ void handleClient(boost::asio::ip::tcp::socket socket)
             else if (request.starts_with("START_GAME "))
             {
                 istringstream stream(request.substr(11)); // Remove "START_GAME "
-                string roomName, password;
-                stream >> roomName >> password;
+                string roomName, password, mapIndex;
+                stream >> roomName >> password >> mapIndex;
 
-                cout << "Starting game in room " << roomName << " with password " << password << endl;
-                int result = roomManager.startGame(roomName, password);
+                cout << "Starting game in room " << roomName << " with password " << password << " with mapIndex " << mapIndex << endl;
+                int result = roomManager.startGame(roomName, password, stoi(mapIndex));
                 if (result == 1)
                 {
                     boost::asio::write(socket, boost::asio::buffer("GAME_STARTED"));

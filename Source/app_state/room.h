@@ -42,17 +42,18 @@ public:
     void parsePlayersResponse(const string& response);
     void leaveRoom();
     void updateStatus();
-    void sendStartGame();
+    void sendStartGame(int mapIndex);
 
 private:
     void drawPlayerList();
     void drawLeaveButton();
     bool allPlayersReady() const;
     void loadRoomFromServer();
-    void startGame();
+    void startGame(int mapIndex);
     void Update();
-    void Init(string& playerName, string& roomName, string& roomPassword);
+    void Init(string& playerName, string& roomName, string& roomPassword, int mapIndex);
 
+    string selectedMap;
     bool isOwner;
     bool playerIsReady;
     string roomPassword;

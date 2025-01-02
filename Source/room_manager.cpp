@@ -4,6 +4,7 @@
 #include <mutex>
 #include "room_manager.h"
 #include <algorithm>
+#include <map>
 
 using namespace std;
 
@@ -23,6 +24,7 @@ bool RoomManager::createRoom(const string &roomName, const string &passwordHash)
     newRoom.roomName = roomName;
     newRoom.passwordHash = passwordHash;
     newRoom.gameStarted = false;
+    newRoom.mapIndex = 1;
 
     // Add the new room to the map
     rooms[roomName] = newRoom;
@@ -194,7 +196,7 @@ int RoomManager::updatePlayerStatus(const string &roomName, const string &passwo
     return 1; // Status updated successfully
 }
 
-int RoomManager::startGame(const string &roomName, const string &password)
+int RoomManager::startGame(const string &roomName, const string &password, const int mapIndex)
 {
     lock_guard<mutex> lock(roomMutex); // Ensure thread safety
 
@@ -212,6 +214,7 @@ int RoomManager::startGame(const string &roomName, const string &password)
     // Logic to start the game
     // Example: Set a "game started" flag or perform necessary initializations
     it->second.gameStarted = true;
+    it->second.mapIndex = mapIndex;
 
     return 1; // Game successfully started
 }
@@ -228,4 +231,17 @@ int RoomManager::getRoomStatus(const string &roomName)
     }
 
     return it->second.gameStarted ? 1 : 0;
+}
+
+int RoomManager::getRoomMapIndex(const string &roomName)
+{
+    lock_guard<mutex> lock(roomMutex); // Ensure thread safety
+
+    auto it = rooms.find(roomName);
+    if (it == rooms.end())
+    {
+        return -1; // Room not found
+    }
+
+    return it->second.mapIndex;
 }
