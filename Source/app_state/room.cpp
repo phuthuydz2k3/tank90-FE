@@ -44,7 +44,8 @@ Room::Room(string roomName, string playerName, string roomPassword, bool isOwner
     r_tank_pointer->clearFlag(TSF_LIFE);
     r_tank_pointer->clearFlag(TSF_SHIELD);
     r_tank_pointer->setFlag(TSF_MENU);
-    r_index = 0;
+    r_index = 1;
+    selectedMap = "1";
     r_finished = false;
     playerIsReady = false;
 }
@@ -107,8 +108,20 @@ void Room::loadRoomFromServer() {
                 parsePlayersResponse(response);
                 return;
             } else if (response.find("START_GAME_SIGNAL") != string::npos) {
-                timer.cancel();
-                startGame();
+                // timer.cancel();
+                // startGame();
+                // return;
+                // Extract map index from "START_GAME_SIGNAL %d"
+                size_t pos = response.find("START_GAME_SIGNAL");
+                if (pos != std::string::npos) {
+                    // Assuming the format is "START_GAME_SIGNAL 123"
+                    std::string mapIndexStr = response.substr(pos + 18);  // 18 is length of "START_GAME_SIGNAL "
+                    int mapIndex = std::stoi(mapIndexStr);  // Convert to integer
+                    std::cout << "Start game signal received. Map Index: " << mapIndex << std::endl;
+
+                    timer.cancel();
+                    startGame(mapIndex);
+                }
                 return;
             }
 
@@ -283,11 +296,15 @@ void Room::drawLeaveButton() {
     SDL_Point textPosition = {300, 370};
     SDL_Point textPosition2 = {70, 370};
     SDL_Point textPosition3 = {325, 170};
+    SDL_Point textPosition5 = {70, 338};
     renderer->drawText(&textPosition, "Leave Room", {255, 255, 255, 255}, 2);
     renderer->drawText(&textPosition2, (isOwner ? "Start Game" : (playerIsReady ? "Not Ready" : "Ready")), {255, 255, 255, 255}, 2);
     renderer->drawText(&textPosition3, "Status", {255, 255, 255, 255}, 2);
     SDL_Point textPosition4 = {190, 170};
     renderer->drawText(&textPosition4, "Role", {255, 255, 255, 255}, 2); // Font size reduced to 1
+    if (isOwner) {
+        renderer->drawText(&textPosition5, "Map: " + selectedMap,{255, 255, 255, 255}, 2);
+    }
 }
 
 void Room::updateStatus() {
@@ -331,7 +348,7 @@ void Room::updateStatus() {
 void Room::eventProcess(SDL_Event* ev) {
     if (ev->type == SDL_KEYDOWN) {
         if (ev->key.keysym.sym == SDLK_RETURN) {
-            if (r_index == 0) {
+            if (r_index == 1) {
                 auto it = find_if(players.begin(), players.end(), [&](const PlayerRoom& player) {
                     return player.username == this->playerName;
                 });
@@ -342,30 +359,50 @@ void Room::eventProcess(SDL_Event* ev) {
                         updateStatus();
                     } else {
                         if (allPlayersReady()) {
-                            sendStartGame();
-                            startGame();
+                            sendStartGame(stoi(selectedMap));
+                            startGame(stoi(selectedMap));
                         }
                     }
                 } else {
                     cout << "Not found player name: " + playerName << endl;
                 }
-            } else if (r_index == 1) {
+            } else if (r_index == 2) {
                 leaveRoom();
             }
-        } else if (ev->key.keysym.sym == SDLK_LEFT) {
-            r_index--;
-            if (r_index < 0) {
-                r_index = 1;
+        } else if (ev->key.keysym.sym == SDLK_LEFT || ev->key.keysym.sym == SDLK_RIGHT) {
+            if (isOwner) {
+                if (r_index == 0 || r_index == 1) {
+                    r_index = 2;
+                    r_tank_pointer->pos_x = 265;
+                    r_tank_pointer->pos_y = 360;
+                } else {
+                    r_index = 1;
+                    r_tank_pointer->pos_x = 35;
+                }
+            } else {
+                if (r_index == 1) {
+                    r_index = 2;
+                    r_tank_pointer->pos_x = 265;
+                } else {
+                    r_index = 1;
+                    r_tank_pointer->pos_x = 35;
+                }
             }
-
-            r_tank_pointer->pos_x = 35 + r_index * 230;
-        } else if (ev->key.keysym.sym == SDLK_RIGHT) {
-            r_index++;
-            if (r_index > 1) {
+        }  else if ((ev->key.keysym.sym == SDLK_DOWN || ev->key.keysym.sym == SDLK_UP) && isOwner) {
+            if (r_index != 0) {
                 r_index = 0;
+                r_tank_pointer->pos_y = 360 - 32;
+                r_tank_pointer->pos_x = 35;
+            } else {
+                r_index = 1;
+                r_tank_pointer->pos_y = 360;
             }
-
-            r_tank_pointer->pos_x = 30 + r_index * 230;
+        } else if (ev->key.keysym.sym == SDLK_1 && r_index == 0) {
+            selectedMap = "1";
+        } else if (ev->key.keysym.sym == SDLK_2 && r_index == 0) {
+            selectedMap = "2";
+        } else if (ev->key.keysym.sym == SDLK_3 && r_index == 0) {
+            selectedMap = "3";
         }
     }
 }
@@ -382,7 +419,7 @@ bool Room::allPlayersReady() const {
     return true;
 }
 
-void Room::Init(string& playerName, string& roomName, string& roomPassword) {
+void Room::Init(string& playerName, string& roomName, string& roomPassword, int mapIndex) {
      if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "SDL haven't been initialized: " << SDL_GetError() << std::endl;
         return;
@@ -412,11 +449,11 @@ void Room::Init(string& playerName, string& roomName, string& roomPassword) {
     LoadResourceManager::getInstance()->InitWindow();
     SystemManager::getInstance()->init(playerName, roomName, roomPassword);
     UIManager::getInstance()->Init();
-    GameplayService().LoadMap(1);
+    GameplayService().LoadMap(mapIndex);
     GameplayService().EnterGame();
 }
 
-void Room::sendStartGame() {
+void Room::sendStartGame(int mapIndex) {
     // Check if the socket is open
     if (!r_socket.is_open()) {
         cerr << "Socket is not open, cannot send start game request." << endl;
@@ -425,7 +462,7 @@ void Room::sendStartGame() {
 
     try {
         // Create the message to send to the server
-        string startGameMessage = "START_GAME " + roomName + " " + roomPassword;
+        string startGameMessage = "START_GAME " + roomName + " " + roomPassword + " " + to_string(mapIndex);
         
         // Send the message to the server
         boost::asio::write(r_socket, boost::asio::buffer(startGameMessage));
@@ -444,7 +481,7 @@ void Room::sendStartGame() {
         string response(buffer.begin(), buffer.begin() + bytesRead);
         cout << "Server response: " << response << endl;
 
-        if (response == "GAME_STARTED") {
+        if (response.find("GAME_STARTED") != std::string::npos) {
             cout << "Game successfully started." << endl;
         } else {
             cerr << "Failed to start game: " << response << endl;
@@ -455,7 +492,7 @@ void Room::sendStartGame() {
 }
 
 
-void Room::startGame() {
+void Room::startGame(int mapIndex) {
     delete r_tank_pointer;
     if (r_socket.is_open()) {
         r_socket.close();
@@ -481,7 +518,8 @@ void Room::startGame() {
     // LoadResourceManager::getInstance()->CleanUp();
     // EntityManager::getInstance()->clearEntities();
 
-    Init(playerName, roomName, roomPassword);
+    cout << "Map index: " << mapIndex << endl;
+    Init(playerName, roomName, roomPassword, mapIndex);
     bool running = true;
     Uint32 lastTime = SDL_GetTicks();
     while (running) {

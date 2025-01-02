@@ -1,1 +1,1 @@
-/usr/bin/c++  -g -g CMakeFiles/Server.dir/Source/Server.cpp.o -o Server  /usr/lib/x86_64-linux-gnu/libSDL2.so -lSDL2_net -lSDL2 
+/usr/bin/c++  -g -g CMakeFiles/Server.dir/Source/server.cpp.o CMakeFiles/Server.dir/Source/room_manager.cpp.o -o Server  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libSDL2.so /usr/lib/x86_64-linux-gnu/libpq.so

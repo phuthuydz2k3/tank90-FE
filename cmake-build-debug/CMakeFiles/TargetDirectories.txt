@@ -1,4 +1,4 @@
-/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles/Tank98.dir
-/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles/Server.dir
-/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/d/A_HustLearning/20241_NetworkProgramming/tank90-FE/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/admin123/CLionProjects/tank90-FE/cmake-build-debug/CMakeFiles/Tank98.dir
+/home/admin123/CLionProjects/tank90-FE/cmake-build-debug/CMakeFiles/Server.dir
+/home/admin123/CLionProjects/tank90-FE/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/admin123/CLionProjects/tank90-FE/cmake-build-debug/CMakeFiles/rebuild_cache.dir

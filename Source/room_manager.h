@@ -32,6 +32,7 @@ struct Room
     string passwordHash;
     vector<Player> players;
     bool gameStarted;
+    int mapIndex;
 };
 
 class RoomManager
@@ -44,8 +45,9 @@ public:
     bool findRoom(string roomName);
     int getPlayerId(const std::string &playerName, const std::string &roomName, const std::string &roomPassword);
     int updatePlayerStatus(const string &roomName, const string &password, const string &playerName, bool isReady, boost::asio::ip::tcp::socket *socket);
-    int startGame(const string &roomName, const string &password);
+    int startGame(const string &roomName, const string &password, const int mapIndex);
     int getRoomStatus(const string &roomName);
+    int getRoomMapIndex(const string &roomName);
 
 private:
     unordered_map<string, Room> rooms;

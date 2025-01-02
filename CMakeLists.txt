@@ -155,7 +155,7 @@ add_executable(Tank98 Source/main.cpp Source/Math/Vector2.cpp
         Source/appconfig.cpp
         Source/appconfig.h
 )
-add_executable(Server Source/Server.cpp
+add_executable(Server Source/server.cpp
         Source/room_manager.cpp
         Source/room_manager.h
 )
