@@ -14,6 +14,7 @@
 #include "Game/Common/ActionStatePacket.h"
 #include "Game/Common/Time.h"
 #include "Game/Components/ControlComponent.h"
+#include "Game/Components/DestroyCounter.h"
 #include "Game/Components/Effect.h"
 #include "Game/Components/NetworkReceiver.h"
 #include "Game/Components/NetworkTracking.h"
@@ -80,6 +81,34 @@ void ControlSystem::update() {
             actionPacket.type = 2;
             actionPacket.id = NetworkTracking::id;
             actionPacket.isShooting = true;
+            sendActionStatePacket(actionPacket);
+            SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/shoot_notfix.wav");
+        }
+        if(control->isSpecialShoot()) {
+            Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
+            bullet->getComponent<Transform>()->position =
+                    entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->forward() * entity
+                    ->getComponent<Sprite>()->size.magnitude() * 0.55f;
+            bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
+            bullet->getComponent<RectangleCollider>()->layer = Player;
+            bullet->isOverlap = true;
+            bullet->addComponent<DestroyCounter>();
+            bullet->getComponent<DestroyCounter>()->timeCounter = 10;
+
+            Smoke *smoke = EntityManager::getInstance()->createEntity<Smoke>();
+            smoke->getComponent<Transform>()->position = bullet->getComponent<Transform>()->position;
+            smoke->getComponent<Effect>()->size = {25, 25};
+            smoke->getComponent<Effect>()->timePerFrame = 0.1f;
+            smoke->getComponent<Effect>()->loop = 1;
+            smoke->getComponent<Effect>()->onEnd = [smoke] {
+                EntityManager::getInstance()->removeEntity(smoke->getId());
+            };
+
+
+            ActionStatePacket actionPacket;
+            actionPacket.type = 6;
+            actionPacket.id = NetworkTracking::id;
+            actionPacket.isSpecialShooting = true;
             sendActionStatePacket(actionPacket);
             SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/shoot_notfix.wav");
         }

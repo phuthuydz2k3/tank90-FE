@@ -7,11 +7,10 @@
 #include "ECS/Entity/Entity.h"
 
 
-class Brick : public Entity{
+class Brick : public Entity {
 public:
     Brick();
 };
-
 
 
 #endif //BRICK_H

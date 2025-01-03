@@ -25,6 +25,8 @@ public:
 
     bool isShoot();
 
+    bool isSpecialShoot();
+
     bool isSpeedup() const;
 
     float speed;

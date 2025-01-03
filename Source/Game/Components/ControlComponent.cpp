@@ -6,6 +6,8 @@
 #include "Game/Common/Time.h"
 float timeCounter = 0;
 float deltaTimeShooting = 0.5f;
+float timeSpecialCounter = 0;
+float deltaSpecialShooting = 5;
 
 bool ControlComponent::isUp() const {
     return this->currentKeyStates[SDL_SCANCODE_UP] || this->currentKeyStates[SDL_SCANCODE_W];
@@ -33,6 +35,17 @@ bool ControlComponent::isShoot() {
         }
     }
     this->isShooting = false;
+    return false;
+}
+
+bool ControlComponent::isSpecialShoot() {
+    timeSpecialCounter += Time::deltaTime;
+    if(timeSpecialCounter >= deltaSpecialShooting) {
+        if(this->currentKeyStates[SDL_SCANCODE_X]) {
+            timeSpecialCounter = 0;
+            return true;
+        }
+    }
     return false;
 }
 

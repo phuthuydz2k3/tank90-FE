@@ -15,6 +15,8 @@
 class Bullet : public Entity {
 public:
     Bullet();
+
+    bool isOverlap;
 };
 
 

@@ -12,6 +12,7 @@
 
 #include "ECS/Entity/EntityManager.h"
 #include "Game/Common/ActionStatePacket.h"
+#include "Game/Components/DestroyCounter.h"
 #include "Game/Components/Effect.h"
 #include "Game/Components/NetworkTracking.h"
 #include "Game/Components/RectangleCollider.h"
@@ -27,13 +28,15 @@
 #include "Game/UIs/GameplayUI.h"
 #include "Game/UIs/PauseUI.h"
 
-NetworkReceiverSystem::NetworkReceiverSystem(const std::string &playerName, const std::string &roomName, const std::string &roomPassword)
-    : playerName(playerName), roomName(roomName), roomPassword(roomPassword) {}
+NetworkReceiverSystem::NetworkReceiverSystem(const std::string &playerName, const std::string &roomName,
+                                             const std::string &roomPassword)
+    : playerName(playerName), roomName(roomName), roomPassword(roomPassword) {
+}
 
 boost::asio::io_context io_context3;
 
 void NetworkReceiverSystem::update() {
-    if (!NetworkReceiver::receivingEnabled)  {
+    if (!NetworkReceiver::receivingEnabled) {
         std::cout << "NetworkReceiverSystem is disabled" << std::endl;
         return; // Skip receiving if disabled
     }
@@ -150,7 +153,7 @@ void NetworkReceiverSystem::update() {
         }
 
         if (actionLen == sizeof(ActionStatePacket)) {
-            if(actionPacket.type == 1) {
+            if (actionPacket.type == 1) {
                 auto entities = EntityManager::getInstance()->getEntitiesWithComponent<BeDestroy>();
                 if (entities.size() == 2) {
                     GameplayService().WinGame();
@@ -195,11 +198,43 @@ void NetworkReceiverSystem::update() {
                     }
                 }
             }
+            if (actionPacket.type == 6) {
+                auto entities = EntityManager::getInstance()->getEntitiesWithComponent<NetworkReceiver>();
+                for (const auto &entity: entities) {
+                    NetworkReceiver *networkReceiver = entity->getComponent<NetworkReceiver>();
+                    if (networkReceiver->id == actionPacket.id) {
+                        if (actionPacket.isSpecialShooting) {
+                            Bullet *bullet = EntityManager::getInstance()->createEntity<Bullet>();
+                            bullet->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                                "../Data/Images/bulletRedSilver_outline.png");
+                            bullet->getComponent<Transform>()->position =
+                                    entity->getComponent<Transform>()->position + entity->getComponent<Transform>()->
+                                    forward() * entity->getComponent<Sprite>()->size.magnitude() * 0.55f;
+                            bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
+                            bullet->getComponent<RectangleCollider>()->layer = Enemy;
+                            bullet->addComponent<DestroyCounter>();
+                            bullet->getComponent<DestroyCounter>()->countTime = 10;
+                            bullet->isOverlap = true;
+
+                            Smoke *smoke = EntityManager::getInstance()->createEntity<Smoke>();
+                            smoke->getComponent<Transform>()->position = bullet->getComponent<Transform>()->position;
+                            smoke->getComponent<Effect>()->size = {25, 25};
+                            smoke->getComponent<Effect>()->timePerFrame = 0.1f;
+                            smoke->getComponent<Effect>()->loop = 1;
+                            smoke->getComponent<Effect>()->onEnd = [smoke] {
+                                EntityManager::getInstance()->removeEntity(smoke->getId());
+                            };
+                            SoundManager::getInstance()->PlayEffect("../Data/Audio/Effect/shoot_notfix.wav");
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
-void NetworkReceiverSystem::init(const std::string &playerName, const std::string &roomName, const std::string &roomPassword) {
+void NetworkReceiverSystem::init(const std::string &playerName, const std::string &roomName,
+                                 const std::string &roomPassword) {
     std::cout << "Initializing NetworkReceiverSystem" << std::endl;
     System::init();
 
@@ -228,7 +263,7 @@ void NetworkReceiverSystem::init(const std::string &playerName, const std::strin
     // Send the request message to the server
     try {
         boost::asio::write(NetworkReceiver::tcpSocket, boost::asio::buffer(requestMessage));
-    } catch (const boost::system::system_error& e) {
+    } catch (const boost::system::system_error &e) {
         std::cerr << "Error sending request message: " << e.what() << std::endl;
     }
 
