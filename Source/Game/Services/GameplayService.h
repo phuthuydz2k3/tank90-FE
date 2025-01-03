@@ -7,6 +7,8 @@
 #include <functional>
 #include <string>
 
+#include "ECS/Entity/Entity.h"
+
 class GameplayService {
 public:
     void LoadMap(int mapIndex) const;
@@ -22,6 +24,8 @@ public:
     void PauseGame(bool isPause) const;
 
     void NotifyServerForWinGame() const;
+
+    void ChangeTheme(int themeIndex) const;
 
     std::vector<std::pair<std::string, int> > GetLeaderBoard() const;
 

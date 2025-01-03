@@ -13,15 +13,11 @@ Tree::Tree() {
     this->addComponent<Sprite>();
     Sprite *sprite = this->getComponent<Sprite>();
     std::string path;
-    int random = rand() % 4;
+    int random = rand() % 2;
     if (random == 0) {
         path = "../Data/Images/treeSmall.png";
-    } else if (random == 1) {
-        path = "../Data/Images/treeLarge.png";
-    } else if (random == 2) {
-        path = "../Data/Images/treeBrown_large.png";
     } else {
-        path = "../Data/Images/treeBrown_small.png";
+        path = "../Data/Images/treeLarge.png";
     }
     sprite->texture = LoadResourceManager::getInstance()->LoadTexture(path);
     sprite->layer = 3;

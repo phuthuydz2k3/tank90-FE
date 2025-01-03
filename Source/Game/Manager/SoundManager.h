@@ -19,6 +19,8 @@ public:
 
     void SetVolume(int volume, int channel = -1);
 
+    void setMute(bool cond);
+
     int SOUNDCHANNEL = 1;
     int EFFECTCHANNEL = 2;
 

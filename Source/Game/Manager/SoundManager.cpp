@@ -25,3 +25,9 @@ void SoundManager::PlayEffect(std::string path, bool isLoop) {
 void SoundManager::SetVolume(int volume, int channel) {
     Mix_Volume(channel, volume);
 }
+
+void SoundManager::setMute(bool cond) {
+    int volume = cond ? 0 : 30;
+    this->SetVolume(volume, this->SOUNDCHANNEL);
+    this->SetVolume(volume, this->EFFECTCHANNEL);
+}

@@ -31,8 +31,8 @@
 #include "Game/UIs/WinUI.h"
 #include <boost/asio.hpp>
 
-class NetworkTracking;
-class Tank;
+std::vector<Entity *> backGrounds;
+std::vector<Entity *> trees;
 
 bool isDigit(const std::string &str) {
     return std::all_of(str.begin(), str.end(), ::isdigit);
@@ -63,13 +63,7 @@ void LoadBorder() {
 }
 
 void LoadEnvironment() {
-    std::string path;
-    int random = rand() % 2;
-    if (random == 0) {
-        path = "../Data/Images/dirt.png";
-    } else {
-        path = "../Data/Images/sand.png";
-    }
+    std::string path = "../Data/Images/dirt.png";
     for (int i = 0; i < 16; i++) {
         for (int j = 0; j < 16; j++) {
             GameObject *environment = EntityManager::getInstance()->createEntity<GameObject>();
@@ -81,6 +75,7 @@ void LoadEnvironment() {
             environment->getComponent<Transform>()->position = VECTOR2(j * 50 + 25, i * 50 + 25);
             environment->getComponent<Sprite>()->layer = -2;
             environment->getComponent<Transform>()->angle = 0;
+            backGrounds.push_back(environment);
         }
     }
 }
@@ -122,8 +117,10 @@ void GameplayService::LoadMap(int mapIndex) const {
             for (auto &index: treeIndexes) {
                 int row = index / 16;
                 int col = index % 16;
-                EntityManager::getInstance()->createEntity<Tree>()->getComponent<Transform>()->position = VECTOR2(
+                Tree *tree = EntityManager::getInstance()->createEntity<Tree>();
+                tree->getComponent<Transform>()->position = VECTOR2(
                     col * 50 + 25, row * 50 + 25);
+                trees.push_back(tree);
             }
             // Seed the random number generator
             std::srand(static_cast<unsigned int>(std::time(nullptr)));
@@ -154,8 +151,6 @@ void GameplayService::EnterGame() const {
     SoundManager::getInstance()->PlaySound("../Data/Audio/BGM/bgm.wav", true);
     SoundManager::getInstance()->SetVolume(30, SoundManager::getInstance()->SOUNDCHANNEL);
     SoundManager::getInstance()->SetVolume(50, SoundManager::getInstance()->EFFECTCHANNEL);
-    SoundManager::getInstance()->SetVolume(0, SoundManager::getInstance()->SOUNDCHANNEL);
-    SoundManager::getInstance()->SetVolume(0, SoundManager::getInstance()->EFFECTCHANNEL);
 }
 
 void GameplayService::PauseGame(bool isPause) const {
@@ -196,6 +191,41 @@ void GameplayService::NotifyServerForWinGame() const {
     } else {
         std::cout << "Notified server that client " << NetworkTracking::id << " win the game and need update score" <<
                 std::endl;
+    }
+}
+
+void GameplayService::ChangeTheme(int themeIndex) const {
+    if (themeIndex == 0) {
+        for (auto &background: backGrounds) {
+            background->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                "../Data/Images/dirt.png");
+        }
+        for (auto &tree: trees) {
+            int random = rand() % 2;
+            if (random == 0) {
+                tree->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                    "../Data/Images/treeSmall.png");
+            } else {
+                tree->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                    "../Data/Images/treeLarge.png");
+            }
+        }
+    }
+    if (themeIndex == 1) {
+        for (auto &background: backGrounds) {
+            background->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                "../Data/Images/sand.png");
+        }
+        for (auto &tree: trees) {
+            int random = rand() % 2;
+            if (random == 0) {
+                tree->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                    "../Data/Images/treeBrown_large.png");
+            } else {
+                tree->getComponent<Sprite>()->texture = LoadResourceManager::getInstance()->LoadTexture(
+                    "../Data/Images/treeBrown_small.png");
+            }
+        }
     }
 }
 
@@ -279,10 +309,5 @@ std::vector<std::pair<std::string, int> > GameplayService::GetLeaderBoard() cons
     // Set the socket back to non-blocking mode
     NetworkReceiver::tcpSocket.non_blocking(true);
     NetworkReceiver::receivingEnabled = true;
-
-    // Print the leaderboard
-    for (const auto &entry: leaderboard) {
-        std::cout << "Username: " << entry.first << ", Points: " << entry.second << std::endl;
-    }
     return leaderboard;
 }
