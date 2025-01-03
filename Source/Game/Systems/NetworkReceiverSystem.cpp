@@ -213,7 +213,7 @@ void NetworkReceiverSystem::update() {
                             bullet->getComponent<Transform>()->angle = entity->getComponent<Transform>()->angle;
                             bullet->getComponent<RectangleCollider>()->layer = Enemy;
                             bullet->addComponent<DestroyCounter>();
-                            bullet->getComponent<DestroyCounter>()->countTime = 10;
+                            bullet->getComponent<DestroyCounter>()->timeCounter = 10;
                             bullet->isOverlap = true;
 
                             Smoke *smoke = EntityManager::getInstance()->createEntity<Smoke>();
